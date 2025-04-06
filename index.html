@@ -1,188 +1,1029 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Custom Software Development Company</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-</head>
+<html lang="en" data-theme="light">
+    
+    <!-- Head Section-->
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>CodeAlytix | Custom Software Development</title>
+        <meta name="description" content="CodeAlytix provides premium custom software development services, web applications, mobile solutions, and digital transformation consulting.">
+        <meta name="keywords" content="software development, web applications, mobile apps, AI solutions, custom software">
+        <meta name="author" content="CodeAlytix">
+        
+        <!-- Preload Fonts for Performance -->
+        <link rel="preload" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" as="style">
+        
+        <!-- Stylesheets -->
+        <link rel="stylesheet" href="common.css">
+        <link rel="stylesheet" href="index.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+        
+        <!-- Google Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap">
+        
+        <!-- AOS Animation -->
+        <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" >
+        
+        <!-- Open Graph Tags for Social Sharing -->
+        <meta property="og:title" content="CodeAlytix | Custom Software Development">
+        <meta property="og:description" content="We deliver innovative software solutions that drive business growth and operational excellence.">
+        <meta property="og:image" content="https://www.CodeAlytix.com/images/og-image.jpg">
+        <meta property="og:url" content="https://www.CodeAlytix.com">
+        <meta property="og:type" content="website">
+    
+        <!-- Favicon -->
+        <link rel="icon" type="image/jpg" href="images/Logo.jpg">
+        <!-- Critical display fix script - must load early -->
+        <script src="init-fix.js"></script>
+        <style>
+            /* Ensure header is visible immediately */
+            .modern-header {
+                display: block !important;
+                background-color: rgba(255, 255, 255, 0.9) !important;
+                backdrop-filter: blur(10px) !important;
+                -webkit-backdrop-filter: blur(10px) !important;
+                z-index: 1000 !important;
+            }
+            .logo a, .logo a span {
+                color: #3498db !important;
+                opacity: 1 !important;
+                visibility: visible !important;
+                font-weight: 800 !important;
+            }
+            .nav-links a {
+                color: #3498db !important;
+                opacity: 1 !important;
+                visibility: visible !important;
+            }
+            .utility-bar {
+                display: flex !important;
+                z-index: 1000 !important;
+            }
+            .theme-switch {
+                display: block !important;
+            }
+            [data-theme="dark"] .modern-header {
+                background-color: rgba(18, 18, 18, 0.9) !important;
+            }
+            [data-theme="dark"] .logo a, [data-theme="dark"] .logo a span,
+            [data-theme="dark"] .nav-links a {
+                color: #61dafb !important;
+            }
+        </style>
+    </head>
+    
 <body>
-    <!-- Header -->
-    <header>
+    <!-- Theme Switch & Scroll Progress Bar -->
+    <div class="utility-bar">
+    <div class="scroll-progress-container">
+        <div class="scroll-progress"></div>
+        </div>
+        <div class="theme-switch">
+            <input type="checkbox" id="theme-toggle">
+            <label for="theme-toggle" class="theme-switch-label">
+                <i class="fas fa-sun"></i>
+                <i class="fas fa-moon"></i>
+                <span class="theme-slider"></span>
+            </label>
+        </div>
+    </div>
+
+    <!-- Header Section - Modern Floating Design -->
+    <header class="modern-header">
         <div class="container">
-            <div class="logo">
-                <h1>TechSolutions</h1>
-            </div>
             <nav>
-                <ul class="menu">
-                    <li><a href="index.html" class="active">Home</a></li>
-                    <li class="dropdown">
-                        <a href="#services">Services</a>
-                        <div class="dropdown-content">
-                            <a href="custom-software.html">Custom Software Development</a>
-                            <a href="mobile-app.html">Mobile App Development</a>
-                            <a href="web-development.html">Web Development</a>
-                            <a href="cloud-solutions.html">Cloud Solutions</a>
-                            <a href="ai-ml.html">AI & ML Services</a>
-                        </div>
-                    </li>
-                    <li><a href="about.html">About Us</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
+                <div class="logo" data-aos="fade-right" data-aos-duration="800">
+                    <a href="index.html">
+                        <span class="text-gradient">CodeAlytix</span>
+                    </a>
+                </div>
+                <div class="nav-container">
+                    <div class="nav-links" data-aos="fade-down" data-aos-duration="800" data-aos-delay="100">
+                    <ul>
+                        <li><a href="index.html" class="active">Home</a></li>
+                        <li class="dropdown">
+                                <a href="javascript:void(0)">Services <i class="fas fa-chevron-down"></i></a>
+                            <div class="dropdown-content">
+                                <a href="custom-software.html">Custom Software</a>
+                                <a href="web-development.html">Web Development</a>
+                                <a href="mobile-development.html">Mobile Development</a>
+                                <a href="digital-transformation.html">Digital Transformation</a>
+                                <a href="ui-ux-design.html">UI/UX Design</a>
+                                <a href="data-analytics.html">Data Analytics</a>
+                            </div>
+                        </li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="case-study.html">Case Studies</a></li>
+                            <li class="dropdown">
+                                <a href="javascript:void(0)">Resources <i class="fas fa-chevron-down"></i></a>
+                                <div class="dropdown-content">
+                                    <a href="blog.html">Blog</a>
+                                    <a href="tutorials.html">Tutorials</a>
+                                    <a href="code-playground.html">Code Playground</a>
+                                    <a href="forum.html">Community Forum</a>
+                                </div>
+                            </li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                    <div class="header-actions" data-aos="fade-left" data-aos-duration="800" data-aos-delay="200">
+                    <a href="contact.html" class="btn-small">Get a Quote</a>
+                        <button class="search-toggle"><i class="fas fa-search"></i></button>
+                    </div>
+                </div>
                 <div class="hamburger">
                     <span></span>
                     <span></span>
                     <span></span>
                 </div>
             </nav>
+            <!-- Modern Search Overlay -->
+            <div class="search-overlay">
+                <button class="search-close"><i class="fas fa-times"></i></button>
+                <div class="search-content">
+                    <h3>What are you looking for?</h3>
+                    <form class="search-form">
+                        <input type="text" placeholder="Search...">
+                        <button type="submit"><i class="fas fa-search"></i></button>
+                    </form>
+                </div>
+            </div>
         </div>
     </header>
 
-    <!-- Hero Section -->
+    <!-- Hero Section with Particles -->
     <section class="hero">
+        <div id="particles-js"></div>
+        <div class="hero-overlay"></div>
         <div class="container">
             <div class="hero-content">
-                <h1>Transforming Ideas Into Powerful Software Solutions</h1>
-                <p>Custom Software Development That Drives Business Growth</p>
-                <a href="contact.html" class="btn">Get a Free Consultation</a>
+                <h1 data-aos="fade-up" data-aos-duration="1000">Transforming Ideas Into <span class="text-gradient typed-text"></span></h1>
+                <p data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">We build custom software solutions that drive innovation and solve complex business challenges.</p>
+                <div class="hero-buttons" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400">
+                    <a href="#services" class="btn btn-primary">Explore Services</a>
+                    <a href="#contact" class="btn btn-outline">Talk to an Expert</a>
+                </div>
+                <div class="hero-stats" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="600">
+                    <div class="stat-item">
+                        <h3 class="counter" data-target="250" data-duration="2000">0</h3>
+                        <p>Projects Delivered</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3 class="counter" data-target="50" data-duration="2000">0</h3>
+                        <p>Expert Developers</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3 class="counter" data-target="98" data-duration="2000">0</h3>
+                        <p>Client Satisfaction %</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="hero-shape">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+                <path fill="var(--background-color)" fill-opacity="1" d="M0,64L48,80C96,96,192,128,288,128C384,128,480,96,576,90.7C672,85,768,107,864,128C960,149,1056,171,1152,165.3C1248,160,1344,128,1392,112L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
+            </svg>
+        </div>
+    </section>
+
+    <!-- Floating Chat Bot -->
+    <div class="chat-bot">
+        <button class="chat-bot-toggle">
+            <i class="fas fa-robot"></i>
+            <i class="fas fa-times"></i>
+        </button>
+        <div class="chat-bot-container">
+            <div class="chat-header">
+                <h4>AI Assistant</h4>
+                <p>Ask me anything about our services</p>
+            </div>
+            <div class="chat-messages">
+                <div class="message bot">
+                    <div class="message-content">
+                        Hello! How can I help you today?
+                    </div>
+                </div>
+            </div>
+            <div class="chat-input">
+                <input type="text" placeholder="Type your message...">
+                <button><i class="fas fa-paper-plane"></i></button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Cookie Consent -->
+    <div class="cookie-consent">
+        <div class="cookie-content">
+            <p>We use cookies to enhance your experience. By continuing to visit this site you agree to our use of cookies.</p>
+            <div class="cookie-buttons">
+                <button class="cookie-accept">Accept</button>
+                <button class="cookie-settings">Preferences</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Trusted By Section - Marquee Style -->
+    <section class="trusted-by">
+        <div class="container">
+            <p data-aos="fade-up">Trusted by leading companies worldwide</p>
+            <div class="marquee">
+                <div class="marquee-content">
+                    <div class="client-logo"><img src="https://via.placeholder.com/150x60" alt="Client Logo"></div>
+                    <div class="client-logo"><img src="https://via.placeholder.com/150x60" alt="Client Logo"></div>
+                    <div class="client-logo"><img src="https://via.placeholder.com/150x60" alt="Client Logo"></div>
+                    <div class="client-logo"><img src="https://via.placeholder.com/150x60" alt="Client Logo"></div>
+                    <div class="client-logo"><img src="https://via.placeholder.com/150x60" alt="Client Logo"></div>
+                    <div class="client-logo"><img src="https://via.placeholder.com/150x60" alt="Client Logo"></div>
+                    <div class="client-logo"><img src="https://via.placeholder.com/150x60" alt="Client Logo"></div>
+                    <div class="client-logo"><img src="https://via.placeholder.com/150x60" alt="Client Logo"></div>
+                </div>
+                <div class="marquee-content">
+                    <div class="client-logo"><img src="https://via.placeholder.com/150x60" alt="Client Logo"></div>
+                    <div class="client-logo"><img src="https://via.placeholder.com/150x60" alt="Client Logo"></div>
+                    <div class="client-logo"><img src="https://via.placeholder.com/150x60" alt="Client Logo"></div>
+                    <div class="client-logo"><img src="https://via.placeholder.com/150x60" alt="Client Logo"></div>
+                    <div class="client-logo"><img src="https://via.placeholder.com/150x60" alt="Client Logo"></div>
+                    <div class="client-logo"><img src="https://via.placeholder.com/150x60" alt="Client Logo"></div>
+                    <div class="client-logo"><img src="https://via.placeholder.com/150x60" alt="Client Logo"></div>
+                    <div class="client-logo"><img src="https://via.placeholder.com/150x60" alt="Client Logo"></div>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- About Section -->
-    <section class="about" id="about">
+    <!-- Services Section - Modern Cards -->
+    <section id="services" class="services">
         <div class="container">
-            <div class="about-content">
-                <h2>About Us</h2>
-                <p>With over 10 years of experience, we deliver tailor-made software solutions for businesses across industries. Our team of expert developers, designers, and project managers work collaboratively to turn your vision into reality.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Services Section -->
-    <section class="services" id="services">
-        <div class="container">
-            <h2>Our Services</h2>
+            <span class="section-subtitle" data-aos="fade-up">What We Offer</span>
+            <h2 data-aos="fade-up" data-aos-delay="100">Our Premium <span class="text-gradient">Services</span></h2>
+            
+            <div class="services-tabs" data-aos="fade-up" data-aos-delay="300">
+                <div class="tab-buttons">
+                    <button class="tab-btn active" data-tab="development">Development</button>
+                    <button class="tab-btn" data-tab="design">Design</button>
+                    <button class="tab-btn" data-tab="cloud">Cloud & DevOps</button>
+                    <button class="tab-btn" data-tab="consulting">Consulting</button>
+                </div>
+                
+                <div class="tab-content">
+                    <div class="tab-pane active" id="development">
             <div class="services-grid">
-                <div class="service-card">
+                            <div class="service-card" data-aos="zoom-in" data-aos-delay="100">
                     <div class="service-icon">
                         <i class="fas fa-laptop-code"></i>
                     </div>
-                    <h3>Custom Software Development</h3>
-                    <p>We build bespoke software solutions tailored to your unique business requirements, helping you streamline operations and enhance productivity.</p>
-                    <a href="custom-software.html" class="btn-small">Learn More</a>
+                    <h3>Custom Software</h3>
+                    <p>Tailored solutions designed to address your unique business challenges and optimize operations.</p>
+                    <a href="custom-software.html" class="read-more">
+                        Learn More <i class="fas fa-arrow-right"></i>
+                    </a>
                 </div>
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-mobile-alt"></i>
-                    </div>
-                    <h3>Mobile App Development</h3>
-                    <p>Our expert team creates intuitive, feature-rich mobile applications for iOS and Android platforms that engage users and drive business growth.</p>
-                    <a href="mobile-app.html" class="btn-small">Learn More</a>
-                </div>
-                <div class="service-card">
+
+                            <div class="service-card" data-aos="zoom-in" data-aos-delay="200">
                     <div class="service-icon">
                         <i class="fas fa-globe"></i>
                     </div>
                     <h3>Web Development</h3>
-                    <p>We deliver responsive, user-friendly websites and web applications that provide exceptional user experiences across all devices.</p>
-                    <a href="web-development.html" class="btn-small">Learn More</a>
+                    <p>Responsive, high-performance web applications that deliver exceptional user experiences.</p>
+                    <a href="#" class="read-more">
+                        Learn More <i class="fas fa-arrow-right"></i>
+                    </a>
                 </div>
-                <div class="service-card">
+
+                            <div class="service-card" data-aos="zoom-in" data-aos-delay="300">
+                    <div class="service-icon">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h3>Mobile Development</h3>
+                    <p>Native and cross-platform mobile applications that engage users and drive business growth.</p>
+                    <a href="#" class="read-more">
+                        Learn More <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+                        </div>
+                </div>
+
+                    <div class="tab-pane" id="design">
+                        <div class="services-grid">
+                            <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-paint-brush"></i>
+                    </div>
+                    <h3>UI/UX Design</h3>
+                    <p>User-centered design that creates intuitive, engaging, and seamless digital experiences.</p>
+                    <a href="#" class="read-more">
+                        Learn More <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+
+                            <div class="service-card">
+                                <div class="service-icon">
+                                    <i class="fas fa-pencil-ruler"></i>
+                                </div>
+                                <h3>Brand Identity</h3>
+                                <p>Comprehensive brand strategy and visual identity design that establishes a strong market presence.</p>
+                                <a href="#" class="read-more">
+                                    Learn More <i class="fas fa-arrow-right"></i>
+                                </a>
+                            </div>
+                            
+                            <div class="service-card">
+                                <div class="service-icon">
+                                    <i class="fas fa-film"></i>
+                                </div>
+                                <h3>Motion Graphics</h3>
+                                <p>Engaging animations and visual effects that bring your digital products to life.</p>
+                                <a href="#" class="read-more">
+                                    Learn More <i class="fas fa-arrow-right"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="tab-pane" id="cloud">
+                        <div class="services-grid">
+                            <div class="service-card">
                     <div class="service-icon">
                         <i class="fas fa-cloud"></i>
                     </div>
                     <h3>Cloud Solutions</h3>
-                    <p>Our cloud experts help you migrate, optimize, and manage your applications in the cloud, ensuring scalability, security, and cost-efficiency.</p>
-                    <a href="cloud-solutions.html" class="btn-small">Learn More</a>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-brain"></i>
+                    <p>Scalable, secure cloud infrastructure that optimizes performance and reduces operational costs.</p>
+                    <a href="#" class="read-more">
+                        Learn More <i class="fas fa-arrow-right"></i>
+                    </a>
+                            </div>
+                            
+                            <div class="service-card">
+                                <div class="service-icon">
+                                    <i class="fas fa-server"></i>
+                                </div>
+                                <h3>DevOps</h3>
+                                <p>Streamlined development operations that accelerate delivery and improve software quality.</p>
+                                <a href="#" class="read-more">
+                                    Learn More <i class="fas fa-arrow-right"></i>
+                                </a>
+                            </div>
+                            
+                            <div class="service-card">
+                                <div class="service-icon">
+                                    <i class="fas fa-shield-alt"></i>
+                                </div>
+                                <h3>Cybersecurity</h3>
+                                <p>Robust security solutions that protect your digital assets and ensure data privacy.</p>
+                                <a href="#" class="read-more">
+                                    Learn More <i class="fas fa-arrow-right"></i>
+                                </a>
+                            </div>
+                        </div>
                     </div>
-                    <h3>AI & Machine Learning</h3>
-                    <p>Leverage the power of artificial intelligence and machine learning to gain valuable insights, automate processes, and make data-driven decisions.</p>
-                    <a href="ai-ml.html" class="btn-small">Learn More</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Why Choose Us -->
-    <section class="why-us">
-        <div class="container">
-            <h2>Why Choose Us</h2>
-            <div class="features-grid">
-                <div class="feature">
-                    <div class="feature-icon">
-                        <i class="fas fa-users"></i>
-                    </div>
-                    <h3>Client-Centric Approach</h3>
-                    <p>We prioritize your business goals and work closely with you to deliver solutions that address your specific challenges.</p>
-                </div>
-                <div class="feature">
-                    <div class="feature-icon">
-                        <i class="fas fa-code"></i>
-                    </div>
-                    <h3>Technical Excellence</h3>
-                    <p>Our team stays updated with the latest technologies and best practices to provide cutting-edge solutions.</p>
-                </div>
-                <div class="feature">
-                    <div class="feature-icon">
-                        <i class="fas fa-sync-alt"></i>
-                    </div>
-                    <h3>Agile Methodology</h3>
-                    <p>We follow agile development practices for faster delivery, better quality, and flexibility to adapt to changing requirements.</p>
-                </div>
-                <div class="feature">
-                    <div class="feature-icon">
-                        <i class="fas fa-headset"></i>
-                    </div>
-                    <h3>Ongoing Support</h3>
-                    <p>We provide reliable post-launch support and maintenance to ensure your software continues to perform optimally.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Testimonials -->
-    <section class="testimonials">
-        <div class="container">
-            <h2>Client Testimonials</h2>
-            <div class="testimonial-slider">
-                <div class="testimonial-slide active">
-                    <div class="testimonial-content">
-                        <p>"Working with this team was a game-changer for our business. They delivered a custom software solution that streamlined our operations and increased productivity by 40%."</p>
-                        <div class="client-info">
-                            <h4>John Smith</h4>
-                            <p>CEO, ABC Company</p>
+                    
+                    <div class="tab-pane" id="consulting">
+                        <div class="services-grid">
+                            <div class="service-card">
+                                <div class="service-icon">
+                                    <i class="fas fa-digital-tachograph"></i>
+                                </div>
+                                <h3>Digital Transformation</h3>
+                                <p>Strategic technology adoption to revolutionize business models and enhance productivity.</p>
+                                <a href="#" class="read-more">
+                                    Learn More <i class="fas fa-arrow-right"></i>
+                                </a>
+                            </div>
+                            
+                            <div class="service-card">
+                                <div class="service-icon">
+                                    <i class="fas fa-chart-line"></i>
+                                </div>
+                                <h3>Technology Strategy</h3>
+                                <p>Expert guidance on technology selection, architecture, and implementation roadmap.</p>
+                                <a href="#" class="read-more">
+                                    Learn More <i class="fas fa-arrow-right"></i>
+                                </a>
+                            </div>
+                            
+                            <div class="service-card">
+                                <div class="service-icon">
+                                    <i class="fas fa-project-diagram"></i>
+                                </div>
+                                <h3>Product Strategy</h3>
+                                <p>Product visioning, planning, and development strategy to maximize market impact.</p>
+                                <a href="#" class="read-more">
+                                    Learn More <i class="fas fa-arrow-right"></i>
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="testimonial-slide">
-                    <div class="testimonial-content">
-                        <p>"The mobile app developed by this team exceeded our expectations. User engagement has increased significantly, and we've seen a substantial boost in our conversion rates."</p>
-                        <div class="client-info">
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us Section - Modern Design -->
+    <section class="why-choose-us bg-light">
+        <div class="container">
+            <div class="flex-container">
+                <div class="content-col">
+                    <span class="section-subtitle" data-aos="fade-up">Why Choose Us</span>
+                    <h2 data-aos="fade-up" data-aos-delay="100">Delivering <span class="text-gradient">Excellence</span> in Every Project</h2>
+                    <p data-aos="fade-up" data-aos-delay="200">We combine innovative technology solutions with industry expertise to deliver exceptional results that exceed expectations.</p>
+                    
+                    <div class="features">
+                        <div class="feature" data-aos="fade-up" data-aos-delay="300">
+                            <div class="feature-icon">
+                                <i class="fas fa-check-circle"></i>
+                            </div>
+                            <div class="feature-content">
+                                <h3>Expert Development Team</h3>
+                                <p>Our team consists of senior developers with an average of 8+ years of experience in software development.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="feature" data-aos="fade-up" data-aos-delay="400">
+                            <div class="feature-icon">
+                                <i class="fas fa-check-circle"></i>
+                            </div>
+                            <div class="feature-content">
+                                <h3>Agile Methodology</h3>
+                                <p>We employ agile development practices to ensure rapid delivery, flexibility, and continuous improvement.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="feature" data-aos="fade-up" data-aos-delay="500">
+                            <div class="feature-icon">
+                                <i class="fas fa-check-circle"></i>
+                            </div>
+                            <div class="feature-content">
+                                <h3>Quality Assurance</h3>
+                                <p>Rigorous testing procedures guarantee high-quality, bug-free software that performs reliably.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="feature" data-aos="fade-up" data-aos-delay="600">
+                            <div class="feature-icon">
+                                <i class="fas fa-check-circle"></i>
+                            </div>
+                            <div class="feature-content">
+                                <h3>Ongoing Support</h3>
+                                <p>We provide continuous maintenance and support to ensure your software remains optimized and secure.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="image-col" data-aos="fade-left" data-aos-duration="1000">
+                    <div class="image-container">
+                        <img src="https://via.placeholder.com/600x700" alt="Our Team Working">
+                        <div class="experience-badge">
+                            <span class="number counter" data-target="10" data-duration="1500">0</span><span>+</span>
+                            <span class="text">Years of Experience</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section class="process">
+        <div class="container">
+            <span class="section-subtitle" data-aos="fade-up">Our Process</span>
+            <h2 data-aos="fade-up" data-aos-delay="100">How We <span class="text-gradient">Work</span></h2>
+            
+            <div class="process-timeline">
+                <div class="timeline-track"></div>
+                <div class="process-step" data-aos="fade-up" data-aos-delay="200">
+                    <div class="step-number">01</div>
+                    <div class="step-content">
+                        <h3>Discovery</h3>
+                        <p>We analyze your business requirements, challenges, and objectives to define the project scope.</p>
+                    </div>
+                </div>
+                
+                <div class="process-step" data-aos="fade-up" data-aos-delay="300">
+                    <div class="step-number">02</div>
+                    <div class="step-content">
+                        <h3>Planning</h3>
+                        <p>Our team creates a detailed project roadmap with timelines, deliverables, and resource allocation.</p>
+                    </div>
+                </div>
+                
+                <div class="process-step" data-aos="fade-up" data-aos-delay="400">
+                    <div class="step-number">03</div>
+                    <div class="step-content">
+                        <h3>Development</h3>
+                        <p>We build your solution using agile methodology, providing regular updates and demonstrations.</p>
+                    </div>
+                </div>
+                
+                <div class="process-step" data-aos="fade-up" data-aos-delay="500">
+                    <div class="step-number">04</div>
+                    <div class="step-content">
+                        <h3>Testing</h3>
+                        <p>Comprehensive quality assurance ensures your software is reliable, secure, and performs optimally.</p>
+                    </div>
+                </div>
+                
+                <div class="process-step" data-aos="fade-up" data-aos-delay="600">
+                    <div class="step-number">05</div>
+                    <div class="step-content">
+                        <h3>Deployment</h3>
+                        <p>We implement your solution, ensuring smooth integration with existing systems and processes.</p>
+                    </div>
+                </div>
+                
+                <div class="process-step" data-aos="fade-up" data-aos-delay="700">
+                    <div class="step-number">06</div>
+                    <div class="step-content">
+                        <h3>Support</h3>
+                        <p>Ongoing maintenance, updates, and technical support keep your software running at peak performance.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Code Playground Section -->
+    <section class="code-playground bg-gradient">
+        <div class="container">
+            <span class="section-subtitle" data-aos="fade-up">Interactive Tools</span>
+            <h2 data-aos="fade-up" data-aos-delay="100">Try Our <span class="text-gradient-alt">Code Playground</span></h2>
+            <p class="section-description" data-aos="fade-up" data-aos-delay="200">Experiment with code snippets and see results in real-time</p>
+            
+            <div class="playground-demo" data-aos="zoom-in" data-aos-delay="300">
+                <div class="code-editor">
+                    <div class="editor-header">
+                        <div class="language-selector">
+                            <button class="active" data-lang="html">HTML</button>
+                            <button data-lang="css">CSS</button>
+                            <button data-lang="js">JavaScript</button>
+                        </div>
+                        <button class="run-code">Run <i class="fas fa-play"></i></button>
+                    </div>
+                    <div class="editor-window">
+                        <pre><code class="language-html">&lt;!-- Try editing this code --&gt;
+&lt;div class="greeting"&gt;
+  &lt;h2&gt;Hello World!&lt;/h2&gt;
+  &lt;p&gt;Welcome to InnovateTech's code playground&lt;/p&gt;
+  &lt;button id="changeColor"&gt;Change Color&lt;/button&gt;
+&lt;/div&gt;</code></pre>
+                    </div>
+                </div>
+                <div class="code-preview">
+                    <div class="preview-header">
+                        <span>Output</span>
+                        <button class="fullscreen-toggle"><i class="fas fa-expand"></i></button>
+                    </div>
+                    <div class="preview-window">
+                        <div class="greeting">
+                            <h2>Hello World!</h2>
+                            <p>Welcome to InnovateTech's code playground</p>
+                            <button id="changeColor">Change Color</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center" data-aos="fade-up" data-aos-delay="400">
+                <a href="code-playground.html" class="btn">Full Code Playground <i class="fas fa-external-link-alt"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Section -->
+    <section class="blog">
+        <div class="container">
+            <span class="section-subtitle" data-aos="fade-up">Latest Resources</span>
+            <h2 data-aos="fade-up" data-aos-delay="100">Tech <span class="text-gradient">Insights</span> & Tutorials</h2>
+            
+            <div class="blog-filters" data-aos="fade-up" data-aos-delay="200">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="tech-trends">Tech Trends</button>
+                <button class="filter-btn" data-filter="tutorials">Tutorials</button>
+                <button class="filter-btn" data-filter="case-studies">Case Studies</button>
+            </div>
+            
+            <div class="blog-grid">
+                <div class="blog-card" data-aos="fade-up" data-aos-delay="300" data-category="tech-trends">
+                    <div class="blog-image">
+                        <img src="https://via.placeholder.com/600x400" alt="Blog Post">
+                        <div class="blog-category">Tech Trends</div>
+                    </div>
+                    <div class="blog-content">
+                        <h3>The Future of AI in Software Development</h3>
+                        <p class="blog-meta">
+                            <span><i class="far fa-calendar"></i> May 15, 2023</span>
+                            <span><i class="far fa-clock"></i> 8 min read</span>
+                        </p>
+                        <p>Explore how artificial intelligence is revolutionizing the software development industry...</p>
+                        <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                
+                <div class="blog-card" data-aos="fade-up" data-aos-delay="400" data-category="tutorials">
+                    <div class="blog-image">
+                        <img src="https://via.placeholder.com/600x400" alt="Blog Post">
+                        <div class="blog-category">Tutorial</div>
+                    </div>
+                    <div class="blog-content">
+                        <h3>Building Responsive Web Apps with React</h3>
+                        <p class="blog-meta">
+                            <span><i class="far fa-calendar"></i> April 28, 2023</span>
+                            <span><i class="far fa-clock"></i> 12 min read</span>
+                        </p>
+                        <p>A step-by-step guide to creating responsive and performant web applications using React...</p>
+                        <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                
+                <div class="blog-card" data-aos="fade-up" data-aos-delay="500" data-category="case-studies">
+                    <div class="blog-image">
+                        <img src="https://via.placeholder.com/600x400" alt="Blog Post">
+                        <div class="blog-category">Case Study</div>
+                    </div>
+                    <div class="blog-content">
+                        <h3>How We Optimized Database Performance by 300%</h3>
+                        <p class="blog-meta">
+                            <span><i class="far fa-calendar"></i> April 10, 2023</span>
+                            <span><i class="far fa-clock"></i> 10 min read</span>
+                        </p>
+                        <p>A detailed case study on how we redesigned a database architecture to handle millions of daily transactions...</p>
+                        <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center" data-aos="fade-up" data-aos-delay="600">
+                <a href="blog.html" class="btn">View All Articles</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Community Section -->
+    <section class="community bg-light">
+        <div class="container">
+            <div class="flex-container">
+                <div class="image-col" data-aos="fade-right" data-aos-duration="1000">
+                    <div class="image-grid">
+                        <img src="https://via.placeholder.com/300x300" alt="Community Event" class="grid-img-1">
+                        <img src="https://via.placeholder.com/300x300" alt="Community Event" class="grid-img-2">
+                        <img src="https://via.placeholder.com/300x300" alt="Community Event" class="grid-img-3">
+                        <div class="community-stats">
+                            <div class="stat">
+                                <h3 class="counter" data-target="5000" data-duration="2000">0</h3>
+                                <p>Community Members</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="content-col">
+                    <span class="section-subtitle" data-aos="fade-up">Join Our Community</span>
+                    <h2 data-aos="fade-up" data-aos-delay="100">Connect, Learn, and <span class="text-gradient">Grow</span> Together</h2>
+                    <p data-aos="fade-up" data-aos-delay="200">Join our thriving community of developers, designers, and technology enthusiasts. Share your knowledge, ask questions, and collaborate on exciting projects.</p>
+                    
+                    <div class="community-features">
+                        <div class="community-feature" data-aos="fade-up" data-aos-delay="300">
+                            <div class="feature-icon">
+                                <i class="fas fa-users"></i>
+                            </div>
+                            <div class="feature-content">
+                                <h3>Discussion Forum</h3>
+                                <p>Engage in meaningful conversations about the latest tech trends and development practices.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="community-feature" data-aos="fade-up" data-aos-delay="400">
+                            <div class="feature-icon">
+                                <i class="fas fa-calendar-alt"></i>
+                            </div>
+                            <div class="feature-content">
+                                <h3>Virtual Events</h3>
+                                <p>Attend webinars, workshops, and meetups to enhance your skills and network with peers.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="community-feature" data-aos="fade-up" data-aos-delay="500">
+                            <div class="feature-icon">
+                                <i class="fas fa-code-branch"></i>
+                            </div>
+                            <div class="feature-content">
+                                <h3>Open Source Projects</h3>
+                                <p>Contribute to collaborative projects and build your portfolio while making a difference.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="community-cta" data-aos="fade-up" data-aos-delay="600">
+                        <a href="forum.html" class="btn">Join Community</a>
+                        <a href="#" class="btn btn-outline">Upcoming Events</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="newsletter">
+        <div class="container">
+            <div class="newsletter-container" data-aos="zoom-in">
+                <div class="newsletter-content">
+                    <h2>Stay Updated with the Latest Tech News</h2>
+                    <p>Subscribe to our newsletter to receive exclusive content, tutorials, and industry insights straight to your inbox.</p>
+                    <form class="newsletter-form">
+                        <div class="form-group">
+                            <input type="email" placeholder="Your email address" required>
+                            <button type="submit" class="btn">Subscribe <i class="fas fa-paper-plane"></i></button>
+                        </div>
+                        <div class="form-check">
+                            <input type="checkbox" id="privacy-consent" required>
+                            <label for="privacy-consent">I agree to the <a href="#">Privacy Policy</a> and consent to receiving emails.</label>
+                        </div>
+                    </form>
+                </div>
+                <div class="newsletter-decoration">
+                    <div class="floating-icon"><i class="fas fa-envelope"></i></div>
+                    <div class="floating-icon"><i class="fas fa-bell"></i></div>
+                    <div class="floating-icon"><i class="fas fa-star"></i></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Case Studies Section -->
+    <section id="case-studies" class="case-studies bg-light">
+        <div class="container">
+            <span class="section-subtitle" data-aos="fade-up">Success Stories</span>
+            <h2 data-aos="fade-up" data-aos-delay="100">Featured <span class="text-gradient">Case Studies</span></h2>
+            
+            <div class="case-studies-slider" data-aos="fade-up" data-aos-delay="300">
+                <div class="swiper-container">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <div class="case-study">
+                                <div class="case-study-image">
+                                    <img src="https://via.placeholder.com/600x400" alt="Case Study 1">
+                                    <div class="case-study-category">Healthcare</div>
+                                </div>
+                                <div class="case-study-content">
+                                    <h3>Patient Management System</h3>
+                                    <p>A comprehensive solution that streamlined patient care workflows and improved operational efficiency by 40%.</p>
+                                    <div class="case-meta">
+                                        <span><i class="fas fa-code"></i> React, Node.js, MongoDB</span>
+                                        <span><i class="fas fa-calendar-alt"></i> 2023</span>
+                                    </div>
+                                    <a href="case-study.html#healthcare" class="read-more">
+                                        View Case Study <i class="fas fa-arrow-right"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    
+                        <div class="swiper-slide">
+                            <div class="case-study">
+                                <div class="case-study-image">
+                                    <img src="https://via.placeholder.com/600x400" alt="Case Study 2">
+                                    <div class="case-study-category">Finance</div>
+                                </div>
+                                <div class="case-study-content">
+                                    <h3>Automated Trading Platform</h3>
+                                    <p>A secure, high-performance trading system that processes over 10,000 transactions per second with 99.99% uptime.</p>
+                                    <div class="case-meta">
+                                        <span><i class="fas fa-code"></i> Java, Spring Boot, PostgreSQL</span>
+                                        <span><i class="fas fa-calendar-alt"></i> 2022</span>
+                                    </div>
+                                    <a href="case-study.html#finance" class="read-more">
+                                        View Case Study <i class="fas fa-arrow-right"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    
+                        <div class="swiper-slide">
+                            <div class="case-study">
+                                <div class="case-study-image">
+                                    <img src="https://via.placeholder.com/600x400" alt="Case Study 3">
+                                    <div class="case-study-category">E-commerce</div>
+                                </div>
+                                <div class="case-study-content">
+                                    <h3>Omnichannel Retail Solution</h3>
+                                    <p>An integrated platform that unified online and in-store operations, increasing sales by 35% and reducing costs by 20%.</p>
+                                    <div class="case-meta">
+                                        <span><i class="fas fa-code"></i> Python, Django, AWS</span>
+                                        <span><i class="fas fa-calendar-alt"></i> 2023</span>
+                                    </div>
+                                    <a href="case-study.html#ecommerce" class="read-more">
+                                        View Case Study <i class="fas fa-arrow-right"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                
+                        <div class="swiper-slide">
+                            <div class="case-study">
+                                <div class="case-study-image">
+                                    <img src="https://via.placeholder.com/600x400" alt="Case Study 4">
+                                    <div class="case-study-category">EdTech</div>
+                                </div>
+                                <div class="case-study-content">
+                                    <h3>Adaptive Learning Platform</h3>
+                                    <p>AI-powered educational platform that personalizes learning experiences for students based on their strengths and weaknesses.</p>
+                                    <div class="case-meta">
+                                        <span><i class="fas fa-code"></i> React, Python, TensorFlow</span>
+                                        <span><i class="fas fa-calendar-alt"></i> 2022</span>
+                                    </div>
+                                    <a href="case-study.html#education" class="read-more">
+                                        View Case Study <i class="fas fa-arrow-right"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-pagination"></div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+            </div>
+            
+            <div class="text-center" data-aos="fade-up" data-aos-delay="400">
+                <a href="case-study.html" class="btn">View All Case Studies</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Data Visualization Section -->
+    <section class="data-visualization">
+        <div class="container">
+            <span class="section-subtitle" data-aos="fade-up">Analytics Dashboard</span>
+            <h2 data-aos="fade-up" data-aos-delay="100">Powerful <span class="text-gradient">Data Visualization</span></h2>
+            <p class="section-description" data-aos="fade-up" data-aos-delay="200">Interactive charts and graphs that help you make data-driven decisions</p>
+            
+            <div class="dashboard-demo" data-aos="zoom-in" data-aos-delay="300">
+                <div class="dashboard-tabs">
+                    <button class="dashboard-tab active" data-tab="performance">Performance</button>
+                    <button class="dashboard-tab" data-tab="users">User Analytics</button>
+                    <button class="dashboard-tab" data-tab="revenue">Revenue</button>
+                </div>
+                
+                <div class="dashboard-panels">
+                    <div class="dashboard-panel active" id="performance">
+                        <div class="chart-container">
+                            <canvas id="performanceChart"></canvas>
+                        </div>
+                        <div class="metrics-grid">
+                            <div class="metric-card">
+                                <h3>Page Load Time</h3>
+                                <p class="metric-value">0.8s</p>
+                                <p class="metric-change positive">↓ 12% from last month</p>
+                            </div>
+                            <div class="metric-card">
+                                <h3>API Response Time</h3>
+                                <p class="metric-value">120ms</p>
+                                <p class="metric-change positive">↓ 8% from last month</p>
+                            </div>
+                            <div class="metric-card">
+                                <h3>Uptime</h3>
+                                <p class="metric-value">99.98%</p>
+                                <p class="metric-change positive">↑ 0.05% from last month</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center" data-aos="fade-up" data-aos-delay="400">
+                <a href="#" class="btn">Explore Full Dashboard Demo</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials bg-gradient-light">
+        <div class="container">
+            <span class="section-subtitle" data-aos="fade-up">Client Feedback</span>
+            <h2 data-aos="fade-up" data-aos-delay="100">What Our <span class="text-gradient">Clients Say</span></h2>
+            
+            <div class="testimonial-carousel" data-aos="fade-up" data-aos-delay="300">
+                <div class="testimonial-track">
+
+                <div class="testimonial-item">
+                        <div class="testimonial-card">
+                            <div class="testimonial-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                    <div class="testimonial-quote">
+                        <i class="fas fa-quote-left"></i>
+                        <p>"InnovateTech delivered an exceptional software solution that transformed our business operations. Their team's expertise, professionalism, and commitment to excellence exceeded our expectations."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="https://via.placeholder.com/80x80" alt="Client">
+                        <div class="author-info">
+                            <h4>Deepak Kumar</h4>
+                            <p>CEO</p>
+                         </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-item">
+                        <div class="testimonial-card">
+                            <div class="testimonial-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                    <div class="testimonial-quote">
+                        <i class="fas fa-quote-left"></i>
+                        <p>"Working with InnovateTech was a game-changer for our company. They delivered a custom solution that increased our productivity by 45% and significantly improved customer satisfaction."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="https://via.placeholder.com/80x80" alt="Client">
+                        <div class="author-info">
                             <h4>Sarah Johnson</h4>
-                            <p>Marketing Director, XYZ Corporation</p>
+                            <p>CEO, Global Finance</p>
+                                </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-item">
+                        <div class="testimonial-card">
+                            <div class="testimonial-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                    <div class="testimonial-quote">
+                        <i class="fas fa-quote-left"></i>
+                        <p>"The team at InnovateTech consistently demonstrated deep technical knowledge and a genuine commitment to our success. Their attention to detail and innovative approach set them apart from other vendors."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="https://via.placeholder.com/80x80" alt="Client">
+                        <div class="author-info">
+                            <h4>Michael Thompson</h4>
+                            <p>Director of IT, Retail Solutions</p>
+                                </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="slider-controls">
-                <span class="dot active" onclick="currentSlide(1)"></span>
-                <span class="dot" onclick="currentSlide(2)"></span>
+            
+                <div class="testimonial-nav">
+                    <button class="testimonial-prev"><i class="fas fa-arrow-left"></i></button>
+                    <div class="testimonial-dots"></div>
+                    <button class="testimonial-next"><i class="fas fa-arrow-right"></i></button>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Call to Action -->
-    <section class="cta">
+    <!-- CTA Section -->
+    <section id="contact" class="cta">
+        <div id="particles-js-cta"></div>
+        <div class="cta-overlay"></div>
         <div class="container">
-            <h2>Ready to transform your business with custom software solutions?</h2>
-            <a href="contact.html" class="btn">Contact Us Today</a>
+            <div class="cta-card" data-aos="zoom-in">
+            <div class="cta-content">
+                    <h2>Ready to Transform Your Business?</h2>
+                    <p>Contact us today to discuss your project and discover how our custom software solutions can drive your success.</p>
+                    <div class="cta-form">
+                        <form>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <input type="text" placeholder="Your Name" required>
+                                </div>
+                                <div class="form-group">
+                                    <input type="email" placeholder="Your Email" required>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <select required>
+                                    <option value="" disabled selected>I'm interested in...</option>
+                                    <option value="custom-software">Custom Software</option>
+                                    <option value="web-development">Web Development</option>
+                                    <option value="mobile-development">Mobile Development</option>
+                                    <option value="digital-transformation">Digital Transformation</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <textarea placeholder="Tell us about your project..." rows="3" required></textarea>
+                            </div>
+                            <div class="form-actions">
+                                <button type="submit" class="btn">Schedule a Consultation</button>
+                    <a href="tel:+91-7978425306" class="btn btn-outline"><i class="fas fa-phone"></i> Call Us</a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -190,43 +1031,82 @@
     <footer>
         <div class="container">
             <div class="footer-content">
-                <div class="footer-column">
-                    <h3>TechSolutions</h3>
-                    <p>We develop custom software solutions that empower businesses to achieve their goals and drive growth.</p>
-                </div>
-                <div class="footer-column">
-                    <h3>Services</h3>
-                    <ul>
-                        <li><a href="custom-software.html">Custom Software Development</a></li>
-                        <li><a href="mobile-app.html">Mobile App Development</a></li>
-                        <li><a href="web-development.html">Web Development</a></li>
-                        <li><a href="cloud-solutions.html">Cloud Solutions</a></li>
-                        <li><a href="ai-ml.html">AI & ML Services</a></li>
-                    </ul>
-                </div>
-                <div class="footer-column">
-                    <h3>Contact</h3>
-                    <p><i class="fas fa-map-marker-alt"></i> 123 Tech Boulevard, San Francisco, CA 94105</p>
-                    <p><i class="fas fa-phone"></i> +1 (555) 123-4567</p>
-                    <p><i class="fas fa-envelope"></i> info@yourcompany.com</p>
-                </div>
-                <div class="footer-column">
-                    <h3>Follow Us</h3>
-                    <div class="social-icons">
-                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                <div class="footer-col">
+                    <div class="footer-logo">
+                        <a href="index.html">
+                            <span class="text-gradient">CodeAlytix</span>
+                        </a>
+                    </div>
+                    <p>We deliver innovative custom software solutions that transform businesses and drive growth. Our team of experts specializes in web, mobile, and enterprise applications.</p>
+                    <div class="social-links">
                         <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
                         <a href="#"><i class="fab fa-instagram"></i></a>
                         <a href="#"><i class="fab fa-github"></i></a>
                     </div>
                 </div>
+                
+                <div class="footer-col">
+                    <h3>Services</h3>
+                    <ul>
+                        <li><a href="custom-software.html">Custom Software Development</a></li>
+                        <li><a href="web-development.html">Web Applications</a></li>
+                        <li><a href="mobile-development.html">Mobile Applications</a></li>
+                        <li><a href="digital-transformation.html">Digital Transformation</a></li>
+                        <li><a href="ui-ux-design.html">UI/UX Design</a></li>
+                        <li><a href="data-analysis.html">Data analyze</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Company</h3>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="#team">Our Team</a></li>
+                        <li><a href="#careers">Careers</a></li>
+                        <li><a href="#blog">Blog</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Contact Us</h3>
+                    <ul class="contact-info">
+                        <li><i class="fas fa-map-marker-alt"></i> Sector 8, Rohini, New Delhi 110085</li>
+                        <li><i class="fas fa-phone"></i> <a href="tel:+917978425306">+91 (7978) 425 306</a></li>
+                        <li><i class="fas fa-envelope"></i> <a href="mailto:info@codealytix.com">info@codealytix.com</a></li>
+                        <li><i class="fas fa-clock"></i> Mon-Fri: 9:00 AM - 6:00 PM</li>
+                    </ul>
+                </div>
             </div>
-            <div class="copyright">
-                <p>&copy; 2023 TechSolutions. All rights reserved.</p>
+            
+            <div class="footer-bottom">
+                <div class="footer-copyright">
+                    <p>&copy; <span id="current-year">2024</span> CodeAlytix. All Rights Reserved.</p>
+                </div>
+                <div class="footer-language">
+                    <select id="language-selector">
+                        <option value="en">English</option>
+                        <option value="es">Español</option>
+                        <option value="fr">Français</option>
+                        <option value="de">Deutsch</option>
+                    </select>
+                </div>
+                <a href="#" class="back-to-top">
+                    Back to Top <i class="fas fa-arrow-up"></i>
+                </a>
             </div>
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+    <script src="common.js"></script>
+    <script src="index.js"></script>
 </body>
 </html> 

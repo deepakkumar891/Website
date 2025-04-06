@@ -1,147 +1,74 @@
-# Custom Software Development Company Website
+# Modern Web Design Studio Website
 
-A complete website template for a software development company with multiple pages, responsive design, and modern features.
+This repository contains the code for a modern web design studio website with multiple pages and a modular, well-organized file structure.
 
-## Overview
+## Project Structure
 
-This repository contains a complete website for a custom software development company. It includes:
+### HTML Files
+- `index.html` - Homepage with various sections showcasing services and features
+- `about.html` - About us page with team information
+- `contact.html` - Contact page with form and map
+- `case-study.html` - Case studies showcase page with filterable projects
 
-- Homepage with services overview and testimonials
-- About Us page with team information
-- Service pages (with Custom Software Development as an example)
-- Contact page with form
+### CSS Files
+- `common.css` - Shared styles used across all pages
+- `index.css` - Homepage-specific styles
+- `aboutStyle.css` - About page-specific styles
+- `contactStyle.css` - Contact page-specific styles
+- `casestudy.css` - Case study-specific styles
+
+### JavaScript Files
+- `common.js` - Shared JavaScript functionality used across all pages
+- `index.js` - Homepage-specific JavaScript
+- `about-animations.js` - About page-specific animations
+- `contact-animations.js` - Contact page-specific functionality
+- `casestudy.js` - Case study-specific functionality (filtering, etc.)
 
 ## Features
 
-- Fully responsive design for all devices
-- Modern and clean user interface
-- Interactive elements including:
-  - Responsive navigation with dropdown menu
-  - Testimonial slider
-  - FAQ accordion
-  - Contact form with validation
-- Optimized for performance and SEO
+- Responsive design for optimal viewing on all devices
+- Dark/light theme switcher
+- Smooth animations using AOS library
+- Interactive elements (sliders, counters, etc.)
+- Case study filter functionality
+- Contact form with validation
+- Map integration on contact page
+- Scroll progress indicator
+- Chatbot functionality
+- Testimonial carousel
+- Interactive code playground demo
+- Data visualization with Chart.js
+- Particles.js backgrounds
 
-## Getting Started
+## Dependencies
 
-### Prerequisites
+- Font Awesome 6.0.0 - Icons
+- Google Fonts (Open Sans, Poppins) - Typography
+- AOS 2.3.1 - Scroll animations
+- Swiper 8 - Touch sliders
+- Chart.js - Data visualization
+- Particles.js - Animated backgrounds
+- Leaflet - Interactive maps
 
-- Any modern web browser
-- Basic knowledge of HTML, CSS, and JavaScript (for customization)
-- A web server or hosting service to deploy the site
+## Organization Structure
 
-### Installation
+The website follows a modular approach where:
 
-1. Download or clone this repository
-2. Upload all files to your web hosting service or server
-3. Ensure the file structure remains intact:
-   ```
-   index.html
-   about.html
-   contact.html
-   custom-software.html
-   styles.css
-   script.js
-   ```
+1. Common styles and scripts are separated from page-specific ones
+2. Each page has its own dedicated CSS and JavaScript files
+3. Functionality is organized logically across files
+4. Dependencies are loaded only where needed
 
-### Customization
+## Usage
 
-#### Changing Content
+To run this website locally:
 
-1. Edit the HTML files to change text content, images, and links
-2. Update the contact information, team members, and services as needed
+1. Clone the repository
+2. Open any HTML file in your web browser
+3. No build process or server required
 
-#### Modifying Styles
+## Customization
 
-1. Edit the `styles.css` file to change colors, fonts, and layout
-2. The CSS uses CSS variables for easy customization:
-   ```css
-   :root {
-       --primary-color: #2563eb;
-       --secondary-color: #1e40af;
-       /* More variables... */
-   }
-   ```
-
-#### Adding Pages
-
-1. Copy an existing page (like custom-software.html)
-2. Rename it and modify the content
-3. Update the navigation links in all HTML files to include the new page
-
-## Page Structure
-
-### index.html (Home)
-
-- Hero section with main header and call-to-action
-- About section
-- Services overview
-- Why choose us section
-- Testimonials
-- Call to action
-
-### about.html
-
-- Company story
-- Mission and vision
-- Core values
-- Team members
-- Our approach
-
-### contact.html
-
-- Contact information
-- Contact form
-- Google Maps location
-- Business hours
-- FAQ section
-
-### custom-software.html (Service Example)
-
-- Service overview
-- Development process
-- Industries served
-- Technologies used
-- Case studies
-- Call to action
-
-## Connecting Your Domain
-
-To connect your domain to this website:
-
-1. Purchase a domain from any domain registrar
-2. Set up hosting with your preferred provider
-3. Upload all files to your hosting server
-4. Configure DNS settings to point your domain to your hosting server
-5. Test the website on your domain
-
-## Form Functionality
-
-To make the contact form functional:
-
-1. Set up a backend service to process form submissions
-2. Update the form's action attribute with your server endpoint
-3. Modify the JavaScript validation as needed
-
-## Browser Support
-
-The website is compatible with:
-- Google Chrome (latest version)
-- Mozilla Firefox (latest version)
-- Safari (latest version)
-- Microsoft Edge (latest version)
-- Opera (latest version)
-
-## Credits
-
-- FontAwesome for icons
-- Google Fonts for typography
-- Unsplash for stock images in the demo
-
-## License
-
-This template is free to use for personal and commercial projects.
-
-## Support
-
-For questions or support, please create an issue in this repository. 
+- Theme colors can be modified in the `:root` variables in `common.css`
+- Page-specific styles can be modified in their respective CSS files
+- Functionality can be extended by adding new functions to the appropriate JS files 

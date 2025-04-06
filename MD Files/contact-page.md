@@ -8,19 +8,19 @@
 ## Contact Information
 
 ### Phone
-+1 (555) 123-4567
++91 (7978)425306
 
 ### Email
-info@yourcompany.com
+info@codealytix.com
 
 ### Headquarters
-123 Tech Boulevard  
-San Francisco, CA 94105  
-United States
+Sector 8, Rohini
+New Delhi - 110085
+India
 
 ### Development Center
-456 Innovation Street  
-Bangalore, 560001  
+Sector 8, Rohini
+New Delhi - 110085
 India
 
 ## Contact Form
@@ -40,8 +40,8 @@ India
 *required fields
 
 ## Business Hours
-Monday to Friday: 9:00 AM - 6:00 PM (PST)  
-Saturday and Sunday: Closed
+Monday to Saturday: 9:00 AM - 6:00 PM (IST)  
+Sunday: Closed
 
 ## FAQ Section
 

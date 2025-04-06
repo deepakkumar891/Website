@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Development Services | InnovateTech Solutions</title>
+    <meta name="description" content="Professional web development services including responsive websites, web applications, e-commerce solutions, and content management systems.">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Critical CSS to fix header visibility issues -->
+    <style>
+        .modern-header {
+            display: flex !important;
+            background-color: rgba(255, 255, 255, 0.9) !important;
+            backdrop-filter: blur(10px) !important;
+            -webkit-backdrop-filter: blur(10px) !important;
+            z-index: 1000 !important;
+            position: fixed !important;
+            top: 0 !important;
+            left: 0 !important;
+            width: 100% !important;
+            padding: 1rem 2rem !important;
+        }
+        .logo a, .logo a span {
+            color: #3498db !important;
+            opacity: 1 !important;
+            visibility: visible !important;
+            font-weight: 800 !important;
+        }
+        .nav-links a {
+            color: #3498db !important;
+            opacity: 1 !important;
+            visibility: visible !important;
+        }
+        .utility-bar {
+            display: flex !important;
+            z-index: 1000 !important;
+        }
+        [data-theme="dark"] .modern-header {
+            background-color: rgba(18, 18, 18, 0.9) !important;
+        }
+        [data-theme="dark"] .logo a, [data-theme="dark"] .logo a span,
+        [data-theme="dark"] .nav-links a {
+            color: #61dafb !important;
+        }
+    </style>
+    <script>
+    /**
+     * Immediate fix script for website display issues
+     * This runs immediately without waiting for DOMContentLoaded
+     */
+    (function() {
+        console.log("Running immediate display fixes");
+        
+        // Force header visibility with more specific fixes
+        function fixHeader() {
+            const header = document.querySelector('.modern-header');
+            if (header) {
+                console.log("Found header element, applying fixes");
+                header.style.display = 'flex';
+                header.style.backgroundColor = 'rgba(255, 255, 255, 0.9)';
+                header.style.backdropFilter = 'blur(10px)';
+                header.style.webkitBackdropFilter = 'blur(10px)';
+                header.style.zIndex = '1000';
+                
+                // Make sure header is correctly positioned
+                header.style.position = 'fixed';
+                header.style.top = '0';
+                header.style.left = '0';
+                header.style.width = '100%';
+                console.log("Header style fixed");
+            } else {
+                console.log("Header element not found");
+            }
+        }
+        
+        // Fix logo text visibility specifically
+        function fixLogo() {
+            // Try different selectors since structure may vary
+            const logoSelectors = [
+                '.logo a span', 
+                '.logo a', 
+                '.logo span',
+                '.logo'
+            ];
+            
+            let logoFixed = false;
+            
+            for (const selector of logoSelectors) {
+                const logoElements = document.querySelectorAll(selector);
+                if (logoElements.length > 0) {
+                    console.log(`Found logo elements with selector: ${selector}`);
+                    logoElements.forEach(el => {
+                        el.style.color = '#3498db';
+                        el.style.opacity = '1';
+                        el.style.visibility = 'visible';
+                        el.style.fontWeight = '800';
+                    });
+                    logoFixed = true;
+                }
+            }
+            
+            console.log(logoFixed ? "Logo text fixed" : "Logo text elements not found with any selector");
+        }
+        
+        // Fix navigation links
+        function fixNavLinks() {
+            const navSelectors = [
+                '.nav-links a',
+                'nav a',
+                '.nav-container a',
+                'header a'
+            ];
+            
+            let navFixed = false;
+            
+            for (const selector of navSelectors) {
+                const navLinks = document.querySelectorAll(selector);
+                if (navLinks.length > 0) {
+                    console.log(`Found navigation links with selector: ${selector}`);
+                    navLinks.forEach(link => {
+                        link.style.color = '#3498db';
+                        link.style.opacity = '1';
+                        link.style.visibility = 'visible';
+                        link.style.fontWeight = '600';
+                    });
+                    navFixed = true;
+                }
+            }
+        }
+        
+        // Apply fixes immediately
+        setTimeout(function() {
+            fixHeader();
+            fixLogo();
+            fixNavLinks();
+        }, 0);
+        
+        // Apply again after a delay
+        setTimeout(function() {
+            fixHeader();
+            fixLogo();
+            fixNavLinks();
+        }, 300);
+    })();
+    </script>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">
+                    <a href="index.html">
+                        <span class="text-gradient">InnovateTech</span>
+                    </a>
+                </div>
+                <div class="nav-links">
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li class="dropdown">
+                            <a href="#services" class="active">Services <i class="fas fa-chevron-down"></i></a>
+                            <div class="dropdown-content">
+                                <a href="custom-software.html">Custom Software</a>
+                                <a href="web-development.html" class="active">Web Development</a>
+                                <a href="mobile-development.html">Mobile Development</a>
+                                <a href="digital-transformation.html">Digital Transformation</a>
+                                <a href="ui-ux-design.html">UI/UX Design</a>
+                            </div>
+                        </li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="index.html#case-studies">Case Studies</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="cta-button">
+                    <a href="contact.html" class="btn-small">Get a Quote</a>
+                </div>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Web Development <span class="text-gradient">Services</span></h1>
+            <p>Creating powerful, scalable, and innovative web solutions that drive customer engagement and business growth</p>
+        </div>
+    </section>
+
+    <!-- Service Overview -->
+    <section class="service-detail">
+        <div class="container">
+            <div class="service-overview fade-in">
+                <h2>Modern Web Solutions for Digital Success</h2>
+                <p>At InnovateTech, we build high-performance, responsive web applications and websites tailored to your specific business needs. Our expert developers leverage cutting-edge technologies to deliver scalable, secure, and user-friendly web solutions that help you achieve your business objectives.</p>
+                
+                <div class="service-benefits">
+                    <div class="benefit-card">
+                        <div class="benefit-icon">
+                            <i class="fas fa-mobile-screen-button"></i>
+                        </div>
+                        <h3>Responsive Design</h3>
+                        <p>Websites that adapt seamlessly to all devices and screen sizes, providing optimal user experience.</p>
+                    </div>
+                    
+                    <div class="benefit-card">
+                        <div class="benefit-icon">
+                            <i class="fas fa-gauge-high"></i>
+                        </div>
+                        <h3>High Performance</h3>
+                        <p>Fast-loading pages and applications optimized for speed and efficiency to improve user retention.</p>
+                    </div>
+                    
+                    <div class="benefit-card">
+                        <div class="benefit-icon">
+                            <i class="fas fa-lock"></i>
+                        </div>
+                        <h3>Security</h3>
+                        <p>Robust security measures to protect your data and applications from threats and vulnerabilities.</p>
+                    </div>
+                    
+                    <div class="benefit-card">
+                        <div class="benefit-icon">
+                            <i class="fas fa-magnifying-glass-chart"></i>
+                        </div>
+                        <h3>SEO Optimized</h3>
+                        <p>Search engine friendly architecture and code that improves visibility and drives organic traffic.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Development Process -->
+            <div class="development-process fade-in">
+                <h2>Our Web Development Process</h2>
+                <p>Our structured approach ensures efficient delivery of high-quality web solutions that meet your business needs.</p>
+                
+                <div class="process-steps">
+                    <div class="step">
+                        <div class="step-number">01</div>
+                        <div class="step-content">
+                            <h3>Requirements Analysis</h3>
+                            <p>We work closely with you to understand your business goals, target audience, and specific requirements to define the scope and objectives of your web project.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="step">
+                        <div class="step-number">02</div>
+                        <div class="step-content">
+                            <h3>UX/UI Design</h3>
+                            <p>Our designers create intuitive and visually appealing interfaces that enhance user experience while aligning with your brand identity and project requirements.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="step">
+                        <div class="step-number">03</div>
+                        <div class="step-content">
+                            <h3>Development & Coding</h3>
+                            <p>Our developers use the most suitable technologies and frameworks to build a robust, scalable, and high-performance web solution tailored to your needs.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="step">
+                        <div class="step-number">04</div>
+                        <div class="step-content">
+                            <h3>Testing & Quality Assurance</h3>
+                            <p>Rigorous testing across multiple browsers, devices, and scenarios to ensure functionality, performance, security, and cross-browser compatibility.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="step">
+                        <div class="step-number">05</div>
+                        <div class="step-content">
+                            <h3>Deployment & Launch</h3>
+                            <p>Careful deployment to production environments with minimal downtime, ensuring a smooth transition and immediate availability to users.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="step">
+                        <div class="step-number">06</div>
+                        <div class="step-content">
+                            <h3>Maintenance & Support</h3>
+                            <p>Ongoing technical support, regular updates, performance monitoring, and continuous optimization to keep your web solution running smoothly.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Web Development Services -->
+            <div class="service-types fade-in">
+                <h2>Our Web Development Services</h2>
+                <p>We offer a comprehensive range of web development solutions tailored to your business needs.</p>
+                
+                <div class="services-grid">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-desktop"></i>
+                        </div>
+                        <h3>Corporate Websites</h3>
+                        <p>Professional, brand-aligned websites that effectively showcase your company, products, and services to your target audience.</p>
+                    </div>
+                    
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-shopping-cart"></i>
+                        </div>
+                        <h3>E-commerce Solutions</h3>
+                        <p>Customized online stores with secure payment gateways, inventory management, and user-friendly interfaces to drive sales.</p>
+                    </div>
+                    
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-laptop-code"></i>
+                        </div>
+                        <h3>Web Applications</h3>
+                        <p>Complex, feature-rich web applications with robust functionality to automate processes and enhance business operations.</p>
+                    </div>
+                    
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-file-lines"></i>
+                        </div>
+                        <h3>Content Management</h3>
+                        <p>Custom CMS solutions that make it easy to update and manage your website content without technical knowledge.</p>
+                    </div>
+                    
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-server"></i>
+                        </div>
+                        <h3>API Development</h3>
+                        <p>Custom API design and development to connect your web solutions with third-party services and systems.</p>
+                    </div>
+                    
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-arrows-rotate"></i>
+                        </div>
+                        <h3>Website Redesign</h3>
+                        <p>Modernization of existing websites to improve performance, user experience, and visual appeal while preserving SEO value.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Technologies -->
+            <div class="technologies fade-in">
+                <h2>Technologies We Use</h2>
+                <p>We leverage cutting-edge technologies and frameworks to deliver high-performance web solutions.</p>
+                
+                <div class="tech-categories">
+                    <div class="tech-category">
+                        <h3>Frontend</h3>
+                        <div class="technologies-grid">
+                            <div class="technology">React.js</div>
+                            <div class="technology">Angular</div>
+                            <div class="technology">Vue.js</div>
+                            <div class="technology">HTML5</div>
+                            <div class="technology">CSS3/SASS</div>
+                            <div class="technology">JavaScript/TypeScript</div>
+                        </div>
+                    </div>
+                    
+                    <div class="tech-category">
+                        <h3>Backend</h3>
+                        <div class="technologies-grid">
+                            <div class="technology">Node.js</div>
+                            <div class="technology">PHP/Laravel</div>
+                            <div class="technology">Python/Django</div>
+                            <div class="technology">Ruby on Rails</div>
+                            <div class="technology">ASP.NET Core</div>
+                            <div class="technology">Java Spring</div>
+                        </div>
+                    </div>
+                    
+                    <div class="tech-category">
+                        <h3>CMS Platforms</h3>
+                        <div class="technologies-grid">
+                            <div class="technology">WordPress</div>
+                            <div class="technology">Drupal</div>
+                            <div class="technology">Joomla</div>
+                            <div class="technology">Shopify</div>
+                            <div class="technology">Magento</div>
+                            <div class="technology">Headless CMS</div>
+                        </div>
+                    </div>
+                    
+                    <div class="tech-category">
+                        <h3>Databases</h3>
+                        <div class="technologies-grid">
+                            <div class="technology">MySQL</div>
+                            <div class="technology">PostgreSQL</div>
+                            <div class="technology">MongoDB</div>
+                            <div class="technology">Redis</div>
+                            <div class="technology">Firebase</div>
+                            <div class="technology">Microsoft SQL</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Case Studies -->
+            <div class="case-studies fade-in">
+                <h2>Success Stories</h2>
+                <p>Explore how our web development expertise has helped businesses achieve their goals.</p>
+                
+                <div class="case-study">
+                    <h3>E-commerce Platform Redesign</h3>
+                    <p><strong>Client:</strong> National Retail Chain</p>
+                    <p><strong>Challenge:</strong> The client's existing e-commerce platform was outdated, slow, and not mobile-responsive, resulting in high cart abandonment rates and limited sales growth.</p>
+                    <p><strong>Solution:</strong> We developed a completely redesigned, responsive e-commerce platform with improved UX/UI, optimized checkout flow, advanced search functionality, and integrated inventory management.</p>
+                    
+                    <div class="case-result">
+                        <div class="result-item">
+                            <h4>67%</h4>
+                            <p>Increase in mobile conversions</p>
+                        </div>
+                        <div class="result-item">
+                            <h4>42%</h4>
+                            <p>Reduction in cart abandonment</p>
+                        </div>
+                        <div class="result-item">
+                            <h4>89%</h4>
+                            <p>Faster page load times</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="case-study">
+                    <h3>Customer Portal Development</h3>
+                    <p><strong>Client:</strong> Financial Services Provider</p>
+                    <p><strong>Challenge:</strong> The client needed a secure, user-friendly customer portal that would allow clients to access financial information, documents, and services while meeting strict regulatory requirements.</p>
+                    <p><strong>Solution:</strong> We developed a comprehensive customer portal with multi-factor authentication, real-time data integration, document management, and personalized dashboards, all with bank-level security measures.</p>
+                    
+                    <div class="case-result">
+                        <div class="result-item">
+                            <h4>35%</h4>
+                            <p>Reduction in customer service calls</p>
+                        </div>
+                        <div class="result-item">
+                            <h4>92%</h4>
+                            <p>Customer satisfaction rating</p>
+                        </div>
+                        <div class="result-item">
+                            <h4>50%</h4>
+                            <p>Increase in digital engagement</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta parallax" data-speed="0.3">
+        <div class="cta-overlay"></div>
+        <div class="container">
+            <div class="cta-content">
+                <h2 class="fade-in">Ready to Build Your Next Web Solution?</h2>
+                <p class="fade-in">Contact us today to discuss your web development project and discover how our expertise can help you achieve your business goals.</p>
+                <div class="cta-buttons fade-in">
+                    <a href="contact.html" class="btn">Schedule a Consultation</a>
+                    <a href="tel:+11234567890" class="btn btn-outline"><i class="fas fa-phone"></i> Call Us</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <div class="footer-logo">
+                        <a href="index.html">
+                            <span class="text-gradient">InnovateTech</span>
+                        </a>
+                    </div>
+                    <p>We deliver innovative software solutions that drive business growth and operational excellence.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Services</h3>
+                    <ul>
+                        <li><a href="custom-software.html">Custom Software</a></li>
+                        <li><a href="web-development.html">Web Development</a></li>
+                        <li><a href="mobile-development.html">Mobile Development</a></li>
+                        <li><a href="digital-transformation.html">Digital Transformation</a></li>
+                        <li><a href="ui-ux-design.html">UI/UX Design</a></li>
+                        <li><a href="#">Cloud Solutions</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Company</h3>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="index.html#case-studies">Case Studies</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Contact Us</h3>
+                    <ul class="contact-info">
+                        <li><i class="fas fa-map-marker-alt"></i> 123 Tech Street, Suite 456<br>San Francisco, CA 94105</li>
+                        <li><i class="fas fa-phone"></i> +1 (123) 456-7890</li>
+                        <li><i class="fas fa-envelope"></i> info@innovatetech.com</li>
+                        <li><i class="fas fa-clock"></i> Mon-Fri: 9:00 AM - 6:00 PM</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2023 InnovateTech Solutions. All Rights Reserved.</p>
+                <a href="#" class="back-to-top">
+                    Back to Top <i class="fas fa-arrow-up"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html> 

@@ -3,70 +3,158 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us - Custom Software Development Company</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <title>About Us - Modern Web Design Studio</title>
+    <meta name="description" content="Learn about our team of passionate designers and developers dedicated to creating exceptional digital experiences.">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <!-- Swiper Slider CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="common.css">
+    <link rel="stylesheet" href="aboutStyle.css">
+    
+    <!-- Google Analytics (Replace with your own GA tag) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'GA_MEASUREMENT_ID');
+    </script>
 </head>
 <body>
+    <!-- Immediate script for theme toggle -->
+    <script>
+        // Check for saved theme preference or use default
+        const currentTheme = localStorage.getItem('theme') || 'light';
+        document.documentElement.setAttribute('data-theme', currentTheme);
+        
+        // Initialize the theme toggle checkbox based on current theme
+        window.addEventListener('DOMContentLoaded', function() {
+            const themeCheckbox = document.getElementById('theme-checkbox');
+            if (themeCheckbox) {
+                themeCheckbox.checked = currentTheme === 'dark';
+            }
+        });
+    </script>
+
     <!-- Header -->
-    <header>
+    <header class="modern-header">
         <div class="container">
-            <div class="logo">
-                <h1>TechSolutions</h1>
-            </div>
             <nav>
-                <ul class="menu">
-                    <li><a href="index.html">Home</a></li>
-                    <li class="dropdown">
-                        <a href="#services">Services</a>
-                        <div class="dropdown-content">
-                            <a href="custom-software.html">Custom Software Development</a>
-                            <a href="mobile-app.html">Mobile App Development</a>
-                            <a href="web-development.html">Web Development</a>
-                            <a href="cloud-solutions.html">Cloud Solutions</a>
-                            <a href="ai-ml.html">AI & ML Services</a>
-                        </div>
-                    </li>
-                    <li><a href="about.html" class="active">About Us</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
+                <div class="logo" data-aos="fade-right" data-aos-duration="800">
+                    <a href="index.html">
+                        <span class="text-gradient">CodeAlytix</span>
+                    </a>
+                </div>
+                <div class="nav-container">
+                    <div class="nav-links" data-aos="fade-down" data-aos-duration="800" data-aos-delay="100">
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li class="dropdown">
+                                <a href="javascript:void(0)">Services <i class="fas fa-chevron-down"></i></a>
+                            <div class="dropdown-content">
+                                <a href="custom-software.html">Custom Software</a>
+                                <a href="web-development.html">Web Development</a>
+                                <a href="mobile-development.html">Mobile Development</a>
+                                <a href="digital-transformation.html">Digital Transformation</a>
+                                <a href="ui-ux-design.html">UI/UX Design</a>
+                                <a href="data-analytics.html">Data Analytics</a>
+                            </div>
+                        </li>
+                        <li><a href="about.html" class="active">About Us</a></li>
+                        <li><a href="case-study.html">Case Studies</a></li>
+                            <li class="dropdown">
+                                <a href="javascript:void(0)">Resources <i class="fas fa-chevron-down"></i></a>
+                                <div class="dropdown-content">
+                                    <a href="blog.html">Blog</a>
+                                    <a href="tutorials.html">Tutorials</a>
+                                    <a href="code-playground.html">Code Playground</a>
+                                    <a href="forum.html">Community Forum</a>
+                                </div>
+                            </li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                    <div class="header-actions" data-aos="fade-left" data-aos-duration="800" data-aos-delay="200">
+                    <a href="contact.html" class="btn-small">Get a Quote</a>
+                        <button class="search-toggle"><i class="fas fa-search"></i></button>
+                    </div>
+                </div>
                 <div class="hamburger">
                     <span></span>
                     <span></span>
                     <span></span>
                 </div>
             </nav>
+            <!-- Modern Search Overlay -->
+            <div class="search-overlay">
+                <button class="search-close"><i class="fas fa-times"></i></button>
+                <div class="search-content">
+                    <h3>What are you looking for?</h3>
+                    <form class="search-form">
+                        <input type="text" placeholder="Search...">
+                        <button type="submit"><i class="fas fa-search"></i></button>
+                    </form>
+                </div>
+            </div>
         </div>
     </header>
 
+    <!-- Utility Bar with Theme Toggle -->
+    <!--  
+    <div class="utility-bar">
+        <div class="theme-toggle">
+            <label class="theme-switch" for="theme-checkbox">
+                <input type="checkbox" id="theme-checkbox" />
+                <span class="slider round"></span> 
+            </label>
+        </div>
+    </div>
+    -->
+    
+    
     <!-- Page Header -->
     <section class="page-header">
         <div class="container">
             <h1>The Team Behind Your Digital Transformation</h1>
-            <p>Passionate experts committed to delivering exceptional software solutions</p>
+            <p style="color: white;">Passionate experts committed to delivering exceptional software solutions</p>
         </div>
     </section>
 
     <!-- Company Story -->
     <section class="company-story">
         <div class="container">
-            <h2>Our Story</h2>
-            <p>Founded in 2013, our company began with a simple mission: to help businesses leverage technology to solve complex challenges and achieve their goals. What started as a small team of passionate developers has grown into a full-service software development company with a global presence.</p>
-            <p>Over the years, we've helped businesses of all sizes—from startups to Fortune 500 companies—transform their operations, enhance customer experiences, and drive innovation through custom software solutions.</p>
+            <h2 class="fade-in">Our Story</h2>
+            <p class="fade-in">Founded in 2024, our company began with a simple mission: to help businesses leverage technology to solve complex challenges and achieve their goals. What started as a small team of passionate developers has grown into a full-service software development company with a global presence.</p>
+            <p class="fade-in">Over the years, we've helped businesses of all sizes—from startups to Fortune many companies—transform their operations, enhance customer experiences, and drive innovation through custom software solutions.</p>
         </div>
     </section>
 
     <!-- Mission & Vision -->
     <section class="mission-vision">
         <div class="container">
-            <h2>Mission & Vision</h2>
+            <h2 class="fade-in">Mission & Vision</h2>
             <div class="mission-vision-grid">
-                <div class="mission">
+                <div class="mission fade-in">
                     <h3>Our Mission</h3>
                     <p>To empower businesses with innovative software solutions that drive growth, efficiency, and competitive advantage.</p>
                 </div>
-                <div class="vision">
+                <div class="vision fade-in">
                     <h3>Our Vision</h3>
                     <p>To be the go-to partner for businesses seeking to harness the full potential of technology in an ever-evolving digital landscape.</p>
                 </div>
@@ -77,37 +165,37 @@
     <!-- Values -->
     <section class="values">
         <div class="container">
-            <h2>Our Values</h2>
+            <h2 class="fade-in">Our Values</h2>
             <div class="values-grid">
-                <div class="value-card">
+                <div class="value-card fade-in">
                     <div class="value-icon">
                         <i class="fas fa-star"></i>
                     </div>
                     <h3>Excellence</h3>
                     <p>We strive for excellence in everything we do, from code quality to client communication.</p>
                 </div>
-                <div class="value-card">
+                <div class="value-card fade-in">
                     <div class="value-icon">
                         <i class="fas fa-lightbulb"></i>
                     </div>
                     <h3>Innovation</h3>
                     <p>We embrace new technologies and approaches to deliver cutting-edge solutions.</p>
                 </div>
-                <div class="value-card">
+                <div class="value-card fade-in">
                     <div class="value-icon">
                         <i class="fas fa-handshake"></i>
                     </div>
                     <h3>Integrity</h3>
                     <p>We build relationships based on honesty, transparency, and ethical business practices.</p>
                 </div>
-                <div class="value-card">
+                <div class="value-card fade-in">
                     <div class="value-icon">
                         <i class="fas fa-users"></i>
                     </div>
                     <h3>Collaboration</h3>
                     <p>We believe the best results come from close collaboration between our team and yours.</p>
                 </div>
-                <div class="value-card">
+                <div class="value-card fade-in">
                     <div class="value-icon">
                         <i class="fas fa-chart-line"></i>
                     </div>
@@ -119,21 +207,22 @@
     </section>
 
     <!-- Team -->
+
     <section class="team">
         <div class="container">
-            <h2>Our Team</h2>
+            <h2 class="fade-in">Our Team</h2>
             <div class="team-grid">
-                <div class="team-member">
+                <div class="team-member fade-in">
                     <div class="team-image">
-                        <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80" alt="John Doe">
+                        <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80" alt="Deepak Kumar">
                     </div>
                     <div class="team-info">
-                        <h3>John Doe</h3>
+                        <h3>Deepak Kumar</h3>
                         <p>Chief Executive Officer</p>
-                        <p>With over 20 years of experience in software development and business leadership, John leads our company's strategic vision and growth initiatives.</p>
+                        <p>With over 10 years of experience in software development and business leadership, Deepak leads our company's strategic vision and growth initiatives.</p>
                     </div>
                 </div>
-                <div class="team-member">
+                <div class="team-member fade-in">
                     <div class="team-image">
                         <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=688&q=80" alt="Jane Smith">
                     </div>
@@ -143,7 +232,7 @@
                         <p>Jane brings 15+ years of expertise in software architecture and emerging technologies, ensuring our solutions leverage the most effective tools and approaches.</p>
                     </div>
                 </div>
-                <div class="team-member">
+                <div class="team-member fade-in">
                     <div class="team-image">
                         <img src="https://images.unsplash.com/photo-1556157382-97eda2f9e2bf?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=770&q=80" alt="Michael Johnson">
                     </div>
@@ -153,7 +242,7 @@
                         <p>Michael leads our development teams, bringing 12 years of experience in managing complex software projects and implementing best practices.</p>
                     </div>
                 </div>
-                <div class="team-member">
+                <div class="team-member fade-in">
                     <div class="team-image">
                         <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=761&q=80" alt="Sarah Williams">
                     </div>
@@ -163,7 +252,7 @@
                         <p>With a background in UX/UI design and user psychology, Sarah ensures our solutions deliver exceptional user experiences that drive engagement and adoption.</p>
                     </div>
                 </div>
-                <div class="team-member">
+                <div class="team-member fade-in">
                     <div class="team-image">
                         <img src="https://images.unsplash.com/photo-1557862921-37829c790f19?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1471&q=80" alt="David Brown">
                     </div>
@@ -176,35 +265,37 @@
             </div>
         </div>
     </section>
+        -->
 
     <!-- Approach -->
     <section class="approach">
         <div class="container">
-            <h2>Our Approach</h2>
-            <p>What sets us apart is not just our technical expertise, but our approach to client partnerships. We believe in:</p>
+            <h2 class="fade-in">Our Approach</h2>
+            <p class="fade-in">What sets us apart is not just our technical expertise, but our approach to client partnerships. We believe in:</p>
             <div class="process-steps">
-                <div class="step">
+                <div class="step slide-in">
                     <div class="step-number">1</div>
                     <div class="step-content">
                         <h3>Deep Understanding</h3>
                         <p>We take the time to thoroughly understand your business, challenges, and goals before proposing solutions.</p>
                     </div>
                 </div>
-                <div class="step">
+
+                <div class="step slide-in">
                     <div class="step-number">2</div>
                     <div class="step-content">
                         <h3>Collaborative Development</h3>
                         <p>We work with you as partners, keeping you involved throughout the development process.</p>
                     </div>
                 </div>
-                <div class="step">
+                <div class="step slide-in">
                     <div class="step-number">3</div>
                     <div class="step-content">
                         <h3>Business-Focused Solutions</h3>
                         <p>Our focus is not just on building software, but on delivering solutions that drive tangible business outcomes.</p>
                     </div>
                 </div>
-                <div class="step">
+                <div class="step slide-in">
                     <div class="step-number">4</div>
                     <div class="step-content">
                         <h3>Long-Term Relationships</h3>
@@ -218,8 +309,8 @@
     <!-- Call to Action -->
     <section class="cta">
         <div class="container">
-            <h2>Want to learn more about how we can help your business?</h2>
-            <a href="contact.html" class="btn">Get in Touch</a>
+            <h2 class="fade-in">Want to learn more about how we can help your business?</h2>
+            <a href="contact.html" class="btn fade-in">Get in Touch</a>
         </div>
     </section>
 
@@ -227,43 +318,80 @@
     <footer>
         <div class="container">
             <div class="footer-content">
-                <div class="footer-column">
-                    <h3>TechSolutions</h3>
-                    <p>We develop custom software solutions that empower businesses to achieve their goals and drive growth.</p>
-                </div>
-                <div class="footer-column">
-                    <h3>Services</h3>
-                    <ul>
-                        <li><a href="custom-software.html">Custom Software Development</a></li>
-                        <li><a href="mobile-app.html">Mobile App Development</a></li>
-                        <li><a href="web-development.html">Web Development</a></li>
-                        <li><a href="cloud-solutions.html">Cloud Solutions</a></li>
-                        <li><a href="ai-ml.html">AI & ML Services</a></li>
-                    </ul>
-                </div>
-                <div class="footer-column">
-                    <h3>Contact</h3>
-                    <p><i class="fas fa-map-marker-alt"></i> 123 Tech Boulevard, San Francisco, CA 94105</p>
-                    <p><i class="fas fa-phone"></i> +1 (555) 123-4567</p>
-                    <p><i class="fas fa-envelope"></i> info@yourcompany.com</p>
-                </div>
-                <div class="footer-column">
-                    <h3>Follow Us</h3>
-                    <div class="social-icons">
-                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                <div class="footer-col">
+                    <div class="footer-logo">
+                        <a href="index.html">
+                            <span class="text-gradient">InnovateTech</span>
+                        </a>
+                    </div>
+                    <p>We deliver innovative software solutions that drive business growth and operational excellence.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
                         <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
                         <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-github"></i></a>
                     </div>
                 </div>
+                
+                <div class="footer-col">
+                    <h3>Services</h3>
+                    <ul>
+                        <li><a href="custom-software.html">Custom Software</a></li>
+                        <li><a href="web-development.html">Web Development</a></li>
+                        <li><a href="mobile-development.html">Mobile Development</a></li>
+                        <li><a href="digital-transformation.html">Digital Transformation</a></li>
+                        <li><a href="ui-ux-design.html">UI/UX Design</a></li>
+                        <li><a href="data-analytics.html">Data Analytics</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Company</h3>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="index.html#case-studies">Case Studies</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Contact Us</h3>
+                    <ul class="contact-info">
+                        <li><i class="fas fa-map-marker-alt"></i> Rohini, New Delhi 110085, India</li>
+                        <li><i class="fas fa-phone"></i> +91 7978425306</li>
+                        <li><i class="fas fa-envelope"></i> info@codealytix.com</li>
+                        <li><i class="fas fa-clock"></i> Mon-Fri: 9:00 AM - 6:00 PM</li>
+                    </ul>
+                </div>
             </div>
-            <div class="copyright">
-                <p>&copy; 2023 TechSolutions. All rights reserved.</p>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 InnovateTech Solutions. All Rights Reserved.</p>
+                <a href="#" class="back-to-top">
+                    Back to Top <i class="fas fa-arrow-up"></i>
+                </a>
             </div>
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <!-- Scripts -->
+    <!-- AOS Animation Library -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+    <!-- Swiper Slider JS -->
+    <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+    
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
+    <!-- Particles.js -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+
+    <!-- Custom Scripts -->
+    <script src="common.js"></script>
+    <script src="about-animations.js"></script>
 </body>
 </html> 
