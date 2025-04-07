@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code Playground | CodeAlytix</title>
+    <meta name="description" content="Interactive code playground to practice and experiment with various programming languages and frameworks.">
+    
+    <!-- Open Graph / Social Media Meta Tags -->
+    <meta property="og:title" content="Code Playground | CodeAlytix">
+    <meta property="og:description" content="Interactive code playground to practice and experiment with various programming languages and frameworks.">
+    <meta property="og:image" content="https://codealytix.com/images/og-image.jpg">
+    <meta property="og:url" content="https://codealytix.com/code-playground.html">
+    <meta property="og:type" content="website">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="images/favicon.png" type="image/png">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <!-- CodeMirror CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/codemirror.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/theme/monokai.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="common.css">
+    <link rel="stylesheet" href="additional-features.css">
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "CodeAlytix Playground",
+      "description": "Interactive code playground for practicing and experimenting with various programming languages and frameworks.",
+      "applicationCategory": "Developer Tools",
+      "operatingSystem": "Web Browser",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      }
+    }
+    </script>
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="modern-header">
+        <div class="container">
+            <nav>
+                <div class="logo" data-aos="fade-right" data-aos-duration="800">
+                    <a href="index.html">
+                        <span class="text-gradient">CodeAlytix</span>
+                    </a>
+                </div>
+                <div class="nav-container">
+                    <div class="nav-links" data-aos="fade-down" data-aos-duration="800" data-aos-delay="100">
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li class="dropdown">
+                                <a href="javascript:void(0)">Services <i class="fas fa-chevron-down"></i></a>
+                                <div class="dropdown-content">
+                                    <a href="custom-software.html">Custom Software</a>
+                                    <a href="web-development.html">Web Development</a>
+                                    <a href="mobile-development.html">Mobile Development</a>
+                                    <a href="digital-transformation.html">Digital Transformation</a>
+                                    <a href="ui-ux-design.html">UI/UX Design</a>
+                                    <a href="data-analytics.html">Data Analytics</a>
+                                </div>
+                            </li>
+                            <li><a href="about.html">About Us</a></li>
+                            <li><a href="case-study.html">Case Studies</a></li>
+                            <li class="dropdown">
+                                <a href="javascript:void(0)" class="active">Resources <i class="fas fa-chevron-down"></i></a>
+                                <div class="dropdown-content">
+                                    <a href="blog.html">Blog</a>
+                                    <a href="tutorials.html">Tutorials</a>
+                                    <a href="code-playground.html" class="active">Code Playground</a>
+                                    <a href="forum.html">Community Forum</a>
+                                </div>
+                            </li>
+                            <li><a href="contact.html">Contact</a></li>
+                        </ul>
+                    </div>
+                    <div class="header-actions" data-aos="fade-left" data-aos-duration="800" data-aos-delay="200">
+                        <a href="contact.html" class="btn-small">Get a Quote</a>
+                        <button class="search-toggle"><i class="fas fa-search"></i></button>
+                    </div>
+                </div>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </nav>
+            <!-- Modern Search Overlay -->
+            <div class="search-overlay">
+                <button class="search-close"><i class="fas fa-times"></i></button>
+                <div class="search-content">
+                    <h3>What are you looking for?</h3>
+                    <form class="search-form">
+                        <input type="text" placeholder="Search...">
+                        <button type="submit"><i class="fas fa-search"></i></button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1 data-aos="fade-up">Code <span class="text-gradient">Playground</span></h1>
+            <p data-aos="fade-up" data-aos-delay="100">Experiment with code in a live environment</p>
+        </div>
+    </section>
+
+    <!-- Playground Controls -->
+    <section class="playground-controls">
+        <div class="container">
+            <div class="controls-wrapper" data-aos="fade-up">
+                <div class="language-selector">
+                    <select id="language-select">
+                        <option value="javascript">JavaScript</option>
+                        <option value="python">Python</option>
+                        <option value="html">HTML</option>
+                        <option value="css">CSS</option>
+                        <option value="java">Java</option>
+                    </select>
+                </div>
+                <div class="playground-actions">
+                    <button id="run-code" class="btn-primary"><i class="fas fa-play"></i> Run Code</button>
+                    <button id="reset-code" class="btn-secondary"><i class="fas fa-redo"></i> Reset</button>
+                    <button id="save-code" class="btn-secondary"><i class="fas fa-save"></i> Save</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Code Editor Section -->
+    <section class="code-editor-section">
+        <div class="container">
+            <div class="editor-wrapper" data-aos="fade-up">
+                <div class="editor-container">
+                    <div class="editor-header">
+                        <span>Editor</span>
+                        <div class="editor-options">
+                            <button class="theme-toggle"><i class="fas fa-moon"></i></button>
+                            <button class="fullscreen-toggle"><i class="fas fa-expand"></i></button>
+                        </div>
+                    </div>
+                    <textarea id="code-editor"></textarea>
+                </div>
+                <div class="output-container">
+                    <div class="output-header">
+                        <span>Output</span>
+                        <button class="clear-output"><i class="fas fa-trash"></i></button>
+                    </div>
+                    <div id="output-area"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Templates Section -->
+    <section class="templates-section">
+        <div class="container">
+            <h2 data-aos="fade-up">Code Templates</h2>
+            <div class="templates-grid" data-aos="fade-up" data-aos-delay="100">
+                <div class="template-card">
+                    <h3>Hello World</h3>
+                    <p>Basic program to get started</p>
+                    <button class="btn-small load-template" data-template="hello-world">Load Template</button>
+                </div>
+                <div class="template-card">
+                    <h3>Calculator</h3>
+                    <p>Simple calculator implementation</p>
+                    <button class="btn-small load-template" data-template="calculator">Load Template</button>
+                </div>
+                <div class="template-card">
+                    <h3>Todo List</h3>
+                    <p>Basic todo list application</p>
+                    <button class="btn-small load-template" data-template="todo-list">Load Template</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Back to Top Button -->
+    <div class="back-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+
+    <!-- Scroll Progress Bar -->
+    <div class="scroll-progress"></div>
+
+    <!-- Cookie Consent Banner -->
+    <div class="cookie-consent">
+        <div class="cookie-content">
+            <p>We use cookies to enhance your experience on our website. By continuing to browse, you agree to our <a href="privacy-policy-page.html">Privacy Policy</a>.</p>
+            <button class="cookie-accept">Accept</button>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="modern-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <a href="index.html">
+                        <span class="text-gradient">CodeAlytix</span>
+                    </a>
+                    <p>Transforming ideas into digital reality</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h3>Services</h3>
+                        <ul>
+                            <li><a href="custom-software.html">Custom Software</a></li>
+                            <li><a href="web-development.html">Web Development</a></li>
+                            <li><a href="mobile-development.html">Mobile Development</a></li>
+                            <li><a href="digital-transformation.html">Digital Transformation</a></li>
+                            <li><a href="ui-ux-design.html">UI/UX Design</a></li>
+                            <li><a href="data-analytics.html">Data Analytics</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h3>Company</h3>
+                        <ul>
+                            <li><a href="about.html">About Us</a></li>
+                            <li><a href="case-study.html">Case Studies</a></li>
+                            <li><a href="contact.html">Contact</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h3>Resources</h3>
+                        <ul>
+                            <li><a href="blog.html">Blog</a></li>
+                            <li><a href="tutorials.html">Tutorials</a></li>
+                            <li><a href="code-playground.html">Code Playground</a></li>
+                            <li><a href="forum.html">Community Forum</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; <span id="current-year">2023</span> CodeAlytix. All rights reserved.</p>
+                <div class="footer-legal">
+                    <a href="privacy-policy-page.html">Privacy Policy</a>
+                    <a href="terms-of-service.html">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/codemirror.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/mode/javascript/javascript.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/mode/python/python.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/mode/xml/xml.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/mode/css/css.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/mode/clike/clike.min.js"></script>
+    <script src="common.js"></script>
+    <script>
+        // Initialize CodeMirror
+        const editor = CodeMirror.fromTextArea(document.getElementById('code-editor'), {
+            mode: 'javascript',
+            theme: 'monokai',
+            lineNumbers: true,
+            autoCloseTags: true,
+            autoCloseBrackets: true,
+            matchBrackets: true,
+            indentUnit: 4,
+            lineWrapping: true
+        });
+
+        // Language selector functionality
+        document.getElementById('language-select').addEventListener('change', function(e) {
+            const language = e.target.value;
+            let mode;
+            switch(language) {
+                case 'javascript':
+                    mode = 'javascript';
+                    break;
+                case 'python':
+                    mode = 'python';
+                    break;
+                case 'html':
+                    mode = 'xml';
+                    break;
+                case 'css':
+                    mode = 'css';
+                    break;
+                case 'java':
+                    mode = 'text/x-java';
+                    break;
+            }
+            editor.setOption('mode', mode);
+        });
+
+        // Run code functionality
+        document.getElementById('run-code').addEventListener('click', function() {
+            const code = editor.getValue();
+            const outputArea = document.getElementById('output-area');
+            
+            try {
+                // This is a simplified example. In a real implementation,
+                // you would need to handle different languages appropriately
+                const result = eval(code);
+                outputArea.textContent = result;
+            } catch (error) {
+                outputArea.textContent = `Error: ${error.message}`;
+            }
+        });
+
+        // Template loading functionality
+        document.querySelectorAll('.load-template').forEach(button => {
+            button.addEventListener('click', function() {
+                const template = this.getAttribute('data-template');
+                // Load template content based on the selected template
+                // This would be implemented with actual template content
+                editor.setValue('// Template loaded: ' + template);
+            });
+        });
+
+        // Theme toggle functionality
+        document.querySelector('.theme-toggle').addEventListener('click', function() {
+            const isDark = document.body.classList.toggle('dark-theme');
+            this.innerHTML = isDark ? '<i class="fas fa-sun"></i>' : '<i class="fas fa-moon"></i>';
+        });
+
+        // Fullscreen toggle functionality
+        document.querySelector('.fullscreen-toggle').addEventListener('click', function() {
+            const editorContainer = document.querySelector('.editor-container');
+            editorContainer.classList.toggle('fullscreen');
+            this.innerHTML = editorContainer.classList.contains('fullscreen') ? 
+                '<i class="fas fa-compress"></i>' : '<i class="fas fa-expand"></i>';
+        });
+    </script>
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-XXXXXXXXXX');
+    </script>
+</body>
+</html>

@@ -24,7 +24,7 @@
     <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css">
     
     <!-- Leaflet Map CSS -->
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A==" crossorigin=""/>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A==" crossorigin="" />
     
     <!-- Custom CSS -->
     <link rel="stylesheet" href="common.css">
@@ -38,6 +38,47 @@
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
         gtag('config', 'GA_MEASUREMENT_ID');
+
+
+    //Submit Form button Action command here
+    function submitForm(event) {
+    event.preventDefault();  // Prevent the default form submission behavior
+    
+    const form = event.target;  // Get the form that was submitted
+    const formData = new FormData(form);  // Prepare the form data for submission
+    
+    const messageDiv = document.getElementById("form-message");  // The div to show messages
+
+    // Use fetch API to submit the form data to Formspree
+    fetch(form.action, {
+      method: form.method,
+      body: formData,
+      headers: {
+        "Accept": "application/json",
+      },
+    })
+    .then((response) => {
+      if (response.ok) {
+        // Show a custom success message
+        messageDiv.style.display = 'block';
+        messageDiv.style.color = 'green';
+        messageDiv.textContent = 'Your message has been sent successfully!';
+        form.reset();  // Optionally, reset the form
+      } else {
+        // Show a custom error message if something goes wrong
+        messageDiv.style.display = 'block';
+        messageDiv.style.color = 'red';
+        messageDiv.textContent = 'Oops! Something went wrong, please try again.';
+      }
+    })
+    .catch(() => {
+      // Handle network or other errors
+      messageDiv.style.display = 'block';
+      messageDiv.style.color = 'red';
+      messageDiv.textContent = 'Network error. Please try again later.';
+    });
+  }
+
     </script>
 </head>
 <body>
@@ -220,18 +261,22 @@
                 <!-- Contact Form -->
                 <div class="contact-form fade-in">
                     <h2>Send Us a Message</h2>
-                    <form id="contactForm" action="https://formspree.io/f/xnnpoqya" method="POST">
+                    <form
+                     method="POST" 
+                     action="https://formspree.io/f/mnnpoqka"
+                     onsubmit="submitForm(event)"
+                     >
                         <div class="form-group">
                             <label for="fullName">Full Name <span class="required">*</span></label>
                             <div class="input-border">
-                                <input type="text" id="fullName" name="fullName" required>
+                                <input type="text" id="fullName" name="fullName" class="inputStyle" required>
                             </div>
                         </div>
                         
                         <div class="form-group">
                             <label for="companyName">Company Name <span class="required">*</span></label>
                             <div class="input-border">
-                                <input type="text" id="companyName" name="companyName" required>
+                                <input type="text" id="companyName" name="companyName" class="inputStyle" required>
                             </div>
                             
                         </div>
@@ -239,34 +284,34 @@
                         <div class="form-group">
                             <label for="email">Email Address <span class="required">*</span></label>
                             <div class="input-border">
-                                <input type="email" id="email" name="email" required>
+                                <input type="email" id="email" name="email" class="inputStyle" required>
                             </div>
                         </div>
                         
                         <div class="form-group">
                             <label for="phone">Phone Number</label>
                             <div class="input-border">
-                                <input type="tel" id="phone" name="phone">
+                                <input type="tel" id="phone" name="phone" class="inputStyle">
                             </div>
                         </div>
                         
                         <div class="form-group">
                             <label for="subject">Subject <span class="required">*</span></label>
                             <div class="input-border">
-                                 <input type="text" id="subject" name="subject" required>
+                                 <input type="text" id="subject" name="subject" class="inputStyle" required>
                             </div>
                         </div>
                         
                         <div class="form-group full-width">
                             <label for="message">Message <span class="required">*</span></label>
                             <div class="input-border">
-                                <textarea id="message" name="message" rows="5" required></textarea>
+                                <textarea id="message" name="message" rows="5"  class="inputStyle" required></textarea>
                             </div>
                         </div>
                         
                         <div class="form-group full-width">
                             <label for="source">How did you hear about us?</label>
-                            <select id="source" name="source">
+                            <select id="source" name="source" class="inputStyle">
                                 <option value="">Please select</option>
                                 <option value="search">Search Engine</option>
                                 <option value="social">Social Media</option>
@@ -283,7 +328,7 @@
                         
                         <div class="form-group full-width checkbox-group">
                             <input type="checkbox" id="privacy" name="privacy" required>
-                            <label for="privacy">I agree to the <a href="#">privacy policy</a> <span class="required">*</span></label>
+                            <label for="privacy">I agree to the <a href="Privacy-policy-page.html">privacy policy</a> <span class="required">*</span></label>
                         </div>
                         
                         <div class="form-group full-width">
@@ -291,6 +336,7 @@
                         </div>
                         <p id="form-status"></p>
                     </form>
+                    <div id="form-message" style="display: none;"></div>
                 </div>
             </div>
         </div>
@@ -389,17 +435,17 @@
                         <li><a href="index.html#case-studies">Case Studies</a></li>
                         <li><a href="#">Careers</a></li>
                         <li><a href="#">Blog</a></li>
-                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="Privacy-policy-page.html">Privacy Policy</a></li>
                         <li><a href="#">Terms of Service</a></li>
                     </ul>
                 </div>
                 
                 <div class="footer-col">
                     <h3>Contact Us</h3>
-                    <ul class="contact-info">
+                    <ul>
                         <li><i class="fas fa-map-marker-alt"></i> Rohini, New Delhi 110085, India</li>
-                        <li><i class="fas fa-phone"></i> +91 7978425306</li>
-                        <li><i class="fas fa-envelope"></i> info@codealytix.com</li>
+                        <li><a href="tel:+917978425306" style="color: inherit; text-decoration: none;"><i class="fas fa-phone"></i> +91 7978425306</a></li>
+                        <li><a href="mailto:info@codealytix.com" style="color: inherit; text-decoration: none;"><i class="fas fa-envelope"></i> info@codealytix.com</a></li>
                         <li><i class="fas fa-clock"></i> Mon-Fri: 9:00 AM - 6:00 PM</li>
                     </ul>
                 </div>

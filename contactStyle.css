@@ -11,8 +11,12 @@
     position: relative;
     overflow: hidden;
     margin-top: 70px !important;
+
 }
 
+.inputStyle{
+    font-size: large;
+}
 .page-header::before {
     content: '';
     position: absolute;
@@ -129,31 +133,6 @@
     color: var(--text-secondary);
     line-height: 1.6;
     margin: 0;
-}
-
-.social-links {
-    display: flex;
-    gap: 15px;
-    margin-top: 30px;
-}
-
-.social-links a {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    background-color: var(--background-secondary);
-    color: var(--text-color);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: all 0.3s ease;
-    text-decoration: none;
-}
-
-.social-links a:hover {
-    background: var(--primary-gradient);
-    color: white;
-    transform: translateY(-5px);
 }
 
 /* Contact Form Styling */

@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tutorials | CodeAlytix</title>
+    <meta name="description" content="Comprehensive tutorials and guides on software development, web technologies, and programming best practices from CodeAlytix experts.">
+    
+    <!-- Open Graph / Social Media Meta Tags -->
+    <meta property="og:title" content="Tutorials | CodeAlytix">
+    <meta property="og:description" content="Comprehensive tutorials and guides on software development, web technologies, and programming best practices from CodeAlytix experts.">
+    <meta property="og:image" content="https://codealytix.com/images/og-image.jpg">
+    <meta property="og:url" content="https://codealytix.com/tutorials.html">
+    <meta property="og:type" content="website">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="images/favicon.png" type="image/png">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="common.css">
+    <link rel="stylesheet" href="additional-features.css">
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "CollectionPage",
+      "name": "CodeAlytix Tutorials",
+      "description": "Comprehensive tutorials and guides on software development, web technologies, and programming best practices.",
+      "publisher": {
+        "@type": "Organization",
+        "name": "CodeAlytix",
+        "url": "https://codealytix.com"
+      }
+    }
+    </script>
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="modern-header">
+        <div class="container">
+            <nav>
+                <div class="logo" data-aos="fade-right" data-aos-duration="800">
+                    <a href="index.html">
+                        <span class="text-gradient">CodeAlytix</span>
+                    </a>
+                </div>
+                <div class="nav-container">
+                    <div class="nav-links" data-aos="fade-down" data-aos-duration="800" data-aos-delay="100">
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li class="dropdown">
+                                <a href="javascript:void(0)">Services <i class="fas fa-chevron-down"></i></a>
+                                <div class="dropdown-content">
+                                    <a href="custom-software.html">Custom Software</a>
+                                    <a href="web-development.html">Web Development</a>
+                                    <a href="mobile-development.html">Mobile Development</a>
+                                    <a href="digital-transformation.html">Digital Transformation</a>
+                                    <a href="ui-ux-design.html">UI/UX Design</a>
+                                    <a href="data-analytics.html">Data Analytics</a>
+                                </div>
+                            </li>
+                            <li><a href="about.html">About Us</a></li>
+                            <li><a href="case-study.html">Case Studies</a></li>
+                            <li class="dropdown">
+                                <a href="javascript:void(0)" class="active">Resources <i class="fas fa-chevron-down"></i></a>
+                                <div class="dropdown-content">
+                                    <a href="blog.html">Blog</a>
+                                    <a href="tutorials.html" class="active">Tutorials</a>
+                                    <a href="code-playground.html">Code Playground</a>
+                                    <a href="forum.html">Community Forum</a>
+                                </div>
+                            </li>
+                            <li><a href="contact.html">Contact</a></li>
+                        </ul>
+                    </div>
+                    <div class="header-actions" data-aos="fade-left" data-aos-duration="800" data-aos-delay="200">
+                        <a href="contact.html" class="btn-small">Get a Quote</a>
+                        <button class="search-toggle"><i class="fas fa-search"></i></button>
+                    </div>
+                </div>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </nav>
+            <!-- Modern Search Overlay -->
+            <div class="search-overlay">
+                <button class="search-close"><i class="fas fa-times"></i></button>
+                <div class="search-content">
+                    <h3>What are you looking for?</h3>
+                    <form class="search-form">
+                        <input type="text" placeholder="Search...">
+                        <button type="submit"><i class="fas fa-search"></i></button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1 data-aos="fade-up">Tutorials & <span class="text-gradient">Guides</span></h1>
+            <p data-aos="fade-up" data-aos-delay="100">Learn from our experts with comprehensive tutorials and guides</p>
+        </div>
+    </section>
+
+    <!-- Tutorial Categories -->
+    <section class="tutorial-categories">
+        <div class="container">
+            <div class="category-filters" data-aos="fade-up">
+                <button class="filter-btn active" data-category="all">All Tutorials</button>
+                <button class="filter-btn" data-category="web">Web Development</button>
+                <button class="filter-btn" data-category="mobile">Mobile Development</button>
+                <button class="filter-btn" data-category="data">Data Science</button>
+                <button class="filter-btn" data-category="devops">DevOps</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tutorial Grid -->
+    <section class="tutorial-grid-section">
+        <div class="container">
+            <div class="tutorial-grid">
+                <!-- Tutorial Card 1 -->
+                <div class="tutorial-card" data-category="web" data-aos="fade-up">
+                    <div class="tutorial-image">
+                        <img src="images/tutorials/web-dev.jpg" alt="Web Development Tutorial" loading="lazy">
+                        <div class="difficulty-level">Beginner</div>
+                    </div>
+                    <div class="tutorial-content">
+                        <h3>Getting Started with React.js</h3>
+                        <p>Learn the fundamentals of React.js and build your first interactive web application.</p>
+                        <div class="tutorial-meta">
+                            <span><i class="far fa-clock"></i> 2 hours</span>
+                            <span><i class="far fa-file-alt"></i> 12 lessons</span>
+                        </div>
+                        <a href="tutorial-detail.html" class="btn-small">Start Learning</a>
+                    </div>
+                </div>
+
+                <!-- Tutorial Card 2 -->
+                <div class="tutorial-card" data-category="mobile" data-aos="fade-up" data-aos-delay="100">
+                    <div class="tutorial-image">
+                        <img src="images/tutorials/mobile-dev.jpg" alt="Mobile Development Tutorial" loading="lazy">
+                        <div class="difficulty-level">Intermediate</div>
+                    </div>
+                    <div class="tutorial-content">
+                        <h3>Flutter App Development</h3>
+                        <p>Master cross-platform mobile app development with Flutter and Dart.</p>
+                        <div class="tutorial-meta">
+                            <span><i class="far fa-clock"></i> 4 hours</span>
+                            <span><i class="far fa-file-alt"></i> 18 lessons</span>
+                        </div>
+                        <a href="tutorial-detail.html" class="btn-small">Start Learning</a>
+                    </div>
+                </div>
+
+                <!-- Tutorial Card 3 -->
+                <div class="tutorial-card" data-category="data" data-aos="fade-up" data-aos-delay="200">
+                    <div class="tutorial-image">
+                        <img src="images/tutorials/data-science.jpg" alt="Data Science Tutorial" loading="lazy">
+                        <div class="difficulty-level">Advanced</div>
+                    </div>
+                    <div class="tutorial-content">
+                        <h3>Machine Learning with Python</h3>
+                        <p>Dive into machine learning algorithms and implement them using Python.</p>
+                        <div class="tutorial-meta">
+                            <span><i class="far fa-clock"></i> 6 hours</span>
+                            <span><i class="far fa-file-alt"></i> 24 lessons</span>
+                        </div>
+                        <a href="tutorial-detail.html" class="btn-small">Start Learning</a>
+                    </div>
+                </div>
+
+                <!-- Tutorial Card 4 -->
+                <div class="tutorial-card" data-category="devops" data-aos="fade-up" data-aos-delay="300">
+                    <div class="tutorial-image">
+                        <img src="images/tutorials/devops.jpg" alt="DevOps Tutorial" loading="lazy">
+                        <div class="difficulty-level">Intermediate</div>
+                    </div>
+                    <div class="tutorial-content">
+                        <h3>Docker & Kubernetes Fundamentals</h3>
+                        <p>Learn containerization and orchestration with Docker and Kubernetes.</p>
+                        <div class="tutorial-meta">
+                            <span><i class="far fa-clock"></i> 3 hours</span>
+                            <span><i class="far fa-file-alt"></i> 15 lessons</span>
+                        </div>
+                        <a href="tutorial-detail.html" class="btn-small">Start Learning</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Load More Button -->
+            <div class="load-more" data-aos="fade-up">
+                <button class="btn-primary">Load More Tutorials</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="newsletter-section">
+        <div class="container">
+            <div class="newsletter-content" data-aos="fade-up">
+                <h2>Subscribe to Our Newsletter</h2>
+                <p>Stay updated with new tutorials and learning resources.</p>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Enter your email address">
+                    <button type="submit" class="btn-primary">Subscribe</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Back to Top Button -->
+    <div class="back-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+
+    <!-- Scroll Progress Bar -->
+    <div class="scroll-progress"></div>
+
+    <!-- Cookie Consent Banner -->
+    <div class="cookie-consent">
+        <div class="cookie-content">
+            <p>We use cookies to enhance your experience on our website. By continuing to browse, you agree to our <a href="privacy-policy-page.html">Privacy Policy</a>.</p>
+            <button class="cookie-accept">Accept</button>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="modern-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <a href="index.html">
+                        <span class="text-gradient">CodeAlytix</span>
+                    </a>
+                    <p>Transforming ideas into digital reality</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h3>Services</h3>
+                        <ul>
+                            <li><a href="custom-software.html">Custom Software</a></li>
+                            <li><a href="web-development.html">Web Development</a></li>
+                            <li><a href="mobile-development.html">Mobile Development</a></li>
+                            <li><a href="digital-transformation.html">Digital Transformation</a></li>
+                            <li><a href="ui-ux-design.html">UI/UX Design</a></li>
+                            <li><a href="data-analytics.html">Data Analytics</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h3>Company</h3>
+                        <ul>
+                            <li><a href="about.html">About Us</a></li>
+                            <li><a href="case-study.html">Case Studies</a></li>
+                            <li><a href="contact.html">Contact</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h3>Resources</h3>
+                        <ul>
+                            <li><a href="blog.html">Blog</a></li>
+                            <li><a href="tutorials.html">Tutorials</a></li>
+                            <li><a href="code-playground.html">Code Playground</a></li>
+                            <li><a href="forum.html">Community Forum</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; <span id="current-year">2023</span> CodeAlytix. All rights reserved.</p>
+                <div class="footer-legal">
+                    <a href="privacy-policy-page.html">Privacy Policy</a>
+                    <a href="terms-of-service.html">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="common.js"></script>
+    <script>
+        // Tutorial filtering functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            const tutorialCards = document.querySelectorAll('.tutorial-card');
+
+            filterButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    // Remove active class from all buttons
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
+                    // Add active class to clicked button
+                    button.classList.add('active');
+
+                    const category = button.getAttribute('data-category');
+
+                    tutorialCards.forEach(card => {
+                        if (category === 'all' || card.getAttribute('data-category') === category) {
+                            card.style.display = 'block';
+                        } else {
+                            card.style.display = 'none';
+                        }
+                    });
+                });
+            });
+        });
+    </script>
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-XXXXXXXXXX');
+    </script>
+</body>
+</html>

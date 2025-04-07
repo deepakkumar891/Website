@@ -9,6 +9,32 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
+    // Theme initialization
+    const initializeTheme = () => {
+        const savedTheme = localStorage.getItem('theme');
+        const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+        
+        if (savedTheme) {
+            document.documentElement.setAttribute('data-theme', savedTheme);
+        } else if (prefersDark) {
+            document.documentElement.setAttribute('data-theme', 'dark');
+            localStorage.setItem('theme', 'dark');
+        } else {
+            document.documentElement.setAttribute('data-theme', 'light');
+            localStorage.setItem('theme', 'light');
+        }
+    };
+
+    // Initialize theme on page load
+    initializeTheme();
+
+    // Listen for system theme changes
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
+        if (!localStorage.getItem('theme')) {
+            document.documentElement.setAttribute('data-theme', e.matches ? 'dark' : 'light');
+        }
+    });
+
     // Header scroll effect
     const header = document.querySelector('.modern-header');
     
@@ -234,6 +260,62 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // Cookie consent
+    const cookieConsent = document.querySelector('.cookie-consent');
+    const cookieAccept = document.querySelector('.cookie-accept');
+    
+    if (cookieConsent && cookieAccept) {
+        if (!localStorage.getItem('cookieConsent')) {
+            setTimeout(() => {
+                cookieConsent.classList.add('active');
+            }, 2000);
+            
+            cookieAccept.addEventListener('click', () => {
+                localStorage.setItem('cookieConsent', 'true');
+                cookieConsent.classList.remove('active');
+            });
+        }
+    }
+});
+
+// Additional Features
+
+// Back to Top Button
+document.addEventListener('DOMContentLoaded', function() {
+    const backToTop = document.querySelector('.back-to-top');
+    
+    if (backToTop) {
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTop.classList.add('visible');
+            } else {
+                backToTop.classList.remove('visible');
+            }
+        });
+
+        backToTop.addEventListener('click', (e) => {
+            e.preventDefault();
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    }
+
+    // Scroll Progress Bar
+    const scrollProgress = document.querySelector('.scroll-progress');
+    
+    if (scrollProgress) {
+        window.addEventListener('scroll', () => {
+            const scrollTop = document.documentElement.scrollTop;
+            const scrollHeight = document.documentElement.scrollHeight;
+            const clientHeight = document.documentElement.clientHeight;
+            
+            const scrollPercentage = (scrollTop / (scrollHeight - clientHeight)) * 100;
+            scrollProgress.style.width = scrollPercentage + '%';
+        });
+    }
+
+    // Cookie Consent
     const cookieConsent = document.querySelector('.cookie-consent');
     const cookieAccept = document.querySelector('.cookie-accept');
     
