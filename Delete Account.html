@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Delete Account | Shore Pass</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f4f4f9;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      color: #333;
+    }
+
+    .delete-container {
+      background-color: #fff;
+      padding: 40px;
+      border-radius: 15px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+      width: 450px;
+      text-align: center;
+    }
+
+    .delete-container h2 {
+      margin-bottom: 20px;
+      color: #333;
+    }
+
+    .delete-container p {
+      margin-bottom: 20px;
+      color: #666;
+      font-size: 15px;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+      text-align: left;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 600;
+    }
+
+    .delete-container textarea,
+    .delete-container input[type="email"] {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 10px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      font-size: 15px;
+      box-sizing: border-box;
+      transition: border-color 0.3s;
+    }
+
+    .delete-container textarea:focus,
+    .delete-container input[type="email"]:focus {
+      border-color: #3498db;
+      outline: none;
+    }
+
+    .radio-group {
+      margin: 15px 0;
+    }
+
+    .radio-option {
+      display: flex;
+      align-items: flex-start;
+      margin-bottom: 10px;
+    }
+
+    .radio-option input {
+      margin-top: 3px;
+      margin-right: 10px;
+    }
+
+    .delete-container button {
+      background-color: #e74c3c;
+      color: #fff;
+      padding: 12px 24px;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      width: 100%;
+      margin-top: 10px;
+    }
+
+    .delete-container button:hover {
+      background-color: #c0392b;
+    }
+
+    .delete-container button.cancel {
+      background-color: #95a5a6;
+      margin-bottom: 10px;
+    }
+
+    .delete-container button.cancel:hover {
+      background-color: #7f8c8d;
+    }
+
+    .confirmation {
+      text-align: center;
+      display: none;
+    }
+
+    .confirmation-icon {
+      width: 70px;
+      height: 70px;
+      background-color: #27ae60;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 20px;
+    }
+
+    .confirmation-icon svg {
+      width: 35px;
+      height: 35px;
+      fill: white;
+    }
+
+    .confirmation h3 {
+      color: #27ae60;
+      margin-bottom: 15px;
+    }
+
+    .confirmation p {
+      margin-bottom: 20px;
+    }
+
+    .note {
+      font-size: 14px;
+      color: #7f8c8d;
+      margin-top: 20px;
+      padding: 10px;
+      background-color: #f9f9f9;
+      border-radius: 8px;
+    }
+
+    .email-highlight {
+      font-weight: 600;
+    }
+
+    .error-message {
+      color: #e74c3c;
+      font-size: 13px;
+      margin-top: -5px;
+      margin-bottom: 10px;
+      text-align: left;
+    }
+
+    #otherReasonField {
+      display: none;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="delete-container">
+    <div id="deleteForm">
+      <h2>Delete Your Account</h2>
+      <p>We're sorry to see you go. This action cannot be undone.</p>
+      
+      <div class="form-group">
+        <label for="email">Confirm your email address:</label>
+        <input type="email" id="email" placeholder="your@email.com" required />
+        <div class="error-message" id="emailError"></div>
+      </div>
+      
+      <div class="form-group">
+        <label>Why are you deleting your account?</label>
+        <div class="radio-group">
+          <div class="radio-option">
+            <input type="radio" id="reason1" name="reason" value="I don't use Shore Pass enough" />
+            <label for="reason1">I don't use Shore Pass enough</label>
+          </div>
+          <div class="radio-option">
+            <input type="radio" id="reason2" name="reason" value="I found a better alternative" />
+            <label for="reason2">I found a better alternative</label>
+          </div>
+          <div class="radio-option">
+            <input type="radio" id="reason3" name="reason" value="I experienced technical issues" />
+            <label for="reason3">I experienced technical issues</label>
+          </div>
+          <div class="radio-option">
+            <input type="radio" id="reason4" name="reason" value="I have privacy concerns" />
+            <label for="reason4">I have privacy concerns</label>
+          </div>
+          <div class="radio-option">
+            <input type="radio" id="reason5" name="reason" value="Other" />
+            <label for="reason5">Other</label>
+          </div>
+        </div>
+        <div id="otherReasonField">
+          <textarea id="otherReason" placeholder="Please tell us more..."></textarea>
+        </div>
+        <div class="error-message" id="reasonError"></div>
+      </div>
+      
+      <button type="button" class="cancel" id="cancelButton">Cancel</button>
+      <button type="button" id="deleteButton">Delete My Account</button>
+    </div>
+    
+    <div class="confirmation" id="confirmationMessage">
+      <div class="confirmation-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+          <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/>
+        </svg>
+      </div>
+      <h3>Request Submitted</h3>
+      <p>Your account will be permanently deleted within 5 working days.</p>
+      <p>We've sent a confirmation email to <span id="confirmEmail" class="email-highlight"></span>.</p>
+      <div class="note">
+        You can still cancel this request by logging into your account within the next 5 working days.
+      </div>
+      <button type="button" id="returnButton">Return to Shore Pass</button>
+    </div>
+  </div>
+
+  <script>
+    const deleteForm = document.getElementById('deleteForm');
+    const confirmationMessage = document.getElementById('confirmationMessage');
+    const deleteButton = document.getElementById('deleteButton');
+    const cancelButton = document.getElementById('cancelButton');
+    const returnButton = document.getElementById('returnButton');
+    const emailField = document.getElementById('email');
+    const confirmEmail = document.getElementById('confirmEmail');
+    const emailError = document.getElementById('emailError');
+    const reasonError = document.getElementById('reasonError');
+    const otherReasonField = document.getElementById('otherReasonField');
+    const otherReasonInput = document.getElementById('otherReason');
+    
+    // Show/hide "Other" reason textarea
+    document.querySelectorAll('input[name="reason"]').forEach(radio => {
+      radio.addEventListener('change', function() {
+        if (this.value === 'Other') {
+          otherReasonField.style.display = 'block';
+        } else {
+          otherReasonField.style.display = 'none';
+        }
+      });
+    });
+
+    // Delete account button
+    deleteButton.addEventListener('click', function() {
+      let isValid = true;
+      
+      // Validate email
+      if (!emailField.value) {
+        emailError.textContent = 'Email is required';
+        isValid = false;
+      } else if (!/\S+@\S+\.\S+/.test(emailField.value)) {
+        emailError.textContent = 'Please enter a valid email';
+        isValid = false;
+      } else {
+        emailError.textContent = '';
+      }
+      
+      // Validate reason
+      const selectedReason = document.querySelector('input[name="reason"]:checked');
+      if (!selectedReason) {
+        reasonError.textContent = 'Please select a reason';
+        isValid = false;
+      } else if (selectedReason.value === 'Other' && !otherReasonInput.value.trim()) {
+        reasonError.textContent = 'Please provide details for your reason';
+        isValid = false;
+      } else {
+        reasonError.textContent = '';
+      }
+      
+      if (isValid) {
+        // Set confirmed email in message
+        confirmEmail.textContent = emailField.value;
+        
+        // Hide form and show confirmation
+        deleteForm.style.display = 'none';
+        confirmationMessage.style.display = 'block';
+      }
+    });
+
+    // Cancel button
+    cancelButton.addEventListener('click', function() {
+      // In a real app, this would redirect back to the user's profile
+      alert('Deletion canceled. Redirecting to your profile...');
+    });
+
+    // Return to Shore Pass button
+    returnButton.addEventListener('click', function() {
+      // In a real app, this would redirect to the home page
+      alert('Redirecting to Shore Pass home...');
+    });
+  </script>
+
+</body>
+</html>
