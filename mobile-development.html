@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" theme="light">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -34,8 +34,41 @@
     <link rel="stylesheet" href="common.css">
     <link rel="stylesheet" href="additional-features.css">
     
-    <!-- Theme Toggle Button Styles -->
+    <!-- Style for Dark Theme -->
     <style>
+        /* Ensure header is visible immediately */
+        .modern-header {
+            display: block !important;
+            background-color: rgba(255, 255, 255, 0.9) !important;
+            backdrop-filter: blur(10px) !important;
+            -webkit-backdrop-filter: blur(10px) !important;
+            z-index: 1000 !important;
+        }
+        .logo a, .logo a span {
+            color: #3498db !important;
+            opacity: 1 !important;
+            visibility: visible !important;
+            font-weight: 800 !important;
+        }
+        .nav-links a {
+            color: #3498db !important;
+            opacity: 1 !important;
+            visibility: visible !important;
+        }
+        .utility-bar {
+            display: flex !important;
+            z-index: 1000 !important;
+        }
+        .theme-switch {
+            display: block !important;
+        }
+        [data-theme="dark"] .modern-header {
+            background-color: rgba(18, 18, 18, 0.9) !important;
+        }
+        [data-theme="dark"] .logo a, [data-theme="dark"] .logo a span,
+        [data-theme="dark"] .nav-links a {
+            color: #61dafb !important;
+        }
         .theme-toggle-btn {
             position: fixed;
             top: 20px;
@@ -74,6 +107,12 @@
         [data-theme="dark"] .theme-toggle-btn.light-active i {
             color: #fff;
         }
+        
+        /* Fix for header covering content */
+        .page-header {
+            margin-top: 80px !important;
+            padding-top: 100px;
+        }
     </style>
     
     <!-- Structured Data -->
@@ -98,6 +137,13 @@
         <i class="fas fa-moon"></i>
     </button>
 
+    <!-- Theme Switch & Scroll Progress Bar -->
+    <div class="utility-bar">
+        <div class="scroll-progress-container">
+            <div class="scroll-progress"></div>
+        </div>
+    </div>
+    
     <!-- Header Section -->
     <header class="modern-header">
         <div class="container">
@@ -123,7 +169,7 @@
                                 </div>
                             </li>
                             <li><a href="about.html">About Us</a></li>
-                            <li><a href="case-study.html">Case Studies</a></li>
+                            <!-- <li><a href="case-study.html">Case Studies</a></li>
                             <li class="dropdown">
                                 <a href="javascript:void(0)">Resources <i class="fas fa-chevron-down"></i></a>
                                 <div class="dropdown-content">
@@ -132,14 +178,12 @@
                                     <a href="code-playground.html">Code Playground</a>
                                     <a href="forum.html">Community Forum</a>
                                 </div>
-                            </li>
+                            </li> -->
                             <li><a href="contact.html">Contact</a></li>
                         </ul>
                     </div>
                     <div class="header-actions" data-aos="fade-left" data-aos-duration="800" data-aos-delay="200">
-                        <button id="theme-toggle-btn" class="theme-toggle-btn" title="Switch Theme"><i class="fas fa-moon"></i></button>
                         <a href="contact.html" class="btn-small">Get a Quote</a>
-                        <button class="search-toggle"><i class="fas fa-search"></i></button>
                     </div>
                 </div>
                 <div class="hamburger">
@@ -148,17 +192,6 @@
                     <span></span>
                 </div>
             </nav>
-            <!-- Modern Search Overlay -->
-            <div class="search-overlay">
-                <button class="search-close"><i class="fas fa-times"></i></button>
-                <div class="search-content">
-                    <h3>What are you looking for?</h3>
-                    <form class="search-form">
-                        <input type="text" placeholder="Search...">
-                        <button type="submit"><i class="fas fa-search"></i></button>
-                    </form>
-                </div>
-            </div>
         </div>
     </header>
 
@@ -166,7 +199,7 @@
     <section class="page-header">
         <div class="container">
             <h1 data-aos="fade-up">Mobile App <span class="text-gradient">Development</span></h1>
-            <p data-aos="fade-up" data-aos-delay="100">Creating powerful, user-friendly mobile applications that elevate your brand and engage users across all platforms</p>
+            <p data-aos="fade-up" data-aos-delay="100" style="color: white;">Creating powerful, user-friendly mobile applications that elevate your brand and engage users across all platforms</p>
         </div>
     </section>
 
@@ -358,9 +391,6 @@
         <i class="fas fa-arrow-up"></i>
     </div>
 
-    <!-- Scroll Progress Bar -->
-    <div class="scroll-progress"></div>
-
     <!-- Cookie Consent Banner -->
     <div class="cookie-consent">
         <div class="cookie-content">
@@ -424,6 +454,54 @@
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
     <script src="common.js"></script>
+    
+    <script>
+        // Initialize AOS
+        AOS.init();
+        
+        // Theme Toggle Functionality
+        const themeToggleBtn = document.getElementById('theme-toggle-btn');
+        const htmlElement = document.documentElement;
+        
+        // Check for saved theme preference
+        const savedTheme = localStorage.getItem('theme') || 'light';
+        htmlElement.setAttribute('theme', savedTheme);
+        
+        if (savedTheme === 'dark') {
+            themeToggleBtn.classList.add('dark-active');
+            themeToggleBtn.innerHTML = '<i class="fas fa-sun"></i>';
+        }
+        
+        themeToggleBtn.addEventListener('click', function() {
+            const currentTheme = htmlElement.getAttribute('theme');
+            const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+            
+            htmlElement.setAttribute('theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+            
+            if (newTheme === 'dark') {
+                themeToggleBtn.classList.add('dark-active');
+                themeToggleBtn.innerHTML = '<i class="fas fa-sun"></i>';
+            } else {
+                themeToggleBtn.classList.remove('dark-active');
+                themeToggleBtn.innerHTML = '<i class="fas fa-moon"></i>';
+            }
+        });
+        
+        // Scroll progress bar
+        window.addEventListener('scroll', function() {
+            const scrollTop = window.scrollY;
+            const docHeight = document.body.offsetHeight - window.innerHeight;
+            const scrollPercent = (scrollTop / docHeight) * 100;
+            document.querySelector('.scroll-progress').style.width = scrollPercent + '%';
+        });
+        
+        // Mobile menu toggle
+        document.querySelector('.hamburger').addEventListener('click', function() {
+            this.classList.toggle('active');
+            document.querySelector('.nav-container').classList.toggle('active');
+        });
+    </script>
 
     <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>

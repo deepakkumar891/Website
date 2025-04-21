@@ -1,27 +1,48 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" theme="light">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Web Development Services | InnovateTech Solutions</title>
+    <title>Web Development Services | CodeAlytix</title>
     <meta name="description" content="Professional web development services including responsive websites, web applications, e-commerce solutions, and content management systems.">
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-
-    <!-- Critical CSS to fix header visibility issues -->
+    
+    <!-- Open Graph / Social Media Meta Tags -->
+    <meta property="og:title" content="Web Development Services | CodeAlytix">
+    <meta property="og:description" content="Professional web development services including responsive websites, web applications, e-commerce solutions, and content management systems.">
+    <meta property="og:image" content="https://codealytix.com/images/og-image.jpg">
+    <meta property="og:url" content="https://codealytix.com/web-development.html">
+    <meta property="og:type" content="website">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="images/favicon.png" type="image/png">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <!-- Swiper Slider CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="common.css">
+    <link rel="stylesheet" href="additional-features.css">
+    
+    <!-- Style for Dark Theme -->
     <style>
+        /* Ensure header is visible immediately */
         .modern-header {
-            display: flex !important;
+            display: block !important;
             background-color: rgba(255, 255, 255, 0.9) !important;
             backdrop-filter: blur(10px) !important;
             -webkit-backdrop-filter: blur(10px) !important;
             z-index: 1000 !important;
-            position: fixed !important;
-            top: 0 !important;
-            left: 0 !important;
-            width: 100% !important;
-            padding: 1rem 2rem !important;
         }
         .logo a, .logo a span {
             color: #3498db !important;
@@ -38,6 +59,9 @@
             display: flex !important;
             z-index: 1000 !important;
         }
+        .theme-switch {
+            display: block !important;
+        }
         [data-theme="dark"] .modern-header {
             background-color: rgba(18, 18, 18, 0.9) !important;
         }
@@ -45,7 +69,6 @@
         [data-theme="dark"] .nav-links a {
             color: #61dafb !important;
         }
-        /* Theme Toggle Button Styles */
         .theme-toggle-btn {
             position: fixed;
             top: 20px;
@@ -84,106 +107,28 @@
         [data-theme="dark"] .theme-toggle-btn.light-active i {
             color: #fff;
         }
+        
+        /* Fix for header covering content */
+        .page-header {
+            margin-top: 80px !important;
+            padding-top: 100px;
+        }
     </style>
-    <script>
-    /**
-     * Immediate fix script for website display issues
-     * This runs immediately without waiting for DOMContentLoaded
-     */
-    (function() {
-        console.log("Running immediate display fixes");
-        
-        // Force header visibility with more specific fixes
-        function fixHeader() {
-            const header = document.querySelector('.modern-header');
-            if (header) {
-                console.log("Found header element, applying fixes");
-                header.style.display = 'flex';
-                header.style.backgroundColor = 'rgba(255, 255, 255, 0.9)';
-                header.style.backdropFilter = 'blur(10px)';
-                header.style.webkitBackdropFilter = 'blur(10px)';
-                header.style.zIndex = '1000';
-                
-                // Make sure header is correctly positioned
-                header.style.position = 'fixed';
-                header.style.top = '0';
-                header.style.left = '0';
-                header.style.width = '100%';
-                console.log("Header style fixed");
-            } else {
-                console.log("Header element not found");
-            }
-        }
-        
-        // Fix logo text visibility specifically
-        function fixLogo() {
-            // Try different selectors since structure may vary
-            const logoSelectors = [
-                '.logo a span', 
-                '.logo a', 
-                '.logo span',
-                '.logo'
-            ];
-            
-            let logoFixed = false;
-            
-            for (const selector of logoSelectors) {
-                const logoElements = document.querySelectorAll(selector);
-                if (logoElements.length > 0) {
-                    console.log(`Found logo elements with selector: ${selector}`);
-                    logoElements.forEach(el => {
-                        el.style.color = '#3498db';
-                        el.style.opacity = '1';
-                        el.style.visibility = 'visible';
-                        el.style.fontWeight = '800';
-                    });
-                    logoFixed = true;
-                }
-            }
-            
-            console.log(logoFixed ? "Logo text fixed" : "Logo text elements not found with any selector");
-        }
-        
-        // Fix navigation links
-        function fixNavLinks() {
-            const navSelectors = [
-                '.nav-links a',
-                'nav a',
-                '.nav-container a',
-                'header a'
-            ];
-            
-            let navFixed = false;
-            
-            for (const selector of navSelectors) {
-                const navLinks = document.querySelectorAll(selector);
-                if (navLinks.length > 0) {
-                    console.log(`Found navigation links with selector: ${selector}`);
-                    navLinks.forEach(link => {
-                        link.style.color = '#3498db';
-                        link.style.opacity = '1';
-                        link.style.visibility = 'visible';
-                        link.style.fontWeight = '600';
-                    });
-                    navFixed = true;
-                }
-            }
-        }
-        
-        // Apply fixes immediately
-        setTimeout(function() {
-            fixHeader();
-            fixLogo();
-            fixNavLinks();
-        }, 0);
-        
-        // Apply again after a delay
-        setTimeout(function() {
-            fixHeader();
-            fixLogo();
-            fixNavLinks();
-        }, 300);
-    })();
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": "Web Development Services",
+      "provider": {
+        "@type": "Organization",
+        "name": "CodeAlytix",
+        "url": "https://codealytix.com"
+      },
+      "description": "Professional web development services including responsive websites, web applications, e-commerce solutions, and content management systems.",
+      "serviceType": "Web Development"
+    }
     </script>
 </head>
 <body>
@@ -192,6 +137,13 @@
         <i class="fas fa-moon"></i>
     </button>
 
+    <!-- Theme Switch & Scroll Progress Bar -->
+    <div class="utility-bar">
+        <div class="scroll-progress-container">
+            <div class="scroll-progress"></div>
+        </div>
+    </div>
+    
     <!-- Header Section -->
     <header class="modern-header">
         <div class="container">
@@ -217,7 +169,7 @@
                                 </div>
                             </li>
                             <li><a href="about.html">About Us</a></li>
-                            <li><a href="case-study.html">Case Studies</a></li>
+                            <!-- <li><a href="case-study.html">Case Studies</a></li>
                             <li class="dropdown">
                                 <a href="javascript:void(0)">Resources <i class="fas fa-chevron-down"></i></a>
                                 <div class="dropdown-content">
@@ -226,14 +178,12 @@
                                     <a href="code-playground.html">Code Playground</a>
                                     <a href="forum.html">Community Forum</a>
                                 </div>
-                            </li>
+                            </li> -->
                             <li><a href="contact.html">Contact</a></li>
                         </ul>
                     </div>
                     <div class="header-actions" data-aos="fade-left" data-aos-duration="800" data-aos-delay="200">
-                        <button id="theme-toggle-btn" class="theme-toggle-btn" title="Switch Theme"><i class="fas fa-moon"></i></button>
                         <a href="contact.html" class="btn-small">Get a Quote</a>
-                        <button class="search-toggle"><i class="fas fa-search"></i></button>
                     </div>
                 </div>
                 <div class="hamburger">
@@ -242,25 +192,14 @@
                     <span></span>
                 </div>
             </nav>
-            <!-- Modern Search Overlay -->
-            <div class="search-overlay">
-                <button class="search-close"><i class="fas fa-times"></i></button>
-                <div class="search-content">
-                    <h3>What are you looking for?</h3>
-                    <form class="search-form">
-                        <input type="text" placeholder="Search...">
-                        <button type="submit"><i class="fas fa-search"></i></button>
-                    </form>
-                </div>
-            </div>
         </div>
     </header>
 
     <!-- Page Header -->
     <section class="page-header">
         <div class="container">
-            <h1>Web Development <span class="text-gradient">Services</span></h1>
-            <p>Creating powerful, scalable, and innovative web solutions that drive customer engagement and business growth</p>
+            <h1 data-aos="fade-up">Web <span class="text-gradient">Development</span></h1>
+            <p data-aos="fade-up" data-aos-delay="100" style="color: white;">Creating powerful, responsive, and user-friendly web solutions that drive business growth</p>
         </div>
     </section>
 
@@ -268,40 +207,40 @@
     <section class="service-detail">
         <div class="container">
             <div class="service-overview fade-in">
-                <h2>Modern Web Solutions for Digital Success</h2>
-                <p>At InnovateTech, we build high-performance, responsive web applications and websites tailored to your specific business needs. Our expert developers leverage cutting-edge technologies to deliver scalable, secure, and user-friendly web solutions that help you achieve your business objectives.</p>
+                <h2>Modern Web Solutions for Modern Businesses</h2>
+                <p>At CodeAlytix, we develop cutting-edge websites and web applications that help businesses establish a strong online presence, improve user engagement, and drive conversions. Our expert developers combine beautiful design with powerful functionality to create web solutions that stand out in today's competitive digital landscape.</p>
                 
                 <div class="service-benefits">
-                    <div class="benefit-card">
+                    <div class="benefit-card" data-aos="fade-up">
                         <div class="benefit-icon">
-                            <i class="fas fa-mobile-screen-button"></i>
+                            <i class="fas fa-laptop"></i>
                         </div>
-                        <h3>Responsive Design</h3>
-                        <p>Websites that adapt seamlessly to all devices and screen sizes, providing optimal user experience.</p>
+                        <h3>Responsive Web Design</h3>
+                        <p>Websites that look and function perfectly on all devices, from desktops to mobiles, providing a seamless user experience.</p>
                     </div>
                     
-                    <div class="benefit-card">
+                    <div class="benefit-card" data-aos="fade-up" data-aos-delay="100">
                         <div class="benefit-icon">
-                            <i class="fas fa-gauge-high"></i>
+                            <i class="fas fa-shopping-cart"></i>
                         </div>
-                        <h3>High Performance</h3>
-                        <p>Fast-loading pages and applications optimized for speed and efficiency to improve user retention.</p>
+                        <h3>E-commerce Solutions</h3>
+                        <p>Custom online stores with secure payment gateways, inventory management, and customer-friendly interfaces to maximize sales.</p>
                     </div>
                     
-                    <div class="benefit-card">
+                    <div class="benefit-card" data-aos="fade-up" data-aos-delay="200">
                         <div class="benefit-icon">
-                            <i class="fas fa-lock"></i>
+                            <i class="fas fa-server"></i>
                         </div>
-                        <h3>Security</h3>
-                        <p>Robust security measures to protect your data and applications from threats and vulnerabilities.</p>
+                        <h3>Web Applications</h3>
+                        <p>Scalable, feature-rich web applications that solve complex business problems and streamline operations.</p>
                     </div>
                     
-                    <div class="benefit-card">
+                    <div class="benefit-card" data-aos="fade-up" data-aos-delay="300">
                         <div class="benefit-icon">
-                            <i class="fas fa-magnifying-glass-chart"></i>
+                            <i class="fas fa-search"></i>
                         </div>
-                        <h3>SEO Optimized</h3>
-                        <p>Search engine friendly architecture and code that improves visibility and drives organic traffic.</p>
+                        <h3>SEO Optimization</h3>
+                        <p>Search engine friendly websites built from the ground up to help you rank higher and attract more organic traffic.</p>
                     </div>
                 </div>
             </div>
@@ -309,217 +248,129 @@
             <!-- Development Process -->
             <div class="development-process fade-in">
                 <h2>Our Web Development Process</h2>
-                <p>Our structured approach ensures efficient delivery of high-quality web solutions that meet your business needs.</p>
+                <p>We follow a systematic approach to deliver high-quality web solutions that exceed expectations.</p>
                 
                 <div class="process-steps">
-                    <div class="step">
+                    <div class="step" data-aos="fade-right">
                         <div class="step-number">01</div>
                         <div class="step-content">
-                            <h3>Requirements Analysis</h3>
-                            <p>We work closely with you to understand your business goals, target audience, and specific requirements to define the scope and objectives of your web project.</p>
+                            <h3>Discovery & Planning</h3>
+                            <p>We begin by understanding your business goals, target audience, and specific requirements to develop a comprehensive project plan.</p>
                         </div>
                     </div>
                     
-                    <div class="step">
+                    <div class="step" data-aos="fade-right" data-aos-delay="100">
                         <div class="step-number">02</div>
                         <div class="step-content">
-                            <h3>UX/UI Design</h3>
-                            <p>Our designers create intuitive and visually appealing interfaces that enhance user experience while aligning with your brand identity and project requirements.</p>
+                            <h3>UI/UX Design</h3>
+                            <p>Our designers create intuitive user interfaces and seamless user experiences that engage and delight your visitors.</p>
                         </div>
                     </div>
                     
-                    <div class="step">
+                    <div class="step" data-aos="fade-right" data-aos-delay="200">
                         <div class="step-number">03</div>
                         <div class="step-content">
-                            <h3>Development & Coding</h3>
-                            <p>Our developers use the most suitable technologies and frameworks to build a robust, scalable, and high-performance web solution tailored to your needs.</p>
+                            <h3>Development</h3>
+                            <p>We build your website or web application using the most appropriate technologies, following best practices and coding standards.</p>
                         </div>
                     </div>
                     
-                    <div class="step">
+                    <div class="step" data-aos="fade-right" data-aos-delay="300">
                         <div class="step-number">04</div>
                         <div class="step-content">
-                            <h3>Testing & Quality Assurance</h3>
-                            <p>Rigorous testing across multiple browsers, devices, and scenarios to ensure functionality, performance, security, and cross-browser compatibility.</p>
+                            <h3>Testing</h3>
+                            <p>Rigorous quality assurance across multiple browsers, devices, and user scenarios ensures your web solution performs flawlessly.</p>
                         </div>
                     </div>
                     
-                    <div class="step">
+                    <div class="step" data-aos="fade-right" data-aos-delay="400">
                         <div class="step-number">05</div>
                         <div class="step-content">
-                            <h3>Deployment & Launch</h3>
-                            <p>Careful deployment to production environments with minimal downtime, ensuring a smooth transition and immediate availability to users.</p>
+                            <h3>Deployment</h3>
+                            <p>We carefully launch your website or application, ensuring everything is properly configured and optimized for performance.</p>
                         </div>
                     </div>
                     
-                    <div class="step">
+                    <div class="step" data-aos="fade-right" data-aos-delay="500">
                         <div class="step-number">06</div>
                         <div class="step-content">
                             <h3>Maintenance & Support</h3>
-                            <p>Ongoing technical support, regular updates, performance monitoring, and continuous optimization to keep your web solution running smoothly.</p>
+                            <p>Ongoing support, monitoring, and regular updates keep your web presence running smoothly and ahead of the competition.</p>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- Web Development Services -->
-            <div class="service-types fade-in">
-                <h2>Our Web Development Services</h2>
-                <p>We offer a comprehensive range of web development solutions tailored to your business needs.</p>
+            <!-- Service Features -->
+            <div class="service-features">
+                <h2>Key Features of Our Web Development Services</h2>
                 
-                <div class="services-grid">
-                    <div class="service-card">
-                        <div class="service-icon">
-                            <i class="fas fa-desktop"></i>
-                        </div>
-                        <h3>Corporate Websites</h3>
-                        <p>Professional, brand-aligned websites that effectively showcase your company, products, and services to your target audience.</p>
+                <div class="features-grid">
+                    <div class="feature-item" data-aos="zoom-in">
+                        <i class="fas fa-mobile-alt"></i>
+                        <h3>Mobile-First Design</h3>
+                        <p>Websites built with mobile users in mind from the start, ensuring optimal experiences across all devices.</p>
                     </div>
                     
-                    <div class="service-card">
-                        <div class="service-icon">
-                            <i class="fas fa-shopping-cart"></i>
-                        </div>
-                        <h3>E-commerce Solutions</h3>
-                        <p>Customized online stores with secure payment gateways, inventory management, and user-friendly interfaces to drive sales.</p>
+                    <div class="feature-item" data-aos="zoom-in" data-aos-delay="100">
+                        <i class="fas fa-tachometer-alt"></i>
+                        <h3>Performance Optimization</h3>
+                        <p>Fast-loading pages optimized for speed, which improves user experience and search engine rankings.</p>
                     </div>
                     
-                    <div class="service-card">
-                        <div class="service-icon">
-                            <i class="fas fa-laptop-code"></i>
-                        </div>
-                        <h3>Web Applications</h3>
-                        <p>Complex, feature-rich web applications with robust functionality to automate processes and enhance business operations.</p>
+                    <div class="feature-item" data-aos="zoom-in" data-aos-delay="200">
+                        <i class="fas fa-lock"></i>
+                        <h3>Security Focus</h3>
+                        <p>Robust security measures including SSL, secure authentication, and data protection to safeguard sensitive information.</p>
                     </div>
                     
-                    <div class="service-card">
-                        <div class="service-icon">
-                            <i class="fas fa-file-lines"></i>
-                        </div>
+                    <div class="feature-item" data-aos="zoom-in" data-aos-delay="300">
+                        <i class="fas fa-file-alt"></i>
                         <h3>Content Management</h3>
-                        <p>Custom CMS solutions that make it easy to update and manage your website content without technical knowledge.</p>
+                        <p>User-friendly CMS solutions that make updating and managing your website content simple and efficient.</p>
                     </div>
                     
-                    <div class="service-card">
-                        <div class="service-icon">
-                            <i class="fas fa-server"></i>
-                        </div>
-                        <h3>API Development</h3>
-                        <p>Custom API design and development to connect your web solutions with third-party services and systems.</p>
+                    <div class="feature-item" data-aos="zoom-in" data-aos-delay="400">
+                        <i class="fas fa-chart-bar"></i>
+                        <h3>Analytics Integration</h3>
+                        <p>Built-in tracking and reporting tools to monitor performance, user behavior, and conversion metrics.</p>
                     </div>
                     
-                    <div class="service-card">
-                        <div class="service-icon">
-                            <i class="fas fa-arrows-rotate"></i>
-                        </div>
-                        <h3>Website Redesign</h3>
-                        <p>Modernization of existing websites to improve performance, user experience, and visual appeal while preserving SEO value.</p>
+                    <div class="feature-item" data-aos="zoom-in" data-aos-delay="500">
+                        <i class="fas fa-plug"></i>
+                        <h3>Third-Party Integrations</h3>
+                        <p>Seamless integration with CRMs, marketing tools, payment gateways, and other essential business systems.</p>
                     </div>
                 </div>
             </div>
-
+            
             <!-- Technologies -->
-            <div class="technologies fade-in">
+            <div class="technologies-section fade-in">
                 <h2>Technologies We Use</h2>
-                <p>We leverage cutting-edge technologies and frameworks to deliver high-performance web solutions.</p>
-                
-                <div class="tech-categories">
-                    <div class="tech-category">
-                        <h3>Frontend</h3>
-                        <div class="technologies-grid">
-                            <div class="technology">React.js</div>
-                            <div class="technology">Angular</div>
-                            <div class="technology">Vue.js</div>
-                            <div class="technology">HTML5</div>
-                            <div class="technology">CSS3/SASS</div>
-                            <div class="technology">JavaScript/TypeScript</div>
-                        </div>
+                <div class="tech-grid">
+                    <div class="tech-item" data-aos="fade-up">
+                        <span>HTML5/CSS3</span>
                     </div>
-                    
-                    <div class="tech-category">
-                        <h3>Backend</h3>
-                        <div class="technologies-grid">
-                            <div class="technology">Node.js</div>
-                            <div class="technology">PHP/Laravel</div>
-                            <div class="technology">Python/Django</div>
-                            <div class="technology">Ruby on Rails</div>
-                            <div class="technology">ASP.NET Core</div>
-                            <div class="technology">Java Spring</div>
-                        </div>
+                    <div class="tech-item" data-aos="fade-up" data-aos-delay="50">
+                        <span>JavaScript</span>
                     </div>
-                    
-                    <div class="tech-category">
-                        <h3>CMS Platforms</h3>
-                        <div class="technologies-grid">
-                            <div class="technology">WordPress</div>
-                            <div class="technology">Drupal</div>
-                            <div class="technology">Joomla</div>
-                            <div class="technology">Shopify</div>
-                            <div class="technology">Magento</div>
-                            <div class="technology">Headless CMS</div>
-                        </div>
+                    <div class="tech-item" data-aos="fade-up" data-aos-delay="100">
+                        <span>React</span>
                     </div>
-                    
-                    <div class="tech-category">
-                        <h3>Databases</h3>
-                        <div class="technologies-grid">
-                            <div class="technology">MySQL</div>
-                            <div class="technology">PostgreSQL</div>
-                            <div class="technology">MongoDB</div>
-                            <div class="technology">Redis</div>
-                            <div class="technology">Firebase</div>
-                            <div class="technology">Microsoft SQL</div>
-                        </div>
+                    <div class="tech-item" data-aos="fade-up" data-aos-delay="150">
+                        <span>Angular</span>
                     </div>
-                </div>
-            </div>
-
-            <!-- Case Studies -->
-            <div class="case-studies fade-in">
-                <h2>Success Stories</h2>
-                <p>Explore how our web development expertise has helped businesses achieve their goals.</p>
-                
-                <div class="case-study">
-                    <h3>E-commerce Platform Redesign</h3>
-                    <p><strong>Client:</strong> National Retail Chain</p>
-                    <p><strong>Challenge:</strong> The client's existing e-commerce platform was outdated, slow, and not mobile-responsive, resulting in high cart abandonment rates and limited sales growth.</p>
-                    <p><strong>Solution:</strong> We developed a completely redesigned, responsive e-commerce platform with improved UX/UI, optimized checkout flow, advanced search functionality, and integrated inventory management.</p>
-                    
-                    <div class="case-result">
-                        <div class="result-item">
-                            <h4>67%</h4>
-                            <p>Increase in mobile conversions</p>
-                        </div>
-                        <div class="result-item">
-                            <h4>42%</h4>
-                            <p>Reduction in cart abandonment</p>
-                        </div>
-                        <div class="result-item">
-                            <h4>89%</h4>
-                            <p>Faster page load times</p>
-                        </div>
+                    <div class="tech-item" data-aos="fade-up" data-aos-delay="200">
+                        <span>Node.js</span>
                     </div>
-                </div>
-                
-                <div class="case-study">
-                    <h3>Customer Portal Development</h3>
-                    <p><strong>Client:</strong> Financial Services Provider</p>
-                    <p><strong>Challenge:</strong> The client needed a secure, user-friendly customer portal that would allow clients to access financial information, documents, and services while meeting strict regulatory requirements.</p>
-                    <p><strong>Solution:</strong> We developed a comprehensive customer portal with multi-factor authentication, real-time data integration, document management, and personalized dashboards, all with bank-level security measures.</p>
-                    
-                    <div class="case-result">
-                        <div class="result-item">
-                            <h4>35%</h4>
-                            <p>Reduction in customer service calls</p>
-                        </div>
-                        <div class="result-item">
-                            <h4>92%</h4>
-                            <p>Customer satisfaction rating</p>
-                        </div>
-                        <div class="result-item">
-                            <h4>50%</h4>
-                            <p>Increase in digital engagement</p>
-                        </div>
+                    <div class="tech-item" data-aos="fade-up" data-aos-delay="250">
+                        <span>PHP/Laravel</span>
+                    </div>
+                    <div class="tech-item" data-aos="fade-up" data-aos-delay="300">
+                        <span>WordPress</span>
+                    </div>
+                    <div class="tech-item" data-aos="fade-up" data-aos-delay="350">
+                        <span>MongoDB/MySQL</span>
                     </div>
                 </div>
             </div>
@@ -527,84 +378,131 @@
     </section>
 
     <!-- CTA Section -->
-    <section class="cta parallax" data-speed="0.3">
-        <div class="cta-overlay"></div>
+    <section class="cta-section">
         <div class="container">
-            <div class="cta-content">
-                <h2 class="fade-in">Ready to Build Your Next Web Solution?</h2>
-                <p class="fade-in">Contact us today to discuss your web development project and discover how our expertise can help you achieve your business goals.</p>
-                <div class="cta-buttons fade-in">
-                    <a href="contact.html" class="btn">Schedule a Consultation</a>
-                    <a href="tel:+11234567890" class="btn btn-outline"><i class="fas fa-phone"></i> Call Us</a>
-                </div>
-            </div>
+            <h2 data-aos="fade-up">Ready to Create Your Perfect Web Presence?</h2>
+            <p data-aos="fade-up" data-aos-delay="100">Let's build a web solution that helps your business thrive in the digital world.</p>
+            <a href="contact.html" class="btn-primary" data-aos="fade-up" data-aos-delay="200">Get Started</a>
         </div>
     </section>
 
+    <!-- Back to Top Button -->
+    <div class="back-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+
+    <!-- Cookie Consent Banner -->
+    <div class="cookie-consent">
+        <div class="cookie-content">
+            <p>We use cookies to enhance your experience on our website. By continuing to browse, you agree to our <a href="privacy-policy-page.html">Privacy Policy</a>.</p>
+            <button class="cookie-accept">Accept</button>
+        </div>
+    </div>
+
     <!-- Footer -->
-    <footer>
+    <footer class="modern-footer">
         <div class="container">
             <div class="footer-content">
-                <div class="footer-col">
-                    <div class="footer-logo">
-                        <a href="index.html">
-                            <span class="text-gradient">InnovateTech</span>
-                        </a>
+                <div class="footer-logo">
+                    <a href="index.html">
+                        <span class="text-gradient">CodeAlytix</span>
+                    </a>
+                    <p>Transforming ideas into digital reality</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h3>Services</h3>
+                        <ul>
+                            <li><a href="custom-software.html">Custom Software</a></li>
+                            <li><a href="web-development.html">Web Development</a></li>
+                            <li><a href="mobile-development.html">Mobile Development</a></li>
+                            <li><a href="digital-transformation.html">Digital Transformation</a></li>
+                            <li><a href="ui-ux-design.html">UI/UX Design</a></li>
+                            <li><a href="data-analytics.html">Data Analytics</a></li>
+                        </ul>
                     </div>
-                    <p>We deliver innovative software solutions that drive business growth and operational excellence.</p>
-                    <div class="social-links">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    <div class="footer-column">
+                        <h3>Company</h3>
+                        <ul>
+                            <li><a href="about.html">About Us</a></li>
+                            <li><a href="contact.html">Contact</a></li>
+                        </ul>
                     </div>
-                </div>
-                
-                <div class="footer-col">
-                    <h3>Services</h3>
-                    <ul>
-                        <li><a href="custom-software.html">Custom Software</a></li>
-                        <li><a href="web-development.html">Web Development</a></li>
-                        <li><a href="mobile-development.html">Mobile Development</a></li>
-                        <li><a href="digital-transformation.html">Digital Transformation</a></li>
-                        <li><a href="ui-ux-design.html">UI/UX Design</a></li>
-                        <li><a href="#">Cloud Solutions</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-col">
-                    <h3>Company</h3>
-                    <ul>
-                        <li><a href="about.html">About Us</a></li>
-                        <li><a href="index.html#case-studies">Case Studies</a></li>
-                        <li><a href="#">Careers</a></li>
-                        <li><a href="#">Blog</a></li>
-                        <li><a href="#">Privacy Policy</a></li>
-                        <li><a href="#">Terms of Service</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-col">
-                    <h3>Contact Us</h3>
-                    <ul class="contact-info">
-                        <li><i class="fas fa-map-marker-alt"></i> 123 Tech Street, Suite 456<br>San Francisco, CA 94105</li>
-                        <li><i class="fas fa-phone"></i> +1 (123) 456-7890</li>
-                        <li><i class="fas fa-envelope"></i> info@innovatetech.com</li>
-                        <li><i class="fas fa-clock"></i> Mon-Fri: 9:00 AM - 6:00 PM</li>
-                    </ul>
                 </div>
             </div>
-            
             <div class="footer-bottom">
-                <p>&copy; 2023 InnovateTech Solutions. All Rights Reserved.</p>
-                <a href="#" class="back-to-top">
-                    Back to Top <i class="fas fa-arrow-up"></i>
-                </a>
+                <p>&copy; <span id="current-year">2024</span> CodeAlytix. All rights reserved.</p>
+                <div class="footer-legal">
+                    <a href="privacy-policy-page.html">Privacy Policy</a>
+                    <a href="terms-of-service.html">Terms of Service</a>
+                </div>
             </div>
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
     <script src="common.js"></script>
+    
+    <script>
+        // Initialize AOS
+        AOS.init();
+        
+        // Theme Toggle Functionality
+        const themeToggleBtn = document.getElementById('theme-toggle-btn');
+        const htmlElement = document.documentElement;
+        
+        // Check for saved theme preference
+        const savedTheme = localStorage.getItem('theme') || 'light';
+        htmlElement.setAttribute('theme', savedTheme);
+        
+        if (savedTheme === 'dark') {
+            themeToggleBtn.classList.add('dark-active');
+            themeToggleBtn.innerHTML = '<i class="fas fa-sun"></i>';
+        }
+        
+        themeToggleBtn.addEventListener('click', function() {
+            const currentTheme = htmlElement.getAttribute('theme');
+            const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+            
+            htmlElement.setAttribute('theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+            
+            if (newTheme === 'dark') {
+                themeToggleBtn.classList.add('dark-active');
+                themeToggleBtn.innerHTML = '<i class="fas fa-sun"></i>';
+            } else {
+                themeToggleBtn.classList.remove('dark-active');
+                themeToggleBtn.innerHTML = '<i class="fas fa-moon"></i>';
+            }
+        });
+        
+        // Scroll progress bar
+        window.addEventListener('scroll', function() {
+            const scrollTop = window.scrollY;
+            const docHeight = document.body.offsetHeight - window.innerHeight;
+            const scrollPercent = (scrollTop / docHeight) * 100;
+            document.querySelector('.scroll-progress').style.width = scrollPercent + '%';
+        });
+        
+        // Mobile menu toggle
+        document.querySelector('.hamburger').addEventListener('click', function() {
+            this.classList.toggle('active');
+            document.querySelector('.nav-container').classList.toggle('active');
+        });
+        
+        // Update copyright year
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+    </script>
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-XXXXXXXXXX');
+    </script>
 </body>
 </html> 

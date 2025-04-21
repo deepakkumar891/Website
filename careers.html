@@ -1,89 +1,128 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" theme = "light">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Careers | Join Our Team</title>
+  <meta name="description" content="Join our team of innovative professionals and help us build the future of software solutions.">
+  
+  <!-- Favicon -->
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+    
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  
+  <!-- AOS Animation Library -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  
+  <!-- Swiper Slider CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css">
+  
+  <!-- Leaflet Map CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A==" crossorigin="" />
+  
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="common.css">
+  <link rel="stylesheet" href="careers.css">
+  
+  <!-- Google Analytics (Replace with your own GA tag) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+  <script async src="common.js"></script>
+  
+  <!-- Style for Dark Theme -->
   <style>
-    body {
-      font-family: 'Segoe UI', sans-serif;
-      margin: 0;
-      padding: 0;
-      background: #f4f4f4;
-      color: #333;
+    /* Ensure header is visible immediately */
+    .modern-header {
+        display: block !important;
+        background-color: rgba(255, 255, 255, 0.9) !important;
+        backdrop-filter: blur(10px) !important;
+        -webkit-backdrop-filter: blur(10px) !important;
+        z-index: 1000 !important;
     }
-
-    header {
-      background-color: #0057b8;
-      color: white;
-      padding: 30px 20px;
-      text-align: center;
+    .logo a, .logo a span {
+        color: #3498db !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+        font-weight: 800 !important;
     }
-
-    header h1 {
-      margin: 0;
-      font-size: 36px;
+    .nav-links a {
+        color: #3498db !important;
+        opacity: 1 !important;
+        visibility: visible !important;
     }
-
-    .container {
-      max-width: 800px;
-      margin: 40px auto;
-      padding: 20px;
-      background: white;
-      border-radius: 10px;
-      box-shadow: 0 0 20px rgba(0,0,0,0.1);
+    .utility-bar {
+        display: flex !important;
+        z-index: 1000 !important;
     }
-
-    h2 {
-      text-align: center;
-      color: #0057b8;
+    .theme-switch {
+        display: block !important;
     }
-
-    form {
-      display: flex;
-      flex-direction: column;
+    [data-theme="dark"] .modern-header {
+        background-color: rgba(18, 18, 18, 0.9) !important;
     }
-
-    label {
-      margin-top: 15px;
-      font-weight: bold;
+    [data-theme="dark"] .logo a, [data-theme="dark"] .logo a span,
+    [data-theme="dark"] .nav-links a {
+        color: #61dafb !important;
     }
-
-    input, textarea, select {
-      padding: 10px;
-      margin-top: 5px;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-      font-size: 16px;
+    .theme-toggle-btn {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        z-index: 1100;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background: linear-gradient(145deg, #e6e6e6, #ffffff);
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        border: none;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.3s ease;
     }
-
-    button {
-      margin-top: 20px;
-      padding: 12px;
-      font-size: 16px;
-      border: none;
-      background-color: #0057b8;
-      color: white;
-      border-radius: 5px;
-      cursor: pointer;
+    .theme-toggle-btn i {
+        font-size: 18px;
+        color: #333;
+        transition: all 0.3s ease;
     }
-
-    button:hover {
-      background-color: #003f8a;
+    .theme-toggle-btn.dark-active {
+        background: linear-gradient(145deg, #2d3748, #1a202c);
     }
-
-    .footer {
-      text-align: center;
-      padding: 20px;
-      color: #888;
-      font-size: 14px;
+    .theme-toggle-btn.dark-active i {
+        color: #ffd700;
+    }
+    .theme-toggle-btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    }
+    [data-theme="dark"] .theme-toggle-btn.light-active {
+        background: linear-gradient(145deg, #2d3748, #1a202c);
+    }
+    [data-theme="dark"] .theme-toggle-btn.light-active i {
+        color: #fff;
     }
   </style>
 </head>
 
-
 <body>
-    
+  <!-- Theme Toggle Button -->
+  <button id="theme-toggle-btn" class="theme-toggle-btn" title="Switch Theme">
+    <i class="fas fa-moon"></i>
+  </button>
+
+  <!-- Theme Switch & Scroll Progress Bar -->
+  <div class="utility-bar">
+    <div class="scroll-progress-container">
+      <div class="scroll-progress"></div>
+    </div>
+  </div>
+  
   <!-- Header Section - Modern Floating Design -->
   <header class="modern-header">
     <div class="container">
@@ -96,7 +135,7 @@
             <div class="nav-container">
                 <div class="nav-links" data-aos="fade-down" data-aos-duration="800" data-aos-delay="100">
                 <ul>
-                    <li><a href="index.html" class="active">Home</a></li>
+                    <li><a href="index.html">Home</a></li>
                     <li class="dropdown">
                             <a href="javascript:void(0)">Services <i class="fas fa-chevron-down"></i></a>
                         <div class="dropdown-content">
@@ -109,7 +148,7 @@
                         </div>
                     </li>
                     <li><a href="about.html">About Us</a></li>
-                    <li><a href="case-study.html">Case Studies</a></li>
+                    <!-- <li><a href="case-study.html">Case Studies</a></li>
                         <li class="dropdown">
                             <a href="javascript:void(0)">Resources <i class="fas fa-chevron-down"></i></a>
                             <div class="dropdown-content">
@@ -119,12 +158,12 @@
                                 <a href="forum.html">Community Forum</a>
                             </div>
                         </li>
+                    <li><a href="careers.html" class="active">Careers</a></li> -->
                     <li><a href="contact.html">Contact</a></li>
                 </ul>
             </div>
                 <div class="header-actions" data-aos="fade-left" data-aos-duration="800" data-aos-delay="200">
                 <a href="contact.html" class="btn-small">Get a Quote</a>
-                    <!-- <button class="search-toggle"><i class="fas fa-search"></i></button> -->
                 </div>
             </div>
             <div class="hamburger">
@@ -133,52 +172,323 @@
                 <span></span>
             </div>
         </nav>
-        <!-- Modern Search Overlay -->
-        <!-- <div class="search-overlay">
-            <button class="search-close"><i class="fas fa-times"></i></button>
-            <div class="search-content">
-                <h3>What are you looking for?</h3>
-                <form class="search-form">
-                    <input type="text" placeholder="Search...">
-                    <button type="submit"><i class="fas fa-search"></i></button>
-                </form>
-            </div>
-        </div> -->
     </div>
-</header>
+  </header>
 
-  <div class="container">
-    <h2>Apply Now</h2>
-    <form action="https://formspree.io/f/your-form-id" method="POST">
-      <label for="name">Full Name</label>
-      <input type="text" id="name" name="name" required>
+  <!-- Page Header -->
+  <section class="page-header">
+    <div class="container">
+        <h1 class="fade-in">Join Our Growing Team</h1>
+        <p style="color: white;" class="fade-in">Discover exciting career opportunities and be part of our innovative journey</p>
+    </div>
+  </section>
 
-      <label for="email">Email Address</label>
-      <input type="email" id="email" name="email" required>
+  <!-- Main Content -->
+  <section class="careers-main">
+    <div class="container">
+      <div class="careers-grid">
+        <!-- Careers Information -->
+        <div class="careers-info">
+          <h2>Why Work With Us</h2>
+          
+          <div class="info-item fade-in">
+            <div class="info-icon">
+              <i class="fas fa-laptop-code"></i>
+            </div>
+            <div class="info-content">
+              <h3>Innovative Environment</h3>
+              <p>Work on cutting-edge technologies and challenging projects that push the boundaries of what's possible.</p>
+            </div>
+          </div>
+          
+          <div class="info-item fade-in">
+            <div class="info-icon">
+              <i class="fas fa-users"></i>
+            </div>
+            <div class="info-content">
+              <h3>Collaborative Culture</h3>
+              <p>Join a team of passionate professionals who value teamwork, creativity, and continuous learning.</p>
+            </div>
+          </div>
+          
+          <div class="info-item fade-in">
+            <div class="info-icon">
+              <i class="fas fa-chart-line"></i>
+            </div>
+            <div class="info-content">
+              <h3>Growth Opportunities</h3>
+              <p>Develop your skills and advance your career with our structured professional development programs.</p>
+            </div>
+          </div>
+          
+          <div class="info-item fade-in">
+            <div class="info-icon">
+              <i class="fas fa-trophy"></i>
+            </div>
+            <div class="info-content">
+              <h3>Competitive Benefits</h3>
+              <p>Enjoy competitive salaries, flexible work arrangements, and comprehensive benefits packages.</p>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Application Form -->
+        <div class="application-form">
+          <h2>Apply Now</h2>
+          <form id="careers-form" action="https://formspree.io/f/your-form-id" method="POST">
+            <div class="form-group">
+              <label for="name">Full Name <span class="required">*</span></label>
+              <input type="text" id="name" name="name" required>
+            </div>
+            
+            <div class="form-group">
+              <label for="email">Email Address <span class="required">*</span></label>
+              <input type="email" id="email" name="email" required>
+            </div>
+            
+            <div class="form-group">
+              <label for="phone">Phone Number</label>
+              <input type="tel" id="phone" name="phone">
+            </div>
+            
+            <div class="form-group">
+              <label for="role">Position You're Applying For <span class="required">*</span></label>
+              <select id="role" name="role" required>
+                <option value="">-- Select Role --</option>
+                <option value="Data Analyst">Data Analyst</option>
+                <option value="Software Developer">Software Developer</option>
+                <option value="Web Designer">Web Designer</option>
+                <option value="UI/UX Designer">UI/UX Designer</option>
+                <option value="Project Manager">Project Manager</option>
+                <option value="Intern">Intern</option>
+                <option value="Other">Other</option>
+              </select>
+            </div>
+            
+            <div class="form-group full-width">
+              <label for="experience">Years of Experience</label>
+              <select id="experience" name="experience">
+                <option value="0-1">0-1 years</option>
+                <option value="1-3">1-3 years</option>
+                <option value="3-5">3-5 years</option>
+                <option value="5+">5+ years</option>
+              </select>
+            </div>
+            
+            <div class="form-group full-width">
+              <label for="message">Why Should We Hire You? <span class="required">*</span></label>
+              <textarea id="message" name="message" rows="4" required></textarea>
+            </div>
+            
+            <div class="form-group full-width">
+              <label for="resume">Resume Link <span class="required">*</span></label>
+              <input type="url" id="resume" name="resume" placeholder="Link to your resume on Google Drive, Dropbox, etc." required>
+            </div>
+            
+            <div id="form-message" style="display: none; margin-bottom: 20px;"></div>
+            
+            <button type="submit" class="btn-submit">Submit Application</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Benefits Section -->
+  <section class="benefits-section">
+    <div class="container">
+      <h2>Employee Benefits</h2>
+      
+      <div class="benefits-grid">
+        <div class="benefit-card fade-in">
+          <div class="benefit-icon">
+            <i class="fas fa-calendar-alt"></i>
+          </div>
+          <h3>Flexible Hours</h3>
+          <p>Work on your own schedule with our flexible work hours policy. We value work-life balance.</p>
+        </div>
+        
+        <div class="benefit-card fade-in">
+          <div class="benefit-icon">
+            <i class="fas fa-laptop-house"></i>
+          </div>
+          <h3>Remote Work</h3>
+          <p>Enjoy the freedom to work from home or anywhere with our hybrid work model.</p>
+        </div>
+        
+        <div class="benefit-card fade-in">
+          <div class="benefit-icon">
+            <i class="fas fa-graduation-cap"></i>
+          </div>
+          <h3>Learning Budget</h3>
+          <p>Continuous learning with our dedicated budget for courses, conferences, and certifications.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- CTA Section -->
+  <section class="cta">
+    <div class="container">
+      <h2>Ready to Start Your Journey With Us?</h2>
+      <a href="#careers-form" class="btn">Apply Now</a>
+    </div>
+  </section>
 
-      <label for="role">Position You're Applying For</label>
-      <select id="role" name="role" required>
-        <option value="">-- Select Role --</option>
-        <option value="Data Analyst">Data Analyst</option>
-        <option value="Software Developer">Software Developer</option>
-        <option value="Web Designer">Web Designer</option>
-        <option value="Intern">Intern</option>
-        <option value="Other">Other</option>
-      </select>
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-col">
+          <div class="footer-logo">
+            <a href="index.html">
+              <span class="text-gradient">CodeAlytix</span>
+            </a>
+          </div>
+          <p>We deliver innovative custom software solutions that transform businesses and drive growth. Our team of experts specializes in web, mobile, and enterprise applications.</p>
+        </div>
+        
+        <div class="footer-col">
+          <h3>Services</h3>
+          <ul>
+            <li><a href="custom-software.html">Custom Software</a></li>
+            <li><a href="web-development.html">Web Applications</a></li>
+            <li><a href="mobile-development.html">Mobile Applications</a></li>
+            <li><a href="digital-transformation.html">Digital Transformation</a></li>
+            <li><a href="ui-ux-design.html">UI/UX Design</a></li>
+            <li><a href="data-analytics.html">Data analyze</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-col">
+          <h3>Company</h3>
+          <ul>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="careers.html">Careers</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-col">
+          <h3>Contact Us</h3>
+          <ul class="contact-info">
+            <li><i class="fas fa-map-marker-alt"></i> <a> Sector 8, Rohini, New Delhi 110085 </a></li>
+            <li><i class="fas fa-phone"></i> <a href="tel:+917978425306">+91 (7978) 425 306</a></li>
+            <li><i class="fas fa-envelope"></i> <a href="mailto:info@codealytix.com">info@codealytix.com</a></li>
+            <li><i class="fas fa-clock"></i> <a>Mon-Fri: 9:00 AM - 6:00 PM </a> </li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <div class="footer-copyright">
+          <p>&copy; <span id="current-year">2024</span> CodeAlytix. All Rights Reserved.</p>
+        </div>
+        <div class="footer-language">
+          <select id="language-selector">
+            <option value="en">English</option>
+            <option value="es">Español</option>
+            <option value="fr">Français</option>
+            <option value="de">Deutsch</option>
+          </select>
+        </div>
+        <a href="#" class="back-to-top">
+          Back to Top <i class="fas fa-arrow-up"></i>
+        </a>
+      </div>
+    </div>
+  </footer>
 
-      <label for="message">Why Should We Hire You?</label>
-      <textarea id="message" name="message" rows="5" required></textarea>
-
-      <label for="resume">Resume (Link or Paste)</label>
-      <textarea id="resume" name="resume" rows="3" placeholder="Paste your resume or provide a link" required></textarea>
-
-      <button type="submit">Submit Application</button>
-    </form>
-  </div>
-
-  <div class="footer">
-    &copy; 2025 [Your Company]. All rights reserved.
-  </div>
-
+  <!-- AOS Animation Script -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  
+  <!-- Swiper Slider Script -->
+  <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+  
+  <!-- Leaflet Map Script -->
+  <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin=""></script>
+  
+  <!-- Form Submission Script -->
+  <script>
+    // Initialize AOS
+    AOS.init();
+    
+    // Theme Toggle Functionality
+    const themeToggleBtn = document.getElementById('theme-toggle-btn');
+    const htmlElement = document.documentElement;
+    
+    // Check for saved theme preference
+    const savedTheme = localStorage.getItem('theme') || 'light';
+    htmlElement.setAttribute('theme', savedTheme);
+    
+    if (savedTheme === 'dark') {
+      themeToggleBtn.classList.add('dark-active');
+      themeToggleBtn.innerHTML = '<i class="fas fa-sun"></i>';
+    }
+    
+    themeToggleBtn.addEventListener('click', function() {
+      const currentTheme = htmlElement.getAttribute('theme');
+      const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+      
+      htmlElement.setAttribute('theme', newTheme);
+      localStorage.setItem('theme', newTheme);
+      
+      if (newTheme === 'dark') {
+        themeToggleBtn.classList.add('dark-active');
+        themeToggleBtn.innerHTML = '<i class="fas fa-sun"></i>';
+      } else {
+        themeToggleBtn.classList.remove('dark-active');
+        themeToggleBtn.innerHTML = '<i class="fas fa-moon"></i>';
+      }
+    });
+    
+    // Form submission handler
+    document.getElementById('careers-form').addEventListener('submit', function(event) {
+      event.preventDefault();
+      
+      const form = event.target;
+      const formData = new FormData(form);
+      const messageDiv = document.getElementById('form-message');
+      
+      fetch(form.action, {
+        method: form.method,
+        body: formData,
+        headers: {
+          'Accept': 'application/json'
+        }
+      })
+      .then(response => {
+        if (response.ok) {
+          messageDiv.style.display = 'block';
+          messageDiv.style.color = 'green';
+          messageDiv.textContent = 'Your application has been submitted successfully!';
+          form.reset();
+        } else {
+          messageDiv.style.display = 'block';
+          messageDiv.style.color = 'red';
+          messageDiv.textContent = 'Oops! Something went wrong. Please try again.';
+        }
+      })
+      .catch(error => {
+        messageDiv.style.display = 'block';
+        messageDiv.style.color = 'red';
+        messageDiv.textContent = 'Network error. Please try again later.';
+      });
+    });
+    
+    // Scroll progress bar
+    window.addEventListener('scroll', function() {
+      const scrollTop = window.scrollY;
+      const docHeight = document.body.offsetHeight - window.innerHeight;
+      const scrollPercent = (scrollTop / docHeight) * 100;
+      document.querySelector('.scroll-progress').style.width = scrollPercent + '%';
+    });
+    
+    // Mobile menu toggle
+    document.querySelector('.hamburger').addEventListener('click', function() {
+      this.classList.toggle('active');
+      document.querySelector('.nav-container').classList.toggle('active');
+    });
+  </script>
 </body>
 </html>
