@@ -89,6 +89,7 @@
                         </ul>
                     </div>
                     <div class="header-actions" data-aos="fade-left" data-aos-duration="800" data-aos-delay="200">
+                        <button id="theme-toggle-btn" class="theme-toggle-btn" title="Switch Theme"><i class="fas fa-moon"></i></button>
                         <a href="contact.html" class="btn-small">Get a Quote</a>
                         <button class="search-toggle"><i class="fas fa-search"></i></button>
                     </div>
@@ -118,6 +119,52 @@
         <div class="container">
             <h1 data-aos="fade-up">Data <span class="text-gradient">Analytics</span></h1>
             <p data-aos="fade-up" data-aos-delay="100">Transform raw data into actionable insights that drive strategic decisions and business growth</p>
+        </div>
+    </section>
+
+     <!-- Data Visualization Section -->
+     <section class="data-visualization">
+        <div class="container">
+            <span class="section-subtitle" data-aos="fade-up">Analytics Dashboard</span>
+            <h2 data-aos="fade-up" data-aos-delay="100">Powerful <span class="text-gradient">Data Visualization</span></h2>
+            <p class="section-description" data-aos="fade-up" data-aos-delay="200">Interactive charts and graphs that help you make data-driven decisions</p>
+            
+            <div class="dashboard-demo" data-aos="zoom-in" data-aos-delay="300">
+                <div class="dashboard-tabs">
+                    <button class="dashboard-tab active" data-tab="performance">Performance</button>
+                    <button class="dashboard-tab" data-tab="users">User Analytics</button>
+                    <button class="dashboard-tab" data-tab="revenue">Revenue</button>
+                </div>
+                
+                <div class="dashboard-panels">
+                    <div class="dashboard-panel active" id="performance">
+                        <div class="chart-container">
+                            <canvas id="performanceChart"></canvas>
+                        </div>
+                        <div class="metrics-grid">
+                            <div class="metric-card">
+                                <h3>Page Load Time</h3>
+                                <p class="metric-value">0.8s</p>
+                                <p class="metric-change positive">↓ 12% from last month</p>
+                            </div>
+                            <div class="metric-card">
+                                <h3>API Response Time</h3>
+                                <p class="metric-value">120ms</p>
+                                <p class="metric-change positive">↓ 8% from last month</p>
+                            </div>
+                            <div class="metric-card">
+                                <h3>Uptime</h3>
+                                <p class="metric-value">99.98%</p>
+                                <p class="metric-change positive">↑ 0.05% from last month</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center" data-aos="fade-up" data-aos-delay="400">
+                <a href="#" class="btn">Explore Full Dashboard Demo</a>
+            </div>
         </div>
     </section>
 

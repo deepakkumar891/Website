@@ -16,12 +16,33 @@ document.addEventListener('DOMContentLoaded', function() {
         
         if (savedTheme) {
             document.documentElement.setAttribute('data-theme', savedTheme);
+            updateThemeButtonState(savedTheme);
         } else if (prefersDark) {
             document.documentElement.setAttribute('data-theme', 'dark');
             localStorage.setItem('theme', 'dark');
+            updateThemeButtonState('dark');
         } else {
             document.documentElement.setAttribute('data-theme', 'light');
             localStorage.setItem('theme', 'light');
+            updateThemeButtonState('light');
+        }
+    };
+
+    // Function to update theme button appearance
+    const updateThemeButtonState = (theme) => {
+        const themeToggleBtn = document.getElementById('theme-toggle-btn');
+        if (themeToggleBtn) {
+            if (theme === 'dark') {
+                themeToggleBtn.innerHTML = '<i class="fas fa-sun"></i>';
+                themeToggleBtn.setAttribute('title', 'Switch to Light Mode');
+                themeToggleBtn.classList.add('dark-active');
+                themeToggleBtn.classList.remove('light-active');
+            } else {
+                themeToggleBtn.innerHTML = '<i class="fas fa-moon"></i>';
+                themeToggleBtn.setAttribute('title', 'Switch to Dark Mode');
+                themeToggleBtn.classList.add('light-active');
+                themeToggleBtn.classList.remove('dark-active');
+            }
         }
     };
 
@@ -31,9 +52,24 @@ document.addEventListener('DOMContentLoaded', function() {
     // Listen for system theme changes
     window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
         if (!localStorage.getItem('theme')) {
-            document.documentElement.setAttribute('data-theme', e.matches ? 'dark' : 'light');
+            const newTheme = e.matches ? 'dark' : 'light';
+            document.documentElement.setAttribute('data-theme', newTheme);
+            updateThemeButtonState(newTheme);
         }
     });
+
+    // Theme toggle button functionality
+    const themeToggleBtn = document.getElementById('theme-toggle-btn');
+    if (themeToggleBtn) {
+        themeToggleBtn.addEventListener('click', () => {
+            const currentTheme = document.documentElement.getAttribute('data-theme');
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            
+            document.documentElement.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+            updateThemeButtonState(newTheme);
+        });
+    }
 
     // Header scroll effect
     const header = document.querySelector('.modern-header');
@@ -92,39 +128,6 @@ document.addEventListener('DOMContentLoaded', function() {
             searchOverlay.classList.remove('active');
             document.body.style.overflow = '';
         });
-    }
-
-    // Theme switcher
-    const themeToggle = document.getElementById('theme-toggle');
-    
-    if (themeToggle) {
-        themeToggle.addEventListener('change', () => {
-            if (themeToggle.checked) {
-                document.documentElement.setAttribute('data-theme', 'dark');
-                localStorage.setItem('theme', 'dark');
-            } else {
-                document.documentElement.setAttribute('data-theme', 'light');
-                localStorage.setItem('theme', 'light');
-            }
-        });
-
-        // Check for saved theme preference
-        const savedTheme = localStorage.getItem('theme');
-        
-        if (savedTheme) {
-            if (savedTheme === 'dark') {
-                themeToggle.checked = true;
-                document.documentElement.setAttribute('data-theme', 'dark');
-            }
-        } else {
-            // Check for system preference
-            const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-            
-            if (prefersDark) {
-                themeToggle.checked = true;
-                document.documentElement.setAttribute('data-theme', 'dark');
-            }
-        }
     }
 
     // Smooth scroll for anchor links

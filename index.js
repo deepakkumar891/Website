@@ -384,3 +384,35 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 }); 
+
+function submitForm(event) {
+    event.preventDefault(); // Prevent Formspree's default action (confirmation page)
+    
+    const form = event.target;
+
+    // Custom confirmation message
+    document.getElementById("dialogBox").style.display = "block";
+    document.getElementById("overlay").style.display = "block";
+    document.getElementById("")
+    
+    // You can submit the form manually using AJAX to Formspree or let the form submit after the confirmation message is shown
+    fetch(form.action, {
+      method: form.method,
+      body: new FormData(form)
+    })
+    .then(response => response.json())
+    .then(data => {
+      // Handle success if needed, e.g. show a success message, etc.
+      console.log("Form submitted successfully", data);
+      form.reset()
+    })
+    .catch(error => {
+      // Handle any errors that occur during the form submission
+      console.error("Error submitting form:", error);
+    });
+  }
+
+  function closeMessage() {
+    document.getElementById("dialogBox").style.display = "none";
+    document.getElementById("overlay").style.display = "none";
+  }

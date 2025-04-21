@@ -65,6 +65,9 @@ html[data-theme="dark"] {
     --border-color: #333333;
     --primary-color: #61dafb;
     --primary-color-dark: #4fa3c7;
+    --light-text-color: #0c0b0b;
+
+
 }
 
 /* Base Styles */
@@ -751,7 +754,7 @@ footer {
 
 .footer-language select {
     background-color: rgba(255, 255, 255, 0.1);
-    color: var(--light-text-color);
+    color: var(--text-color);
     border: none;
     padding: 8px 15px;
     border-radius: var(--radius-small);
@@ -761,7 +764,7 @@ footer {
 .back-to-top {
     display: inline-flex;
     align-items: center;
-    color: var(--light-text-color);
+    color: var(--text-color);
     opacity: 0.8;
     transition: all 0.3s ease;
 }

@@ -166,12 +166,18 @@
   </style>
 </head>
 <body>
-
   <div class="delete-container">
+    <div class="app-name">
+      <h1>iFleet Manager</h1>
+    </div>
     <div id="deleteForm">
       <h2>Delete Your Account</h2>
       <p>We're sorry to see you go. This action cannot be undone.</p>
       
+      <div class="resolutionLink">
+        <p>If you face any issue within App, Please contact us and we can resolve. <a style="color: blue;" href="contact.html"> Click here >> </a></p>
+
+      </div>
       <div class="form-group">
         <label for="email">Confirm your email address:</label>
         <input type="email" id="email" placeholder="your@email.com" required />
@@ -208,8 +214,9 @@
         <div class="error-message" id="reasonError"></div>
       </div>
       
-      <button type="button" class="cancel" id="cancelButton">Cancel</button>
-      <button type="button" id="deleteButton">Delete My Account</button>
+     <a href="index.html"> <button type="button" class="cancel" id="cancelButton">Cancel</button> </a>
+
+     <button type="button" id="deleteButton">Delete My Account</button>
     </div>
     
     <div class="confirmation" id="confirmationMessage">
@@ -224,7 +231,7 @@
       <div class="note">
         You can still cancel this request by logging into your account within the next 5 working days.
       </div>
-      <button type="button" id="returnButton">Return to Shore Pass</button>
+      <button type="button" id="returnButton">Ok</button>
     </div>
   </div>
 
