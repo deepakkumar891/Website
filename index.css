@@ -341,7 +341,14 @@ button {
     display: flex;
     gap: 15px;
 }
-
+.swiper-slide {
+    border-bottom: 2px solid #ccc; /* light grey line */
+    margin-bottom: 30px; /* optional small gap */
+  }
+  
+  .swiper-slide:last-child {
+    border-bottom: none; /* no border for the last slide */
+  }
 .cookie-accept {
     padding: 8px 20px;
     background-color: var(--primary-color);
