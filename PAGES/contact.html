@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en" theme = "light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Modern Web Design Studio</title>
+    <meta name="description" content="Get in touch with our team for project inquiries, support, or to discuss your next big idea.">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <!-- Swiper Slider CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css">
+    
+    <!-- Leaflet Map CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A==" crossorigin="" />
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="CSS/main.css">
+    <link rel="stylesheet" href="CSS/pages/_contact.css">
+   
+    
+    <!-- Google Analytics (Replace with your own GA tag) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+    
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'GA_MEASUREMENT_ID');
+
+
+    //Submit Form button Action command here
+    function submitForm(event) {
+    event.preventDefault();  // Prevent the default form submission behavior
+    
+    const form = event.target;  // Get the form that was submitted
+    const formData = new FormData(form);  // Prepare the form data for submission
+    
+    const messageDiv = document.getElementById("form-message");  // The div to show messages
+
+    // Use fetch API to submit the form data to Formspree
+    fetch(form.action, {
+      method: form.method,
+      body: formData,
+      headers: {
+        "Accept": "application/json",
+      },
+    })
+    .then((response) => {
+      if (response.ok) {
+        // Show a custom success message
+        messageDiv.style.display = 'block';
+        messageDiv.style.color = 'green';
+        messageDiv.textContent = 'Your message has been sent successfully!';
+        form.reset();  // Optionally, reset the form
+      } else {
+        // Show a custom error message if something goes wrong
+        messageDiv.style.display = 'block';
+        messageDiv.style.color = 'red';
+        messageDiv.textContent = 'Oops! Something went wrong, please try again.';
+      }
+    })
+    .catch(() => {
+      // Handle network or other errors
+      messageDiv.style.display = 'block';
+      messageDiv.style.color = 'red';
+      messageDiv.textContent = 'Network error. Please try again later.';
+    });
+  }
+
+    </script>
+
+ 
+</head>
+<body>
+    <!-- Immediate script for theme toggle -->
+     <!-- Theme Toggle Button -->
+     <button id="theme-toggle-btn" class="theme-toggle-btn" title="Switch Theme">
+        <i class="fas fa-moon"></i>
+    </button>
+
+    <!-- Theme Switch & Scroll Progress Bar -->
+    <div class="utility-bar">
+    <div class="scroll-progress-container">
+        <div class="scroll-progress"></div>
+        </div>
+        <!-- <div class="theme-switch">
+            <input type="checkbox" id="theme-toggle">
+            <label for="theme-toggle" class="theme-switch-label">
+                <i class="fas fa-sun"></i>
+                <i class="fas fa-moon"></i>
+                <span class="theme-slider"></span>
+            </label>
+        </div> -->
+    </div>
+    
+    <!-- Header -->
+    <header class="modern-header">
+        <div class="container">
+            <nav>
+                <div class="logo" data-aos="fade-right" data-aos-duration="800">
+                    <a href="home.html">
+                        <span class="text-gradient">CodeAlytix</span>
+                    </a>
+                </div>
+                <div class="nav-container">
+                    <div class="nav-links" data-aos="fade-down" data-aos-duration="800" data-aos-delay="100">
+                    <ul>
+                        <li><a href="home.html">Home</a></li>
+                        <li class="dropdown">
+                                <a href="javascript:void(0)">Services <i class="fas fa-chevron-down"></i></a>
+                            <div class="dropdown-content">
+                                <a href="custom-software.html">Custom Software</a>
+                                <a href="web-development.html">Web Development</a>
+                                <a href="mobile-development.html">Mobile Development</a>
+                                <a href="digital-transformation.html">Digital Transformation</a>
+                                <a href="ui-ux-design.html">UI/UX Design</a>
+                                <a href="data-analytics.html">Data Analytics</a>
+                            </div>
+                        </li>
+                        <li><a href="about.html">About Us</a></li>
+                        <!-- <li><a href="case-study.html">Case Studies</a></li>
+                            <li class="dropdown">
+                                <a href="javascript:void(0)">Resources <i class="fas fa-chevron-down"></i></a>
+                                <div class="dropdown-content">
+                                    <a href="blog.html">Blog</a>
+                                    <a href="tutorials.html">Tutorials</a>
+                                    <a href="code-playground.html">Code Playground</a>
+                                    <a href="forum.html">Community Forum</a>
+                                </div> -->
+                            </li>
+                        <li><a href="contact.html" class="active">Contact</a></li>
+                    </ul>
+                </div>
+                    <div class="header-actions" data-aos="fade-left" data-aos-duration="800" data-aos-delay="200">
+                    <a href="contact.html" class="btn-small">Get a Quote</a>
+                        <!-- <button class="search-toggle"><i class="fas fa-search"></i></button> -->
+                    </div>
+                </div>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </nav>
+            <!-- Modern Search Overlay -->
+            <!-- <div class="search-overlay">
+                <button class="search-close"><i class="fas fa-times"></i></button>
+                <div class="search-content">
+                    <h3>What are you looking for?</h3>
+                    <form class="search-form">
+                        <input type="text" placeholder="Search...">
+                        <button type="submit"><i class="fas fa-search"></i></button>
+                    </form>
+                </div>
+            </div> -->
+        </div>
+    </header>
+     
+      <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1 class="fade-in">Get in Touch With Our Experts</h1>
+            <p style="color: white;" class="fade-in">We're here to answer your questions and discuss your software development needs</p>
+        </div>
+    </section>
+
+    <!-- Contact Information & Form Section -->
+    <section class="contact-main">
+        <div class="container">
+            <div class="contact-grid">
+                <!-- Contact Information -->
+                <div class="contact-info fade-in">
+                    <h2>Contact Information</h2>
+                    
+                    <div class="info-item">
+                        <div class="info-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div class="info-content">
+                            <h3>Phone</h3>
+                            <p><a href="tel:+919968855190">+91-9968855190</a></p>
+                        </div>
+                    </div>
+                    
+                    <div class="info-item">
+                        <div class="info-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="info-content">
+                            <h3>Email</h3>
+                            <p>info@codealytix.com</p>
+                        </div>
+                    </div>
+                    
+                    <div class="info-item">
+                        <div class="info-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="info-content">
+                            <h3>Headquarters</h3>
+                            <p>Sector 8, Rohini<br>New Delhi - 110085<br>India</p>
+                        </div>
+                    </div>
+                    
+                    <div class="info-item">
+                        <div class="info-icon">
+                            <i class="fas fa-building"></i>
+                        </div>
+                        <div class="info-content">
+                            <h3>Development Center</h3>
+                            <p>Sector 8, Rohini<br>New Delhi - 110085<br>India</p>
+                        </div>
+                    </div>
+                    
+                    <div class="info-item">
+                        <div class="info-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div class="info-content">
+                            <h3>Business Hours</h3>
+                            <p>Monday to Saturday: 9:00 AM - 6:00 PM (IST)<br>Sunday: Closed</p>
+                        </div>
+                    </div>
+                    
+                    <div class="social-links">
+                        <a href="#" aria-label="LinkedIn" style="color: #0077B5;"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" aria-label="Twitter" style="color: #1DA1F2;"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="Facebook" style="color: #1877F2;"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Instagram" style="color: #E1306C;"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="GitHub" style="color: #333;"><i class="fab fa-github"></i></a>
+                    </div>
+                    
+                </div>
+                
+                <!-- Contact Form -->
+                <div class="contact-form fade-in">
+                    <h2>Send Us a Message</h2>
+                    <form
+                     method="POST" 
+                     action="https://formspree.io/f/mnnpoqka"
+                     onsubmit="submitForm(event)"
+                     >
+                        <div class="form-group">
+                            <label for="fullName">Full Name <span class="required">*</span></label>
+                            <div class="input-border">
+                                <input type="text" id="fullName" name="fullName" class="inputStyle" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="companyName">Company Name <span class="required">*</span></label>
+                            <div class="input-border">
+                                <input type="text" id="companyName" name="companyName" class="inputStyle" required>
+                            </div>
+                            
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Email Address <span class="required">*</span></label>
+                            <div class="input-border">
+                                <input type="email" id="email" name="email" class="inputStyle" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <div class="input-border">
+                                <input type="tel" id="phone" name="phone" class="inputStyle">
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="subject">Subject <span class="required">*</span></label>
+                            <div class="input-border">
+                                 <input type="text" id="subject" name="subject" class="inputStyle" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group full-width">
+                            <label for="message">Message <span class="required">*</span></label>
+                            <div class="input-border">
+                                <textarea id="message" name="message" rows="5"  class="inputStyle" required></textarea>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group full-width">
+                            <label for="source">How did you hear about us?</label>
+                            <select id="source" name="source" class="inputStyle">
+                                <option value="">Please select</option>
+                                <option value="search">Search Engine</option>
+                                <option value="social">Social Media</option>
+                                <option value="referral">Referral</option>
+                                <option value="advertisement">Advertisement</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group full-width checkbox-group">
+                            <input type="checkbox" id="newsletter" name="newsletter">
+                            <label for="newsletter">Subscribe to our newsletter for updates and industry insights</label>
+                        </div>
+                        
+                        <div class="form-group full-width checkbox-group">
+                            <input type="checkbox" id="privacy" name="privacy" required>
+                            <label for="privacy">I agree to the <a href="Privacy-policy-page.html">privacy policy</a> <span class="required">*</span></label>
+                        </div>
+                        
+                        <div class="form-group full-width">
+                            <button type="submit" class="btn-submit">Submit</button>
+                        </div>
+                        <p id="form-status"></p>
+                    </form>
+                    <div id="form-message" style="display: none;"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map Section -->
+    <section class="map-section">
+        <div class="container">
+            <h2 class="fade-in">Find Us</h2>
+            <div class="map-container fade-in">
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3499.8942720918987!2d77.10649731508849!3d28.70093668239419!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d0138a74f7da7%3A0xf09fad683c23b42e!2sSector%208%2C%20Rohini%2C%20Delhi%2C%20110085!5e0!3m2!1sen!2sin!4v1649150544018!5m2!1sen!2sin" 
+                    width="100%" 
+                    height="450" 
+                    style="border:0;" 
+                    allowfullscreen="" 
+                    loading="lazy" 
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="container">
+            <h2 class="fade-in">Frequently Asked Questions</h2>
+            <div class="faq-grid">
+                <div class="faq-item fade-in">
+                    <h3>How do I request a quote for my project?</h3>
+                    <p>You can request a quote by filling out our contact form or calling us directly. Our team will get back to you within 24 hours to discuss your requirements.</p>
+                </div>
+                
+                <div class="faq-item fade-in">
+                    <h3>What information should I prepare before contacting you?</h3>
+                    <p>It's helpful to have a basic outline of your project goals, timeline, budget range, and any specific features or requirements you have in mind.</p>
+                </div>
+                
+                <div class="faq-item fade-in">
+                    <h3>Do you work with clients internationally?</h3>
+                    <p>Yes, we have clients worldwide. Our team is equipped to work across different time zones and can communicate through various channels to ensure smooth collaboration.</p>
+                </div>
+                
+                <div class="faq-item fade-in">
+                    <h3>How do you handle project confidentiality?</h3>
+                    <p>We take confidentiality seriously and are happy to sign NDAs before discussing your project details. We maintain strict protocols to protect your intellectual property.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="cta">
+        <div class="container">
+            <h2 class="fade-in">Ready to start your project with us?</h2>
+            <a href="#" class="btn fade-in">Schedule a Free Consultation</a>
+        </div>
+    </section>
+
+     <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <div class="footer-logo">
+                        <a href="index.html">
+                            <span class="text-gradient">CodeAlytix</span>
+                        </a>
+                    </div>
+                    <p>We deliver innovative custom software solutions that transform businesses and drive growth. Our team of experts specializes in web, mobile, and enterprise applications.</p>
+                    <!-- This Section will be added after Getting GST Registration -->
+                    <!-- <div class="social-links">
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-github"></i></a>
+                    </div> -->
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Services</h3>
+                    <ul>
+                        <li><a href="custom-software.html">Custom Software</a></li>
+                        <li><a href="web-development.html">Web Applications</a></li>
+                        <li><a href="mobile-development.html">Mobile Applications</a></li>
+                        <li><a href="digital-transformation.html">Digital Transformation</a></li>
+                        <li><a href="ui-ux-design.html">UI/UX Design</a></li>
+                        <li><a href="data-analytics.html">Data analyze</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Company</h3>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <!-- <li><a href="#team">Our Team</a></li> -->
+                        <li><a href="careers.html">Careers</a></li>
+                        <!-- <li><a href="#blog">Blog</a></li> -->
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Contact Us</h3>
+                    <ul class="info-content">
+                        <li><i class="fas fa-map-marker-alt"></i> <a> Sector 8, Rohini, New Delhi 110085 </a></li>
+                        <li><i class="fas fa-phone"></i> <a href="tel:+919968855190">+91-9968855190</a></li>
+                        <li><i class="fas fa-envelope"></i> <a href="mailto:info@codealytix.com">info@codealytix.com</a></li>
+                        <li><i class="fas fa-clock"></i> <a>Mon-Fri: 9:00 AM - 6:00 PM </a> </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="footer-copyright">
+                    <p>&copy; <span id="current-year">2024</span> CodeAlytix. All Rights Reserved.</p>
+                </div>
+                <div class="footer-language">
+                    <select id="language-selector">
+                        <option value="en">English</option>
+                        <option value="es">Español</option>
+                        <option value="fr">Français</option>
+                        <option value="de">Deutsch</option>
+                    </select>
+                </div>
+                <a href="#" class="back-to-top">
+                    Back to Top <i class="fas fa-arrow-up"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <!-- AOS Animation Library -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+    <!-- Swiper Slider JS -->
+    <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+    
+    <!-- Leaflet Map JS -->
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin=""></script>
+    
+    <!-- Particles.js -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+
+    <!-- Custom Scripts -->
+    <script src="SCRIPT/common.js"></script>
+    <script src="SCRIPT/contact-animations.js"></script>
+</body>
+</html>

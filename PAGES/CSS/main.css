@@ -1,0 +1,33 @@
+/*
+ * Main CSS File
+ * Imports all modular CSS files in the correct order
+ */
+
+/* Abstracts */
+@import 'abstracts/_variables.css';
+@import 'abstracts/_utilities.css';
+
+/* Base */
+@import 'base/_reset.css';
+
+/* Components */
+@import 'components/_buttons.css';
+@import 'components/_forms.css';
+@import 'components/_cards.css';
+
+/* Layout */
+@import 'layout/_header.css';
+@import 'layout/_footer.css';
+@import 'layout/_responsive.css';
+@import 'layout/_body.css';
+
+
+/* Theme */
+@import 'themes/_theme.css';
+
+/*
+ * Note: This is the main CSS file that imports all modular CSS files.
+ * For each new component, add a corresponding import statement above.
+ * The imports are ordered from least specific (variables, reset) to 
+ * most specific (components, pages) to ensure proper cascade.
+ */ 

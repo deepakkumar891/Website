@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en" theme="dark-active">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom Software Development Services | CodeAlytix</title>
+    <meta name="description" content="Tailor-made software solutions designed to address your unique business challenges and drive innovation, efficiency, and growth.">
+    
+    <!-- Open Graph / Social Media Meta Tags -->
+    <meta property="og:title" content="Custom Software Development Services | CodeAlytix">
+    <meta property="og:description" content="Tailor-made software solutions designed to address your unique business challenges and drive innovation, efficiency, and growth.">
+    <meta property="og:image" content="https://codealytix.com/images/og-image.jpg">
+    <meta property="og:url" content="https://codealytix.com/custom-software.html">
+    <meta property="og:type" content="website">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="images/favicon.png" type="image/png">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <!-- Swiper Slider CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="CSS/main.css">
+    
+        .theme-toggle-btn {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1100;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: linear-gradient(145deg, #e6e6e6, #ffffff);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            border: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+        .theme-toggle-btn i {
+            font-size: 18px;
+            color: #333;
+            transition: all 0.3s ease;
+        }
+        .theme-toggle-btn.dark-active {
+            background: linear-gradient(145deg, #2d3748, #1a202c);
+        }
+        .theme-toggle-btn.dark-active i {
+            color: #ffd700;
+        }
+        .theme-toggle-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+        [data-theme="dark"] .theme-toggle-btn.light-active {
+            background: linear-gradient(145deg, #2d3748, #1a202c);
+        }
+        [data-theme="dark"] .theme-toggle-btn.light-active i {
+            color: #fff;
+        }
+    </style> -->
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": "Custom Software Development Services",
+      "provider": {
+        "@type": "Organization",
+        "name": "CodeAlytix",
+        "url": "https://codealytix.com"
+      },
+      "description": "Tailor-made software solutions designed to address your unique business challenges and drive innovation, efficiency, and growth.",
+      "serviceType": "Custom Software Development"
+    }
+    </script>
+    
+</head>
+<body>
+    <!-- Theme Toggle Button -->
+    <button id="theme-toggle-btn" class="theme-toggle-btn" title="Switch Theme">
+        <i class="fas fa-moon"></i>
+    </button>
+
+    <!-- Header Section -->
+    <header class="modern-header">
+        <div class="container">
+            <nav>
+                <div class="logo" data-aos="fade-right" data-aos-duration="800">
+                    <a href="home.html">
+                        <span class="text-gradient">CodeAlytix</span>
+                    </a>
+                </div>
+                <div class="nav-container">
+                    <div class="nav-links" data-aos="fade-down" data-aos-duration="800" data-aos-delay="100">
+                        <ul>
+                            <li><a href="home.html">Home</a></li>
+                            <li class="dropdown">
+                                <a href="javascript:void(0)" class="active">Services <i class="fas fa-chevron-down"></i></a>
+                                <div class="dropdown-content">
+                                    <a href="custom-software.html" class="active">Custom Software</a>
+                                    <a href="web-development.html">Web Development</a>
+                                    <a href="mobile-development.html">Mobile Development</a>
+                                    <a href="digital-transformation.html">Digital Transformation</a>
+                                    <a href="ui-ux-design.html">UI/UX Design</a>
+                                    <a href="data-analytics.html">Data Analytics</a>
+                                </div>
+                            </li>
+                            <li><a href="about.html">About Us</a></li>
+                            <!-- <li><a href="case-study.html">Case Studies</a></li>
+                            <li class="dropdown">
+                                <a href="javascript:void(0)">Resources <i class="fas fa-chevron-down"></i></a>
+                                <div class="dropdown-content">
+                                    <a href="blog.html">Blog</a>
+                                    <a href="tutorials.html">Tutorials</a>
+                                    <a href="code-playground.html">Code Playground</a>
+                                    <a href="forum.html">Community Forum</a>
+                                </div> -->
+                            </li>
+                            <li><a href="contact.html">Contact</a></li>
+                        </ul>
+                    </div>
+                    <div class="header-actions" data-aos="fade-left" data-aos-duration="800" data-aos-delay="200">
+                        <!-- <button id="theme-toggle-btn" class="theme-toggle-btn" title="Switch Theme"><i class="fas fa-moon"></i></button> -->
+                        <a href="contact.html" class="btn-small">Get a Quote</a>
+                        <!-- <button class="search-toggle"><i class="fas fa-search"></i></button> -->
+                    </div>
+                </div>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </nav>
+            <!-- Modern Search Overlay -->
+            <div class="search-overlay">
+                <button class="search-close"><i class="fas fa-times"></i></button>
+                <div class="search-content">
+                    <h3>What are you looking for?</h3>
+                    <form class="search-form">
+                        <input type="text" placeholder="Search...">
+                        <button type="submit"><i class="fas fa-search"></i></button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1 data-aos="fade-up">Custom <span class="text-gradient">Software</span> Development</h1>
+            <p data-aos="fade-up" data-aos-delay="100">Tailor-made solutions designed to address your unique business challenges and drive innovation</p>
+        </div>
+    </section>
+
+    <!-- Service Overview -->
+    <section class="service-detail">
+        <div class="container">
+            <div class="service-overview fade-in">
+                <h2>Bespoke Software Solutions for Your Business Needs</h2>
+                <p>At CodeAlytix, we develop custom software solutions that are precisely tailored to address your unique business requirements. Our expert team analyzes your challenges, processes, and goals to create software that streamlines operations, enhances productivity, and gives you a competitive edge in your industry.</p>
+                
+                <div class="service-benefits">
+                    <div class="benefit-card" data-aos="fade-up">
+                        <div class="benefit-icon">
+                            <i class="fas fa-puzzle-piece"></i>
+                        </div>
+                        <h3>Tailored Solutions</h3>
+                        <p>Software built specifically for your business needs, not a one-size-fits-all approach that requires compromises.</p>
+                    </div>
+                    
+                    <div class="benefit-card" data-aos="fade-up" data-aos-delay="100">
+                        <div class="benefit-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <h3>Improved Efficiency</h3>
+                        <p>Streamlined processes and automated workflows that save time, reduce errors, and boost productivity.</p>
+                    </div>
+                    
+                    <div class="benefit-card" data-aos="fade-up" data-aos-delay="200">
+                        <div class="benefit-icon">
+                            <i class="fas fa-lock"></i>
+                        </div>
+                        <h3>Enhanced Security</h3>
+                        <p>Built-in security measures designed to protect your sensitive data and comply with industry regulations.</p>
+                    </div>
+                    
+                    <div class="benefit-card" data-aos="fade-up" data-aos-delay="300">
+                        <div class="benefit-icon">
+                            <i class="fas fa-expand-arrows-alt"></i>
+                        </div>
+                        <h3>Scalable Architecture</h3>
+                        <p>Future-proof solutions that grow with your business and adapt to changing needs and technologies.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Development Process -->
+            <div class="development-process fade-in">
+                <h2>Our Custom Software Development Process</h2>
+                <p>We follow a structured, collaborative approach to ensure your custom software perfectly aligns with your business objectives.</p>
+                
+                <div class="process-steps">
+                    <div class="step" data-aos="fade-right">
+                        <div class="step-number">01</div>
+                        <div class="step-content">
+                            <h3>Discovery & Analysis</h3>
+                            <p>We thoroughly analyze your business processes, challenges, and goals to understand what your software needs to accomplish. This phase includes stakeholder interviews, workflow analysis, and requirements gathering.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="step" data-aos="fade-right" data-aos-delay="100">
+                        <div class="step-number">02</div>
+                        <div class="step-content">
+                            <h3>Planning & Architecture</h3>
+                            <p>We develop a detailed project roadmap, define the technical architecture, and select the optimal technology stack for your specific requirements. This ensures a solid foundation for your software.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="step" data-aos="fade-right" data-aos-delay="200">
+                        <div class="step-number">03</div>
+                        <div class="step-content">
+                            <h3>UI/UX Design</h3>
+                            <p>Our designers create intuitive, user-friendly interfaces that make your software easy to use and visually appealing, enhancing user adoption and satisfaction.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="step" data-aos="fade-right" data-aos-delay="300">
+                        <div class="step-number">04</div>
+                        <div class="step-content">
+                            <h3>Development</h3>
+                            <p>Using agile methodologies, our developers build your software incrementally, providing regular demos and gathering feedback to ensure the solution meets your expectations.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="step" data-aos="fade-right" data-aos-delay="400">
+                        <div class="step-number">05</div>
+                        <div class="step-content">
+                            <h3>Testing & Quality Assurance</h3>
+                            <p>We conduct rigorous testing to ensure your software is reliable, secure, and performs optimally across all intended environments and scenarios.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="step" data-aos="fade-right" data-aos-delay="500">
+                        <div class="step-number">06</div>
+                        <div class="step-content">
+                            <h3>Deployment</h3>
+                            <p>We smoothly transition your software into production, providing training for your team and ensuring a seamless implementation.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="step" data-aos="fade-right" data-aos-delay="600">
+                        <div class="step-number">07</div>
+                        <div class="step-content">
+                            <h3>Ongoing Support & Maintenance</h3>
+                            <p>We provide continued technical support, regular updates, and enhancements to keep your software running smoothly and adapting to your evolving business needs.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Types of Custom Software -->
+            <div class="service-features">
+                <h2>Types of Custom Software We Develop</h2>
+                
+                <div class="features-grid">
+                    <div class="feature-item" data-aos="zoom-in">
+                        <i class="fas fa-database"></i>
+                        <h3>Enterprise Resource Planning (ERP)</h3>
+                        <p>Integrated systems to manage your core business processes, from inventory and supply chain to human resources and finance.</p>
+                    </div>
+                    
+                    <div class="feature-item" data-aos="zoom-in" data-aos-delay="100">
+                        <i class="fas fa-users-cog"></i>
+                        <h3>Customer Relationship Management (CRM)</h3>
+                        <p>Tailor-made solutions to manage customer interactions, sales pipelines, and marketing campaigns effectively.</p>
+                    </div>
+                    
+                    <div class="feature-item" data-aos="zoom-in" data-aos-delay="200">
+                        <i class="fas fa-shipping-fast"></i>
+                        <h3>Supply Chain Management</h3>
+                        <p>Software to optimize your supply chain operations, from procurement and logistics to inventory management.</p>
+                    </div>
+                    
+                    <div class="feature-item" data-aos="zoom-in" data-aos-delay="300">
+                        <i class="fas fa-cogs"></i>
+                        <h3>Business Process Automation</h3>
+                        <p>Solutions that automate repetitive tasks and streamline workflows, saving time and reducing errors.</p>
+                    </div>
+                    
+                    <div class="feature-item" data-aos="zoom-in" data-aos-delay="400">
+                        <i class="fas fa-chart-pie"></i>
+                        <h3>Business Intelligence & Analytics</h3>
+                        <p>Custom dashboards and reporting tools that transform your data into actionable insights for better decision-making.</p>
+                    </div>
+                    
+                    <div class="feature-item" data-aos="zoom-in" data-aos-delay="500">
+                        <i class="fas fa-project-diagram"></i>
+                        <h3>Integration Solutions</h3>
+                        <p>Software that connects your existing systems and third-party applications for seamless data flow and enhanced functionality.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Technologies -->
+            <div class="technologies-section fade-in">
+                <h2>Technologies We Use</h2>
+                <div class="tech-grid">
+                    <div class="tech-item" data-aos="fade-up">
+                        <span>Java</span>
+                    </div>
+                    <div class="tech-item" data-aos="fade-up" data-aos-delay="50">
+                        <span>Python</span>
+                    </div>
+                    <div class="tech-item" data-aos="fade-up" data-aos-delay="100">
+                        <span>.NET</span>
+                    </div>
+                    <div class="tech-item" data-aos="fade-up" data-aos-delay="150">
+                        <span>Node.js</span>
+                    </div>
+                    <div class="tech-item" data-aos="fade-up" data-aos-delay="200">
+                        <span>React</span>
+                    </div>
+                    <div class="tech-item" data-aos="fade-up" data-aos-delay="250">
+                        <span>Angular</span>
+                    </div>
+                    <div class="tech-item" data-aos="fade-up" data-aos-delay="300">
+                        <span>SQL/NoSQL</span>
+                    </div>
+                    <div class="tech-item" data-aos="fade-up" data-aos-delay="350">
+                        <span>AWS/Azure</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Industries We Serve -->
+            <div class="industries-section">
+                <h2>Industries We Serve</h2>
+                <div class="industries-grid">
+                    <div class="industry-item" data-aos="fade-up">
+                        <div class="industry-icon">
+                            <i class="fas fa-hospital"></i>
+                        </div>
+                        <h3>Healthcare</h3>
+                        <p>Electronic health records, telemedicine platforms, medical billing systems, and patient management solutions.</p>
+                    </div>
+                    
+                    <div class="industry-item" data-aos="fade-up" data-aos-delay="100">
+                        <div class="industry-icon">
+                            <i class="fas fa-money-bill-wave"></i>
+                        </div>
+                        <h3>Finance & Banking</h3>
+                        <p>Payment processing systems, loan management platforms, risk assessment tools, and financial reporting software.</p>
+                    </div>
+                    
+                    <div class="industry-item" data-aos="fade-up" data-aos-delay="200">
+                        <div class="industry-icon">
+                            <i class="fas fa-shopping-cart"></i>
+                        </div>
+                        <h3>Retail & E-commerce</h3>
+                        <p>Inventory management systems, point-of-sale solutions, customer loyalty programs, and omnichannel retail platforms.</p>
+                    </div>
+                    
+                    <div class="industry-item" data-aos="fade-up" data-aos-delay="300">
+                        <div class="industry-icon">
+                            <i class="fas fa-industry"></i>
+                        </div>
+                        <h3>Manufacturing</h3>
+                        <p>Production planning software, quality control systems, equipment maintenance management, and supply chain solutions.</p>
+                    </div>
+                    
+                    <div class="industry-item" data-aos="fade-up" data-aos-delay="400">
+                        <div class="industry-icon">
+                            <i class="fas fa-truck"></i>
+                        </div>
+                        <h3>Logistics & Transportation</h3>
+                        <p>Fleet management systems, route optimization software, warehouse management, and shipment tracking solutions.</p>
+                    </div>
+                    
+                    <div class="industry-item" data-aos="fade-up" data-aos-delay="500">
+                        <div class="industry-icon">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                        <h3>Education</h3>
+                        <p>Learning management systems, student information systems, educational content platforms, and assessment tools.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2 data-aos="fade-up">Ready to Build Your Custom Software Solution?</h2>
+            <p data-aos="fade-up" data-aos-delay="100">Let's create software that perfectly aligns with your business needs and drives your success.</p>
+            <a href="contact.html" class="btn-primary" data-aos="fade-up" data-aos-delay="200">Start Your Project</a>
+        </div>
+    </section>
+
+    <!-- Scroll Progress Bar -->
+    <div class="scroll-progress"></div>
+
+
+     <!-- Footer -->
+     <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <div class="footer-logo">
+                        <a href="index.html">
+                            <span class="text-gradient">CodeAlytix</span>
+                        </a>
+                    </div>
+                    <p>We deliver innovative custom software solutions that transform businesses and drive growth. Our team of experts specializes in web, mobile, and enterprise applications.</p>
+                    <!-- This Section will be added after Getting GST Registration -->
+                    <!-- <div class="social-links">
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-github"></i></a>
+                    </div> -->
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Services</h3>
+                    <ul>
+                        <li><a href="custom-software.html">Custom Software</a></li>
+                        <li><a href="web-development.html">Web Applications</a></li>
+                        <li><a href="mobile-development.html">Mobile Applications</a></li>
+                        <li><a href="digital-transformation.html">Digital Transformation</a></li>
+                        <li><a href="ui-ux-design.html">UI/UX Design</a></li>
+                        <li><a href="data-analytics.html">Data analyze</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Company</h3>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <!-- <li><a href="#team">Our Team</a></li> -->
+                        <li><a href="careers.html">Careers</a></li>
+                        <!-- <li><a href="#blog">Blog</a></li> -->
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Contact Us</h3>
+                    <ul class="contact-info">
+                        <li><i class="fas fa-map-marker-alt"></i> <a> Sector 8, Rohini, New Delhi 110085 </a></li>
+                        <li><i class="fas fa-phone"></i> <a href="tel:+919968855190">+91-9968855190</a></li>
+                        <li><i class="fas fa-envelope"></i> <a href="mailto:info@codealytix.com">info@codealytix.com</a></li>
+                        <li><i class="fas fa-clock"></i> <a>Mon-Fri: 9:00 AM - 6:00 PM </a> </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="footer-copyright">
+                    <p>&copy; <span id="current-year">2024</span> CodeAlytix. All Rights Reserved.</p>
+                </div>
+                <div class="footer-language">
+                    <select id="language-selector">
+                        <option value="en">English</option>
+                        <option value="es">Español</option>
+                        <option value="fr">Français</option>
+                        <option value="de">Deutsch</option>
+                    </select>
+                </div>
+                <a href="#" class="back-to-top">
+                    Back to Top <i class="fas fa-arrow-up"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+    <script src="SCRIPT/common.js"></script>
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-XXXXXXXXXX');
+    </script>
+</body>
+</html>

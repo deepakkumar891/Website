@@ -1,0 +1,252 @@
+/* Responsive Styles */
+
+/* Large Screens */
+@media (max-width: 1200px) {
+    h1 {
+        font-size: 2.8rem;
+    }
+    
+    h2 {
+        font-size: 2.2rem;
+    }
+
+    .flex-container {
+        flex-direction: column;
+    }
+    
+    .hero-stats {
+        margin-top: 30px;
+    }
+    
+    .process-step {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .step-content {
+        padding-left: 0;
+    }
+    
+    .cta-content {
+        padding: 0 20px;
+    }
+    
+    .form-row {
+        flex-direction: column;
+    }
+    
+    .footer-bottom {
+        flex-direction: column;
+    }
+}
+
+/* Tablets */
+@media (max-width: 992px) {
+    .hamburger {
+        display: block;
+    }
+    
+    .nav-container {
+        position: fixed;
+        right: -100%;
+        top: 0;
+        width: 80%;
+        max-width: 320px;
+        height: 100vh;
+        background-color: #fff;
+        box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s ease;
+        z-index: 1000;
+        overflow-y: auto;
+        padding: 80px 30px 30px;
+        display: block;
+    }
+    
+    [data-theme="dark"] .nav-container {
+        background-color: #1a202c;
+    }
+    
+    .nav-container.active {
+        right: 0;
+    }
+
+    /* Ensure dropdown displays properly on mobile */
+    .nav-links {
+        display: block;
+        margin-top: 30px;
+    }
+
+    .nav-links ul {
+        flex-direction: column;
+        padding: 0;
+    }
+
+    .nav-links li {
+        margin: 10px 0;
+        width: 100%;
+    }
+
+    .nav-links a {
+        font-size: 16px;
+        padding: 12px 0;
+        display: block;
+        color: #333;
+    }
+    
+    [data-theme="dark"] .nav-links a {
+        color: #e0e0e0;
+    }
+
+    .dropdown-content {
+        background-color: transparent;
+        padding-left: 20px;
+    }
+    
+    [data-theme="dark"] .dropdown-content {
+        background-color: transparent;
+    }
+    
+    .dropdown-content a {
+        color: #555 !important;
+        padding: 10px 0 !important;
+    }
+    
+    [data-theme="dark"] .dropdown-content a {
+        color: #bbb !important;
+    }
+
+    .hamburger.active span:nth-child(1) {
+        transform: rotate(45deg) translate(6px, 6px);
+    }
+
+    .hamburger.active span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger.active span:nth-child(3) {
+        transform: rotate(-45deg) translate(6px, -6px);
+    }
+
+    /* Call button position on tablet */
+    .call-button {
+        bottom: 20px;
+        right: 20px;
+        width: 45px;
+        height: 45px;
+    }
+
+    /* Position theme toggle better on tablet */
+    .theme-toggle-btn {
+        right: 80px;
+        top: 15px;
+    }
+}
+
+/* Mobile Phones */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2.2rem;
+    }
+    
+    h2 {
+        font-size: 1.8rem;
+    }
+    
+    .hero {
+        padding-top: 120px;
+    }
+    
+    .hero-buttons {
+        flex-direction: column;
+    }
+    
+    .services-grid, .blog-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .tab-buttons {
+        flex-wrap: wrap;
+    }
+    
+    .tab-btn {
+        flex: 1 1 calc(50% - 10px);
+    }
+    
+    .testimonial-carousel {
+        padding: 0 20px;
+    }
+    
+    .testimonial-item {
+        padding: 0 10px;
+    }
+    
+    .testimonial-card {
+        padding: 20px;
+    }
+    
+    .dashboard-demo {
+        flex-direction: column;
+    }
+    
+    .dashboard-tabs {
+        flex-wrap: wrap;
+    }
+    
+    .cookie-content {
+        flex-direction: column;
+    }
+    
+    .footer-content {
+        grid-template-columns: 1fr;
+    }
+    
+    .social-links {
+        justify-content: center;
+    }
+    
+    .footer-col ul li a {
+        font-size: 0.9rem;
+    }
+    
+    .contact-info li {
+        font-size: 0.9rem;
+    }
+    
+    /* Make touch targets larger */
+    .nav-links a, .header-actions .btn-small, .dropdown-content a {
+        padding: 15px;
+        display: block;
+    }
+}
+
+/* Small Mobile Devices */
+@media (max-width: 576px) {
+    h1 {
+        font-size: 1.8rem;
+    }
+    
+    .hero-stats {
+        grid-template-columns: 1fr;
+    }
+    
+    .hero-buttons {
+        width: 100%;
+    }
+    
+    .hero-buttons .btn {
+        width: 100%;
+    }
+    
+    .cta-content {
+        padding: 0;
+    }
+    
+    .theme-switch {
+        display: none;
+    }
+}
+
+/* Add body styles for menu open state */
+body.menu-open {
+    overflow: hidden;
+} 

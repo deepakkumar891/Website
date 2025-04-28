@@ -1,0 +1,83 @@
+/* Variables
+ * All project variables in one place
+ */
+
+:root {
+    /* Typography */
+    --font-primary: 'Poppins', sans-serif;
+    --font-secondary: 'Open Sans', sans-serif;
+    --body-font: 'Open Sans', sans-serif;
+    --heading-font: 'Poppins', sans-serif;
+    
+    /* Font sizes */
+    --base-font-size: 16px;
+    --h1-font-size: 2.5rem;
+    --h2-font-size: 2rem;
+    --h3-font-size: 1.5rem;
+    --body-font-size: 1rem;
+    --small-font-size: 0.875rem;
+    
+    /* Colors - Light theme */
+    --primary-color: #3498db;
+    --primary-color-light: #64b5f6;
+    --primary-color-dark: #2980b9;
+    --secondary-color: #e74c3c;
+    --text-color: #333;
+    --text-secondary: #666;
+    --text-color-light: #666;
+    --heading-color: #333;
+    --background-color: #fff;
+    --background-secondary: #f5f7fa;
+    --card-bg-color: #fff;
+    --light-bg-color: #f8f9fa;
+    --border-color: #eee;
+    --success-color: #27ae60;
+    --error-color: #e74c3c;
+    
+    /* Gradients */
+    --background-gradient: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+    --primary-gradient: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-color-dark) 100%);
+    
+    /* Shadows */
+    --shadow-small: 0 3px 8px rgba(0, 0, 0, 0.05);
+    --shadow-light: 0 5px 15px rgba(0, 0, 0, 0.05);
+    --shadow-medium: 0 10px 25px rgba(0, 0, 0, 0.1);
+    
+    /* Border radius */
+    --radius-small: 4px;
+    --radius-medium: 8px;
+    --radius-large: 12px;
+    --radius-round: 30px;
+    
+    /* Transitions */
+    --transition-fast: 0.2s;
+    --transition-normal: 0.3s;
+    --transition-slow: 0.5s;
+    
+    /* Layout */
+    --container-width: 1200px;
+    --container-padding: 20px;
+    --section-padding: 80px 0;
+    
+    /* Convert primary color to RGB for opacity operations */
+    --primary-color-rgb: 52, 152, 219;
+    --secondary-color-rgb: 231, 76, 60;
+}
+
+/* Dark theme colors */
+[data-theme="dark"] {
+    --text-color: #e0e0e0;
+    --text-secondary: #aaaaaa;
+    --text-color-light: #aaaaaa;
+    --heading-color: #f5f5f5;
+    --background-color: #121212;
+    --background-color-dark: #121212;
+    --background-secondary: #1e1e1e;
+    --card-bg-color: #1e2a3a;
+    --light-bg-color: #1e2a3a;
+    --border-color: #2c3e50;
+    --shadow-light: 0 5px 15px rgba(0, 0, 0, 0.2);
+    --shadow-medium: 0 10px 25px rgba(0, 0, 0, 0.3);
+    --primary-color: #64b5f6;
+    --primary-color-dark: #1976d2;
+} 
