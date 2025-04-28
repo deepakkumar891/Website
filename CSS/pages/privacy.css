@@ -9,6 +9,10 @@
     position: relative;
 }
 
+.content-wrapper{
+padding-top: 120px;
+}
+
 .privacy-hero::before {
     content: '';
     position: absolute;
