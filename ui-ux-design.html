@@ -31,9 +31,7 @@
     <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css">
     
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="common.css">
-    <link rel="stylesheet" href="ui-ux.css">
-    <link rel="stylesheet" href="additional-features.css">
+    <link rel="stylesheet" href="CSS/main.css">
     
     
     <!-- Structured Data -->
@@ -52,6 +50,7 @@
     }
     </script>
 </head>
+
 <body>
     <!-- Theme Toggle Button -->
     <button id="theme-toggle-btn" class="theme-toggle-btn" title="Switch Theme">
@@ -128,7 +127,7 @@
     <section class="service-detail">
         <div class="container">
             <div class="service-overview fade-in">
-                <h2>User-Centered Design for Exceptional Digital Experiences</h2>
+                <h2 class="text-gradient">User-Centered Design for Exceptional Digital Experiences</h2>
                 <p>At CodeAlytix, we believe great design is about more than aesthetics—it's about creating intuitive, meaningful experiences that resonate with users and achieve business goals. Our expert UI/UX designers blend creativity with strategic thinking to deliver digital solutions that are both beautiful and functional.</p>
                 
                 <div class="service-benefits">
@@ -166,9 +165,17 @@
                 </div>
             </div>
 
+
+            <!-- Lin Break -->
+            <br>
+            <br>
+            <br>
+            
+
+            
             <!-- Design Process -->
             <div class="development-process fade-in">
-                <h2>Our UI/UX Design Process</h2>
+                <h2 class="text-gradient">Our UI/UX Design Process</h2>
                 <p>We follow a comprehensive approach to design that ensures your digital products delight users and drive results.</p>
                 
                 <div class="process-steps">
@@ -230,9 +237,17 @@
                 </div>
             </div>
 
+
+            <!-- Lin Break -->
+            <br>
+            <br>
+            <br>
+            
+
+            
             <!-- Design Services -->
             <div class="service-features">
-                <h2>Our UI/UX Design Services</h2>
+                <h2 class="text-gradient">Our UI/UX Design Services</h2>
                 
                 <div class="features-grid">
                     <div class="feature-item" data-aos="zoom-in">
@@ -273,9 +288,17 @@
                 </div>
             </div>
             
+
+            <!-- Lin Break -->
+            <br>
+            <br>
+            <br>
+            
+
+            
             <!-- Design Tools -->
             <div class="technologies-section fade-in">
-                <h2>Design Tools We Use</h2>
+                <h2 class="text-gradient">Design Tools We Use</h2>
                 <div class="tech-grid">
                     <div class="tech-item" data-aos="fade-up">
                         <span>Figma</span>
@@ -304,9 +327,17 @@
                 </div>
             </div>
             
+
+            <!-- Lin Break -->
+            <br>
+            <br>
+            <br>
+            
+
+            
             <!-- Why Choose Us -->
             <div class="why-choose-us">
-                <h2>Why Choose Our UI/UX Design Services</h2>
+                <h2 class="text-gradient">Why Choose Our UI/UX Design Services</h2>
                 <div class="reasons-grid">
                     <div class="reason-item" data-aos="fade-up">
                         <div class="reason-icon">
@@ -347,7 +378,7 @@
     <!-- CTA Section -->
     <section class="cta-section">
         <div class="container">
-            <h2 data-aos="fade-up">Ready to Transform Your Digital Experience?</h2>
+            <h2 data-aos="fade-up" class="text-gradient">Ready to Transform Your Digital Experience?</h2>
             <p data-aos="fade-up" data-aos-delay="100">Let's create beautiful, user-friendly designs that elevate your brand and drive results.</p>
             <a href="contact.html" class="btn-primary" data-aos="fade-up" data-aos-delay="200">Start Your Project</a>
         </div>
@@ -400,8 +431,8 @@
                 <div class="footer-col">
                     <h3>Contact Us</h3>
                     <ul class="contact-info">
-                        <li><i class="fas fa-map-marker-alt"></i> <a> Sector 8, Rohini, New Delhi 110085 </a></li>
-                        <li><i class="fas fa-phone"></i> <a href="tel:+919968855190">+91-9968855190</a></li>
+                        <li><i class="fas fa-map-marker-alt"></i> <a> Lampur Narela, New Delhi 110085</a></li>
+                        <li><i class="fas fa-phone"></i> <a href="tel:+919211463649">+91-9211463649</a></li>
                         <li><i class="fas fa-envelope"></i> <a href="mailto:info@codealytix.com">info@codealytix.com</a></li>
                         <li><i class="fas fa-clock"></i> <a>Mon-Fri: 9:00 AM - 6:00 PM </a> </li>
                     </ul>
@@ -431,55 +462,8 @@
     <!-- Scripts -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
-    <script src="common.js"></script>
+    <script src="SCRIPT/common.js"></script>
 
-    <script>
-        // Initialize AOS
-        AOS.init();
-        
-        // Theme Toggle Functionality
-        const themeToggleBtn = document.getElementById('theme-toggle-btn');
-        const htmlElement = document.documentElement;
-        
-        // Check for saved theme preference
-        const savedTheme = localStorage.getItem('theme') || 'light';
-        htmlElement.setAttribute('theme', savedTheme);
-        
-        if (savedTheme === 'dark') {
-            themeToggleBtn.classList.add('dark-active');
-            themeToggleBtn.innerHTML = '<i class="fas fa-sun"></i>';
-        }
-        
-        themeToggleBtn.addEventListener('click', function() {
-            const currentTheme = htmlElement.getAttribute('theme');
-            const newTheme = currentTheme === 'light' ? 'dark' : 'light';
-            
-            htmlElement.setAttribute('theme', newTheme);
-            localStorage.setItem('theme', newTheme);
-            
-            if (newTheme === 'dark') {
-                themeToggleBtn.classList.add('dark-active');
-                themeToggleBtn.innerHTML = '<i class="fas fa-sun"></i>';
-            } else {
-                themeToggleBtn.classList.remove('dark-active');
-                themeToggleBtn.innerHTML = '<i class="fas fa-moon"></i>';
-            }
-        });
-        
-        // Scroll progress bar
-        window.addEventListener('scroll', function() {
-            const scrollTop = window.scrollY;
-            const docHeight = document.body.offsetHeight - window.innerHeight;
-            const scrollPercent = (scrollTop / docHeight) * 100;
-            document.querySelector('.scroll-progress').style.width = scrollPercent + '%';
-        });
-        
-        // Mobile menu toggle
-        document.querySelector('.hamburger').addEventListener('click', function() {
-            this.classList.toggle('active');
-            document.querySelector('.nav-container').classList.toggle('active');
-        });
-    </script>
 
     <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>

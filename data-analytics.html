@@ -31,9 +31,7 @@
     <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css">
     
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="common.css">
-    <link rel="stylesheet" href="data-analytics.css">
-    <link rel="stylesheet" href="additional-features.css">
+    <link rel="stylesheet" href="CSS/main.css">
     
       
     <!-- Structured Data -->
@@ -174,7 +172,7 @@
     <section class="service-detail">
         <div class="container">
             <div class="service-overview fade-in">
-                <h2>Harness the Power of Your Data</h2>
+                <h2 class="text-gradient">Harness the Power of Your Data</h2>
                 <p>At CodeAlytix, we help businesses unlock the full potential of their data through advanced analytics, visualization, and predictive modeling. Our data scientists and analytics experts work with you to translate complex data into clear insights that drive strategic decision-making and measurable business results.</p>
                 
                 <div class="service-benefits">
@@ -212,9 +210,18 @@
                 </div>
             </div>
 
+
+
+            <!-- Lin Break -->
+            <br>
+            <br>
+            <br>
+            
+
+            
             <!-- Analytics Services -->
             <div class="service-features">
-                <h2>Our Data Analytics Services</h2>
+                <h2 class="text-gradient">Our Data Analytics Services</h2>
                 
                 <div class="features-grid">
                     <div class="feature-item" data-aos="zoom-in">
@@ -255,9 +262,17 @@
                 </div>
             </div>
 
+
+            <!-- Lin Break -->
+            <br>
+            <br>
+            <br>
+            
+
+            
             <!-- Analytics Process -->
             <div class="development-process fade-in">
-                <h2>Our Data Analytics Process</h2>
+                <h2 class="text-gradient">Our Data Analytics Process</h2>
                 <p>We follow a systematic, collaborative approach to transform your data into actionable business insights.</p>
                 
                 <div class="process-steps">
@@ -319,9 +334,18 @@
                 </div>
             </div>
             
+
+
+            <!-- Lin Break -->
+            <br>
+            <br>
+            <br>
+            
+
+            
             <!-- Technologies -->
             <div class="technologies-section fade-in">
-                <h2>Analytics Tools & Technologies We Use</h2>
+                <h2 class="text-gradient">Analytics Tools & Technologies We Use</h2>
                 <div class="tech-grid">
                     <div class="tech-item" data-aos="fade-up">
                         <span>Python</span>
@@ -394,7 +418,7 @@
     <!-- CTA Section -->
     <section class="cta-section">
         <div class="container">
-            <h2 data-aos="fade-up">Ready to Turn Your Data into Business Value?</h2>
+            <h2 data-aos="fade-up" class="text-gradient">Ready to Turn Your Data into Business Value?</h2>
             <p data-aos="fade-up" data-aos-delay="100">Let's create data-driven strategies that give you a competitive edge and drive growth.</p>
             <a href="contact.html" class="btn-primary" data-aos="fade-up" data-aos-delay="200">Get Started</a>
         </div>
@@ -446,8 +470,8 @@
                 <div class="footer-col">
                     <h3>Contact Us</h3>
                     <ul class="contact-info">
-                        <li><i class="fas fa-map-marker-alt"></i> <a> Sector 8, Rohini, New Delhi 110085 </a></li>
-                        <li><i class="fas fa-phone"></i> <a href="tel:+919968855190">+91-9968855190</a></li>
+                        <li><i class="fas fa-map-marker-alt"></i> <a> Lampur Narela, New Delhi 110085</a></li>
+                        <li><i class="fas fa-phone"></i> <a href="tel:+919211463649">+91-9211463649</a></li>
                         <li><i class="fas fa-envelope"></i> <a href="mailto:info@codealytix.com">info@codealytix.com</a></li>
                         <li><i class="fas fa-clock"></i> <a>Mon-Fri: 9:00 AM - 6:00 PM </a> </li>
                     </ul>
@@ -477,40 +501,9 @@
     <!-- Scripts -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
-    <script src="common.js"></script>
+    <script src="SCRIPT/common.js"></script>
     
     <script>
-        // Initialize AOS
-        AOS.init();
-        
-        // Theme Toggle Functionality
-        const themeToggleBtn = document.getElementById('theme-toggle-btn');
-        const htmlElement = document.documentElement;
-        
-        // Check for saved theme preference
-        const savedTheme = localStorage.getItem('theme') || 'light';
-        htmlElement.setAttribute('theme', savedTheme);
-        
-        if (savedTheme === 'dark') {
-            themeToggleBtn.classList.add('dark-active');
-            themeToggleBtn.innerHTML = '<i class="fas fa-sun"></i>';
-        }
-        
-        themeToggleBtn.addEventListener('click', function() {
-            const currentTheme = htmlElement.getAttribute('theme');
-            const newTheme = currentTheme === 'light' ? 'dark' : 'light';
-            
-            htmlElement.setAttribute('theme', newTheme);
-            localStorage.setItem('theme', newTheme);
-            
-            if (newTheme === 'dark') {
-                themeToggleBtn.classList.add('dark-active');
-                themeToggleBtn.innerHTML = '<i class="fas fa-sun"></i>';
-            } else {
-                themeToggleBtn.classList.remove('dark-active');
-                themeToggleBtn.innerHTML = '<i class="fas fa-moon"></i>';
-            }
-        });
         
         // Scroll progress bar
         window.addEventListener('scroll', function() {

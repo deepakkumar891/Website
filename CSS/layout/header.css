@@ -133,35 +133,28 @@
     display: inline-block;
 }
 
+/* Remove the dropdown arrow as ::after to avoid conflict with underline */
 .dropdown > a::after {
-    content: '';
-    display: inline-block;
-    margin-left: 5px;
-    width: 8px;
-    height: 8px;
-    border-right: 2px solid #666;
-    border-bottom: 2px solid #666;
-    transform: rotate(45deg);
-    transition: all 0.3s;
+    display: none;
 }
 
-[data-theme="dark"] .dropdown > a::after {
-    border-right: 2px solid #aaa;
-    border-bottom: 2px solid #aaa;
-}
-
-[data-theme="light"] .dropdown > a::after {
-    border-right: 2px solid #666;
-    border-bottom: 2px solid #666;
-}
-
+/* Use chevron icon instead for dropdown */
 .dropdown > a i.fa-chevron-down {
     margin-left: 5px;
     font-size: 0.8rem;
+    transition: all 0.3s;
 }
 
-.dropdown:hover > a::after {
-    transform: rotate(-180deg) translateY(-3px);
+.dropdown:hover > a i.fa-chevron-down {
+    transform: rotate(180deg);
+}
+
+[data-theme="dark"] .dropdown > a i.fa-chevron-down {
+    color: #aaa;
+}
+
+[data-theme="light"] .dropdown > a i.fa-chevron-down {
+    color: #666;
 }
 
 .dropdown-content {
