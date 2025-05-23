@@ -118,21 +118,31 @@ function updateThemeToggleButton(theme) {
  * Initialize hamburger menu
  */
 function initializeHamburger() {
+    console.log('Initializing hamburger menu...');
     const hamburger = document.querySelector('.hamburger');
     const navContainer = document.querySelector('.nav-container');
     const dropdowns = document.querySelectorAll('.dropdown');
     
+    console.log('Hamburger element:', hamburger);
+    console.log('Nav container element:', navContainer);
+    
     if (hamburger && navContainer) {
+        // Remove any existing event listeners
+        const newHamburger = hamburger.cloneNode(true);
+        hamburger.parentNode.replaceChild(newHamburger, hamburger);
+        
         // Set initial positions of hamburger spans
-        const spans = hamburger.querySelectorAll('span');
+        const spans = newHamburger.querySelectorAll('span');
         if (spans.length === 3) {
             spans[0].style.top = '0';
-            spans[1].style.top = '9px';
-            spans[2].style.top = '18px';
+            spans[1].style.top = '11px';
+            spans[2].style.top = '22px';
         }
         
         // Toggle hamburger menu
-        hamburger.addEventListener('click', function() {
+        newHamburger.addEventListener('click', function(e) {
+            e.stopPropagation();
+            console.log('Hamburger clicked');
             this.classList.toggle('active');
             navContainer.classList.toggle('active');
             document.body.classList.toggle('menu-open');
@@ -144,6 +154,8 @@ function initializeHamburger() {
                 });
             }
         });
+    } else {
+        console.error('Hamburger or nav container not found');
     }
     
     // Toggle dropdown menus
@@ -153,6 +165,7 @@ function initializeHamburger() {
             link.addEventListener('click', function(e) {
                 if (window.innerWidth < 992) {
                     e.preventDefault();
+                    e.stopPropagation();
                     item.classList.toggle('active');
                 }
             });
