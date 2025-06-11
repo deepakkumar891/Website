@@ -14,6 +14,9 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Add Call Button to all pages 
     addCallButton();
+
+    //Add Whatsapp Button to all pages
+    addWhatsApppButton();
     
     // Remove duplicate dropdown arrows
     removeDuplicateArrows();
@@ -245,6 +248,30 @@ function addCallButton() {
     
     // Append to body
     document.body.appendChild(callButton);
+}
+
+function addWhatsApppButton() {
+    // First: Remove any back-to-top buttons
+    const backToTopButtons = document.querySelectorAll('.back-to-top');
+    backToTopButtons.forEach(button => {
+        button.remove();
+    });
+    
+    // Remove any existing call button
+    const existingChatButton = document.querySelector('.call-button-whatsapp');
+    if (existingChatButton) {
+        existingChatButton.remove();
+    }
+    
+    // Create new call button
+    const chatButton = document.createElement('a');
+    chatButton.href = 'https://wa.me/+919211463649';
+    chatButton.className = 'call-button-whatsapp';
+    chatButton.title = 'Chat with Us';
+    chatButton.innerHTML = '<i class="fab fa-whatsapp"></i>';
+    
+    // Append to body
+    document.body.appendChild(chatButton);
 }
 
 /**
