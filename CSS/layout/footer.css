@@ -230,7 +230,7 @@ footer {
     box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
 }
 
-[data-theme="dark"] .call-button {
+[data-theme="dark"] .call-button .call-button-whatsapp {
     box-shadow: 0 4px 15px rgba(37, 211, 102, 0.5);
 }
 
