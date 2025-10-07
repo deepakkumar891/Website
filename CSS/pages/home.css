@@ -1004,3 +1004,13 @@
   .sticky-button:hover {
     background-color: #45a049;
   }
+
+  .productLogo {
+  height: 100px;
+  width: 100px;
+  border-radius: 20px;   /* ← Adjust this value */
+  object-fit: cover;     /* Keeps the image nicely cropped */
+  border: 2px solid #00bfff; /* Optional blue border for design */
+  box-shadow: 0 4px 10px rgba(0, 0, 50, 0.4); /* Optional shadow */
+}
+

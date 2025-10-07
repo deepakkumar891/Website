@@ -1,0 +1,93 @@
+/* Section Background */
+.ship-section {
+  background: linear-gradient(135deg, #001f3f, #003f7f);
+  padding: 130px 20px;
+  color: white;
+  font-family: "Poppins", sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Container */
+.ship-container {
+  max-width: 900px;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.08);
+  padding: 40px 30px;
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(0, 0, 50, 0.4);
+  transition: all 0.4s ease;
+}
+
+.ship-container:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(0, 0, 80, 0.5);
+}
+
+/* Title */
+.section-title {
+  font-size: 2.2rem;
+  margin-bottom: 30px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #00bfff;
+}
+
+/* Product Box */
+.ship-products {
+  background: rgba(0, 191, 255, 0.1);
+  border: 1px solid rgba(0, 191, 255, 0.3);
+  border-radius: 15px;
+  padding: 25px;
+  transition: all 0.3s ease;
+}
+
+.ship-products:hover {
+  background: rgba(0, 191, 255, 0.15);
+  transform: scale(1.02);
+}
+
+/* Titles and Description */
+.product-title {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  color: #00bfff;
+}
+
+.product-desc {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #e6f7ff;
+  margin-bottom: 20px;
+}
+
+/* Button */
+.learn-more {
+  background: #00bfff;
+  color: #001f3f;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 30px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.learn-more:hover {
+  background: #0099cc;
+  transform: scale(1.05);
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+  .section-title {
+    font-size: 1.8rem;
+  }
+  .product-title {
+    font-size: 1.3rem;
+  }
+  .product-desc {
+    font-size: 0.95rem;
+  }
+}
