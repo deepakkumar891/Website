@@ -1,0 +1,628 @@
+/* ============================================
+   Maritime Theme - CodeAlytix Maritime Software
+   Dark Navy + Ocean Blue Design System
+   ============================================ */
+
+/* Maritime Color Variables */
+:root {
+    --maritime-navy: #0a1628;
+    --maritime-deep: #0d2137;
+    --maritime-blue: #0e4d8a;
+    --maritime-ocean: #1565c0;
+    --maritime-accent: #00b4d8;
+    --maritime-light: #90e0ef;
+    --maritime-gold: #f4a261;
+    --maritime-white: #e8f4f8;
+    --maritime-gradient: linear-gradient(135deg, #0a1628 0%, #0e4d8a 50%, #00b4d8 100%);
+    --maritime-card-bg: rgba(13, 33, 55, 0.95);
+}
+
+/* ============================================
+   HEADER - Maritime Style
+   ============================================ */
+.maritime-header {
+    background: rgba(10, 22, 40, 0.97) !important;
+    border-bottom: 1px solid rgba(0, 180, 216, 0.2);
+}
+
+.maritime-header .logo a {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.maritime-tag {
+    font-size: 0.65rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--maritime-accent);
+    background: rgba(0, 180, 216, 0.15);
+    border: 1px solid rgba(0, 180, 216, 0.3);
+    padding: 2px 8px;
+    border-radius: 20px;
+    margin-left: 4px;
+}
+
+.maritime-header .nav-links ul li a {
+    color: var(--maritime-white);
+    opacity: 0.85;
+    transition: all 0.3s ease;
+}
+
+.maritime-header .nav-links ul li a:hover,
+.maritime-header .nav-links ul li a.active {
+    color: var(--maritime-accent);
+    opacity: 1;
+}
+
+.maritime-header .dropdown-content {
+    background: var(--maritime-deep);
+    border: 1px solid rgba(0, 180, 216, 0.2);
+    border-top: 2px solid var(--maritime-accent);
+}
+
+.maritime-header .dropdown-content a {
+    color: var(--maritime-white) !important;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 20px;
+}
+
+.maritime-header .dropdown-content a i {
+    color: var(--maritime-accent);
+    width: 16px;
+}
+
+.maritime-header .dropdown-content a:hover {
+    background: rgba(0, 180, 216, 0.1);
+    color: var(--maritime-accent) !important;
+}
+
+.maritime-header .btn-small {
+    background: linear-gradient(135deg, var(--maritime-ocean), var(--maritime-accent));
+    border: none;
+    color: #fff;
+}
+
+/* ============================================
+   HERO - Maritime Style
+   ============================================ */
+.maritime-hero {
+    background: var(--maritime-navy);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 160px 0 120px;
+}
+
+.maritime-overlay {
+    background: linear-gradient(135deg, 
+        rgba(10, 22, 40, 0.92) 0%, 
+        rgba(14, 77, 138, 0.7) 50%, 
+        rgba(0, 180, 216, 0.3) 100%) !important;
+}
+
+.hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(0, 180, 216, 0.15);
+    border: 1px solid rgba(0, 180, 216, 0.4);
+    color: var(--maritime-accent);
+    padding: 8px 20px;
+    border-radius: 30px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    animation: pulse-border 2s infinite;
+}
+
+@keyframes pulse-border {
+    0%, 100% { border-color: rgba(0, 180, 216, 0.4); }
+    50% { border-color: rgba(0, 180, 216, 0.8); }
+}
+
+.maritime-hero h1 {
+    color: #fff;
+    font-size: 3.2rem;
+    line-height: 1.2;
+    margin-bottom: 24px;
+}
+
+.maritime-hero h1 .accent-text {
+    color: var(--maritime-accent);
+}
+
+.maritime-hero p {
+    color: rgba(232, 244, 248, 0.85);
+    font-size: 1.2rem;
+    max-width: 700px;
+    margin: 0 auto 40px;
+    line-height: 1.8;
+}
+
+.maritime-hero .btn {
+    background: linear-gradient(135deg, var(--maritime-ocean), var(--maritime-accent));
+    border: none;
+    color: #fff;
+    padding: 14px 32px;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 20px rgba(0, 180, 216, 0.3);
+}
+
+.maritime-hero .btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 30px rgba(0, 180, 216, 0.5);
+}
+
+.maritime-hero .btn-outline {
+    background: transparent;
+    border: 2px solid rgba(0, 180, 216, 0.6);
+    color: var(--maritime-accent);
+}
+
+.maritime-hero .btn-outline:hover {
+    background: rgba(0, 180, 216, 0.1);
+    border-color: var(--maritime-accent);
+}
+
+/* Hero Stats */
+.maritime-stats {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    margin-top: 60px;
+    padding-top: 40px;
+    border-top: 1px solid rgba(0, 180, 216, 0.2);
+}
+
+.maritime-stats .stat-item {
+    text-align: center;
+    color: var(--maritime-white);
+}
+
+.maritime-stats .stat-item i {
+    font-size: 2rem;
+    color: var(--maritime-accent);
+    margin-bottom: 10px;
+    display: block;
+}
+
+.maritime-stats .stat-item h3 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #fff;
+    margin-bottom: 4px;
+}
+
+.maritime-stats .stat-item p {
+    font-size: 0.8rem;
+    color: rgba(232, 244, 248, 0.6);
+    margin: 0;
+}
+
+/* ============================================
+   MARITIME PRODUCTS SECTION
+   ============================================ */
+.maritime-products {
+    background: var(--background-color);
+    padding: 100px 0;
+}
+
+.maritime-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 30px;
+    margin-top: 50px;
+}
+
+.maritime-card {
+    background: var(--card-bg-color);
+    border-radius: 16px;
+    padding: 35px 30px;
+    border: 1px solid rgba(0, 180, 216, 0.1);
+    position: relative;
+    overflow: hidden;
+    transition: all 0.4s ease;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+}
+
+.maritime-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--maritime-ocean), var(--maritime-accent));
+}
+
+.maritime-card:hover {
+    transform: translateY(-8px);
+    border-color: rgba(0, 180, 216, 0.3);
+    box-shadow: 0 20px 50px rgba(0, 180, 216, 0.15);
+}
+
+.maritime-icon {
+    width: 70px;
+    height: 70px;
+    border-radius: 16px;
+    background: linear-gradient(135deg, rgba(14, 77, 138, 0.1), rgba(0, 180, 216, 0.1));
+    border: 1px solid rgba(0, 180, 216, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    color: var(--maritime-accent);
+    margin-bottom: 20px;
+    transition: all 0.3s ease;
+}
+
+.maritime-card:hover .maritime-icon {
+    background: linear-gradient(135deg, var(--maritime-ocean), var(--maritime-accent));
+    color: #fff;
+    border-color: transparent;
+    transform: rotate(5deg);
+}
+
+.product-badge {
+    display: inline-block;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--maritime-accent);
+    background: rgba(0, 180, 216, 0.1);
+    border: 1px solid rgba(0, 180, 216, 0.25);
+    padding: 3px 10px;
+    border-radius: 20px;
+    margin-bottom: 12px;
+}
+
+.maritime-card h3 {
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-bottom: 12px;
+    color: var(--heading-color);
+}
+
+.maritime-card > p {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.feature-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 25px;
+}
+
+.feature-list li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 6px 0;
+    font-size: 0.9rem;
+    color: var(--text-color);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.feature-list li:last-child {
+    border-bottom: none;
+}
+
+.feature-list li i {
+    color: var(--maritime-accent);
+    font-size: 0.75rem;
+    flex-shrink: 0;
+}
+
+.btn-product {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--maritime-accent);
+    font-weight: 600;
+    font-size: 0.9rem;
+    text-decoration: none;
+    padding: 10px 0;
+    border-bottom: 2px solid transparent;
+    transition: all 0.3s ease;
+}
+
+.btn-product:hover {
+    border-bottom-color: var(--maritime-accent);
+    gap: 12px;
+}
+
+/* ============================================
+   INDUSTRY SOLUTIONS SECTION
+   ============================================ */
+.maritime-solutions {
+    padding: 100px 0;
+}
+
+.solutions-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 30px;
+    margin-top: 50px;
+}
+
+.solution-card {
+    background: var(--card-bg-color);
+    border-radius: 16px;
+    padding: 35px 30px;
+    border: 1px solid var(--border-color);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.solution-card::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--maritime-ocean), var(--maritime-accent));
+    transition: width 0.4s ease;
+}
+
+.solution-card:hover::after {
+    width: 100%;
+}
+
+.solution-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+    border-color: rgba(0, 180, 216, 0.2);
+}
+
+.solution-icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 14px;
+    background: linear-gradient(135deg, var(--maritime-ocean), var(--maritime-accent));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    color: #fff;
+    margin-bottom: 20px;
+}
+
+.solution-card h3 {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-bottom: 12px;
+    color: var(--heading-color);
+}
+
+.solution-card > p {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.solution-features {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.solution-features li {
+    padding: 5px 0;
+    font-size: 0.88rem;
+    color: var(--text-color);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.solution-features li::before {
+    content: '→';
+    color: var(--maritime-accent);
+    font-weight: 700;
+}
+
+/* ============================================
+   TRUSTED BY SECTION
+   ============================================ */
+.maritime-trusted {
+    padding: 80px 0;
+    background: linear-gradient(135deg, var(--maritime-navy) 0%, var(--maritime-deep) 100%);
+    color: #fff;
+}
+
+.maritime-trusted .section-subtitle {
+    color: var(--maritime-accent);
+}
+
+.maritime-trusted h2 {
+    color: #fff;
+}
+
+.trust-stats {
+    display: flex;
+    justify-content: center;
+    gap: 60px;
+    margin-top: 50px;
+    flex-wrap: wrap;
+}
+
+.trust-item {
+    text-align: center;
+    padding: 30px 40px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(0, 180, 216, 0.2);
+    border-radius: 16px;
+    transition: all 0.3s ease;
+    min-width: 200px;
+}
+
+.trust-item:hover {
+    background: rgba(0, 180, 216, 0.1);
+    border-color: rgba(0, 180, 216, 0.4);
+    transform: translateY(-5px);
+}
+
+.trust-item i {
+    font-size: 2.5rem;
+    color: var(--maritime-accent);
+    margin-bottom: 15px;
+    display: block;
+}
+
+.trust-item h3 {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 6px;
+}
+
+.trust-item p {
+    font-size: 0.85rem;
+    color: rgba(232, 244, 248, 0.6);
+    margin: 0;
+}
+
+/* ============================================
+   WHY CHOOSE US - Maritime
+   ============================================ */
+.maritime-why {
+    padding: 100px 0;
+}
+
+.maritime-why .step-number {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--maritime-ocean), var(--maritime-accent));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    color: #fff;
+    flex-shrink: 0;
+}
+
+/* ============================================
+   CTA SECTION - Maritime
+   ============================================ */
+.maritime-cta .cta-overlay {
+    background: linear-gradient(135deg, var(--maritime-navy) 0%, var(--maritime-ocean) 60%, var(--maritime-accent) 100%) !important;
+}
+
+/* ============================================
+   FOOTER - Maritime
+   ============================================ */
+.maritime-footer {
+    background: var(--maritime-navy);
+    color: var(--maritime-white);
+}
+
+.maritime-footer .footer-logo .maritime-tag {
+    vertical-align: middle;
+}
+
+.maritime-footer p {
+    color: rgba(232, 244, 248, 0.7);
+}
+
+.maritime-footer h3 {
+    color: var(--maritime-accent);
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
+.maritime-footer ul li a {
+    color: rgba(232, 244, 248, 0.7);
+    transition: color 0.3s ease;
+}
+
+.maritime-footer ul li a:hover {
+    color: var(--maritime-accent);
+}
+
+.maritime-footer .contact-info li {
+    color: rgba(232, 244, 248, 0.7);
+}
+
+.maritime-footer .contact-info li i {
+    color: var(--maritime-accent);
+}
+
+.maritime-footer .footer-bottom {
+    border-top: 1px solid rgba(0, 180, 216, 0.15);
+    color: rgba(232, 244, 248, 0.5);
+}
+
+.maritime-footer .back-to-top {
+    color: var(--maritime-accent);
+}
+
+/* ============================================
+   DARK THEME OVERRIDES
+   ============================================ */
+[data-theme="dark"] .maritime-card {
+    background: rgba(13, 33, 55, 0.8);
+    border-color: rgba(0, 180, 216, 0.15);
+}
+
+[data-theme="dark"] .solution-card {
+    background: rgba(13, 33, 55, 0.8);
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+@media (max-width: 768px) {
+    .maritime-hero h1 {
+        font-size: 2.2rem;
+    }
+
+    .maritime-stats {
+        gap: 25px;
+        flex-wrap: wrap;
+    }
+
+    .maritime-grid,
+    .solutions-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .trust-stats {
+        gap: 20px;
+    }
+
+    .trust-item {
+        min-width: 150px;
+        padding: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .maritime-hero h1 {
+        font-size: 1.8rem;
+    }
+
+    .maritime-stats {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+}

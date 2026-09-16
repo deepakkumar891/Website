@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Open Hearts Support Group</title>
+    <style>
+        :root {
+            --ink: #18324b;
+            --blue: #5a7c8a;
+            --light: #f5f1ee;
+            --accent: #d98a6b;
+            --header-start: #7a9c9b;
+            --header-end: #c78d7d;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            color: var(--ink);
+            background: var(--light);
+            line-height: 1.6;
+        }
+
+        header {
+            padding: 72px 20px 58px;
+            color: white;
+            background: linear-gradient(135deg, var(--header-start), var(--header-end));
+            box-shadow: 0 10px 30px rgba(122, 156, 155, 0.25);
+        }
+
+        .header-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            align-items: center;
+            gap: 28px;
+        }
+
+        header h1 {
+            margin: 0 0 12px;
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            text-align: left;
+        }
+
+        header p {
+            margin: 0;
+            font-size: 1.15rem;
+            text-align: left;
+            max-width: 560px;
+        }
+
+        .header-visual {
+            position: relative;
+        }
+
+        .header-visual img {
+            width: 100%;
+            max-height: 380px;
+            object-fit: cover;
+            border-radius: 22px;
+            box-shadow: 0 18px 40px rgba(24, 50, 75, 0.18);
+            border: 4px solid rgba(255, 255, 255, 0.4);
+            display: block;
+        }
+
+        .header-badge {
+            position: absolute;
+            right: -10px;
+            bottom: -12px;
+            background: rgba(255, 255, 255, 0.92);
+            color: var(--ink);
+            padding: 10px 14px;
+            border-radius: 12px;
+            box-shadow: 0 10px 24px rgba(24, 50, 75, 0.12);
+            font-size: 0.8rem;
+            font-weight: bold;
+        }
+
+        main {
+            max-width: 980px;
+            margin: 0 auto;
+            padding: 42px 20px 60px;
+        }
+
+        .story-row {
+            display: grid;
+            grid-template-columns: 1.1fr 1fr;
+            gap: 24px;
+            align-items: center;
+            margin: 18px 0 12px;
+        }
+
+        .story-row.reverse {
+            grid-template-columns: 1fr 1.1fr;
+        }
+
+        .story-image {
+            width: 100%;
+            height: 270px;
+            object-fit: cover;
+            border-radius: 16px;
+            box-shadow: 0 10px 20px rgba(24, 50, 75, 0.08);
+            display: block;
+        }
+
+        .story-copy {
+            margin: 0;
+            font-size: 1rem;
+            color: var(--ink);
+        }
+
+        section {
+            background: white;
+            margin-bottom: 24px;
+            padding: 28px;
+            border-radius: 12px;
+            box-shadow: 0 4px 18px #18324b12;
+        }
+
+        h2 {
+            margin-top: 0;
+            color: var(--blue);
+        }
+
+        ul {
+            padding-left: 22px;
+        }
+
+        .details {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+            gap: 18px;
+        }
+
+        .detail {
+            padding: 16px;
+            background: var(--light);
+            border-left: 4px solid var(--accent);
+        }
+
+        .detail strong {
+            display: block;
+            color: var(--blue);
+        }
+
+        .cta {
+            text-align: center;
+            background: #eaf6fb;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 13px 24px;
+            color: white;
+            background: var(--blue);
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .button:hover {
+            background: #104c7c;
+        }
+
+        footer {
+            padding: 24px;
+            text-align: center;
+            color: #587085;
+            font-size: .9rem;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="header-inner">
+            <div>
+                <h1>Open Hearts Support Group</h1>
+                <p>A safe place for anyone who feels overwhelmed, alone, or needs someone to talk to.</p>
+            </div>
+            <div class="header-visual">
+                <img src="images/SupportGroup/Sunrise.jpg" alt="Sunrise symbolizing hope and healing">
+                <div class="header-badge">Hope • Healing • Support</div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section>
+            <h2>Who This Group Is For</h2>
+            <div class="story-row">
+                <div>
+                    <p class="story-copy">We welcome anyone who is struggling with life challenges and needs a kind,
+                        listening space. This group is
+                        for people dealing with depression, anxiety, anger issues, grief, loneliness, illness, cancer,
+                        burnout,
+                        stress, or simply feeling like they need support.</p>
+                    <ul>
+                        <li>People feeling depressed or emotionally exhausted.</li>
+                        <li>Anyone dealing with anger, frustration, or emotional overwhelm.</li>
+                        <li>People facing cancer, illness, or major life changes.</li>
+                        <li>Anyone who wants someone to listen without judgment.</li>
+                    </ul>
+                </div>
+                <img class="story-image" src="images/SupportGroup/SadWomenAlone.jpg"
+                    alt="Person feeling alone and overwhelmed">
+            </div>
+        </section>
+
+        <section>
+            <h2>What We Offer</h2>
+            <div class="story-row reverse">
+                <img class="story-image" src="images/SupportGroup/Hands.jpg"
+                    alt="Hands showing comfort and caring support">
+                <div>
+                    <p class="story-copy">We create a respectful and compassionate environment where people can speak
+                        freely, feel heard, and
+                        connect with others who understand.</p>
+                    <ul>
+                        <li>Gentle, non-judgmental conversation.</li>
+                        <li>Support for emotional healing and personal encouragement.</li>
+                        <li>Access to listening ears, shared experiences, and practical guidance.</li>
+                        <li>A community where no one has to carry pain alone.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>How We Support Each Other</h2>
+            <div class="story-row">
+                <div>
+                    <p class="story-copy">Every session is built around respect, privacy, and compassion. You can speak
+                        as much or as little as you
+                        feel comfortable with. The goal is not to fix everything instantly, but to help people feel
+                        seen,
+                        supported, and less alone.</p>
+                    <ul>
+                        <li>Confidential and respectful group discussions.</li>
+                        <li>Listening without blame, pressure, or judgment.</li>
+                        <li>Encouragement, reflection, and peer support.</li>
+                    </ul>
+                </div>
+                <img class="story-image" src="images/SupportGroup/SupportGroupPhotoGroupDiscussion.webp"
+                    alt="Support group discussion">
+            </div>
+        </section>
+
+        <section>
+            <h2>Session Details</h2>
+            <div class="details">
+                <div class="detail"><strong>When</strong>Every Sunday <br>10:00 AM – 05:00 PM (All Batches) </div>
+                <div class="detail"><strong>Where</strong>Online via video conference<br>Or by arrangement for private
+                    support conversations.</div>
+                <div class="detail"><strong>Cost</strong>Free to attend</div>
+                <div class="detail"><strong>Who Can Join</strong>Anyone who needs support, encouragement, or a safe
+                    place to talk.</div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Important Note</h2>
+            <p>This is a peer support and listening group. It is not a substitute for emergency care or professional
+                medical treatment. If someone is in immediate danger, or if a medical emergency is happening, please
+                contact local emergency services or a qualified healthcare professional right away.</p>
+        </section>
+
+        <section class="cta">
+            <h2>Need Someone to Talk To?</h2>
+            <p>You do not have to carry your pain alone. Reach out and join a supportive conversation.</p>
+            <a class="button" href="https://forms.gle/gNhHXGjgBaH8i9e26" target="https://forms.gle/gNhHXGjgBaH8i9e26"
+                rel="noopener">Join the Support
+                Group</a>
+            <p>Everyone deserves kindness, understanding, and a safe place to be heard.</p>
+        </section>
+    </main>
+    <footer>
+        &copy; 2026 Codealytix - Open Hearts Support Group. Compassion, listening, and hope.
+        <p>Contact us at <a href="mailto:info@codealytix.com">info@codealytix.com</a> for more information or call <a
+                href="tel:+919211463649">+91-9211463649</a>.</p>
+    </footer>
+</body>
+
+</html>
